@@ -2,6 +2,7 @@ import React from 'react';
 import Section from "../components/section";
 import Projects from "../components/projects";
 import Areas from "../components/areas";
+import Contact from "../components/contact";
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -19,12 +20,8 @@ export default () => (
       <Areas/>
       <Section header="Projects" content={content}/>
       <Projects/>
-      <Section header="Skills" content={content}/>
-      <Section header="Profesional Services" content={content}/>
       <Section header="Blog" content={content}/>
-      <Section header="Publications" content={content}/>
-      <Section header="In the Press" content={content}/>
-      <Section header="Sandbox" content={content}/>
       <Section header="Get In Touch" content={inmail}/>
+      <Contact/>
   </Wrapper>
 );

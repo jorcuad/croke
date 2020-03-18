@@ -11,7 +11,7 @@ import BgItem2 from "../../../static/Bg2.png"
 import BgItem3 from "../../../static/Bg3.png"
 
 const Padding = styled.div`
-  ${tw`w-screen flex items-center justify-center`}
+  ${tw`w-screen flex items-center justify-center mb-64`}
 `;
 
 const Background = styled.div`

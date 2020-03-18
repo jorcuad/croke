@@ -14,16 +14,16 @@ const Row = styled.div`
 export default props => (
   <Row>
     <Content>
-      <Sectionbutton section="AREA PROYECTOS"/>
-      <Sectionbutton section="AREA BLOG"/>
+      <Sectionbutton section="PROJECTS"/>
+      <Sectionbutton section="BLOG"/>
     </Content>
     <Content>
-      <Sectionbutton section="AREA SKILLS"/>
-      <Sectionbutton section="AREA PRESS"/>
+      <Sectionbutton section="SERVICES"/>
+      <Sectionbutton section="PRESS"/>
     </Content>
     <Content>
-      <Sectionbutton section="AREA PUBLICACIONES"/>
-      <Sectionbutton section="AREA SANDBOX"/>
+      <Sectionbutton section="PUBLICATIONS"/>
+      <Sectionbutton section="SANDBOX"/>
     </Content>
   </Row>
 )
