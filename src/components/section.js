@@ -8,7 +8,7 @@ const Content = styled.div`
 `;
 
 const Title = styled.h1`
-  ${tw`text-5xl block mb-4`}
+  ${tw`text-5xl block mb-4 text-croke-purple`}
 `;
 
 const Text = styled.p`

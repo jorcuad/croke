@@ -22,11 +22,11 @@ const Headline = styled.div`
 `;
 
 const Title = styled.h1`
-  ${tw`flex flex-row mb-1 text-4xl`}
+  ${tw`flex flex-row mb-1 text-4xl text-croke-white`}
 `;
 
 const Subtitle = styled.h2`
-  ${tw`flex flex-row text-2xl`}
+  ${tw`flex flex-row text-2xl text-croke-white`}
 `;
 
 export default () => (

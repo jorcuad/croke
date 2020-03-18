@@ -9,11 +9,11 @@ const Card = styled.div`
 `;
 
 const CardImage = styled.div`
-  ${tw`h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden`}
+  ${tw`border-croke-purple lg:border-t lg:border lg:border-r-0 lg:border-croke-purple h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden`}
 `;
 
 const CardContent = styled.div`
-  ${tw`border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal`}
+  ${tw`border-r border-b border-l border-t border-croke-purple lg:border-l-0 lg:border-t lg:border-croke-purple bg-croke-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal`}
 `;
 
 const CardTitleWrapper = styled.div`
@@ -21,7 +21,7 @@ const CardTitleWrapper = styled.div`
 `;
 
 const CardTitle = styled.div`
-  ${tw`text-gray-900 font-bold text-xl mb-2`}
+  ${tw`text-croke-purple font-bold text-xl mb-2`}
 `;
 
 const CardText = styled.p`
@@ -37,11 +37,11 @@ const MetaCardTextWrapper = styled.div`
 `;
 
 const MetaCardText = styled.p`
-  ${tw`text-gray-900 leading-none`}
+  ${tw`text-croke-purple leading-none`}
 `;
 
 const MetaCardTextSub = styled.p`
-  ${tw`text-gray-600`}
+  ${tw`text-croke-purple`}
 `;
 
 export default props => (
