@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from "../components/section";
 import Projects from "../components/projects";
+import Areas from "../components/areas";
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -15,6 +16,7 @@ const Wrapper = styled.div`
 export default () => (
   <Wrapper>
       <Section header="Security, Electronics and Crazy projects" content={content}/>
+      <Areas/>
       <Section header="Projects" content={content}/>
       <Projects/>
       <Section header="Skills" content={content}/>

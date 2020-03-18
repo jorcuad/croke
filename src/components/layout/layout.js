@@ -33,20 +33,23 @@ const MiddleWrapper = styled.div`
 export default ({ children }) => (
   <div>
     <Header/>
-    <Background>
-      <LeftWrapper>
-        <img className="bgImage1 block relative" src={BgItem1} alt="BGItem"/>
-      </LeftWrapper>
-      <RightWrapper>
-        <img className="bgImage2 block relative" src={BgItem2} alt="BGItem"/>
-      </RightWrapper>
-      <MiddleWrapper>
-        <img className="bgImage3 block relative" src={BgItem3} alt="BGItem"/>
-      </MiddleWrapper>
-    </Background>
     <Padding>
       {children}
     </Padding>
     <Footer/>
   </div>
 )
+
+/*
+<Background>
+  <LeftWrapper>
+    <img className="bgImage1 block relative" src={BgItem1} alt="BGItem"/>
+  </LeftWrapper>
+  <RightWrapper>
+    <img className="bgImage2 block relative" src={BgItem2} alt="BGItem"/>
+  </RightWrapper>
+  <MiddleWrapper>
+    <img className="bgImage3 block relative" src={BgItem3} alt="BGItem"/>
+  </MiddleWrapper>
+</Background>
+*/
