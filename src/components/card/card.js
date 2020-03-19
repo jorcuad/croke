@@ -1,15 +1,16 @@
 import React from "react";
-import "./card.css"
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
+import img from './card-left.jpg';
 
 const Card = styled.div`
   ${tw`max-w-sm max-h-sm w-full h-48 flex mb-4 overflow-hidden`}
 `;
 
 const CardImage = styled.div`
-  ${tw`border-croke-purple lg:border-t lg:border lg:border-r-0 lg:border-croke-purple h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden`}
+  ${tw`border-croke-purple lg:border-t lg:border lg:border-r-0 lg:border-croke-purple h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden`};
+  background-image: url(${props => props.image});
 `;
 
 const CardContent = styled.div`
@@ -46,17 +47,17 @@ const MetaCardTextSub = styled.p`
 
 export default props => (
   <Card>
-    <CardImage className="card-image" title="Woman holding a mug">
+    <CardImage image={props.image} className="card-image" title={props.title}>
     </CardImage>
     <CardContent>
       <CardTitleWrapper>
-        <CardTitle>ASSAP TOOL</CardTitle>
-        <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</CardText>
+        <CardTitle>{props.title}</CardTitle>
+        <CardText>{props.description}</CardText>
       </CardTitleWrapper>
       <MetaCardWrapper>
         <MetaCardTextWrapper>
-          <MetaCardText>Jorge Cuadrado Saez</MetaCardText>
-          <MetaCardTextSub>Aug 18</MetaCardTextSub>
+          <MetaCardText>{props.link}</MetaCardText>
+          <MetaCardTextSub>{props.date}</MetaCardTextSub>
         </MetaCardTextWrapper>
       </MetaCardWrapper>
     </CardContent>
