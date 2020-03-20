@@ -9,30 +9,17 @@
         transform: translateX(-50%) translateZ(0) scaleY(1)
     }
 }
-.waveFooterWrapper {
-    overflow: hidden;
-    position: absolute;
-    height: 16rem;
-    width: 100%;
-}
-.waveFooterWrapperInner {
-    position: absolute;
-    width: 100%;
-    overflow: hidden;
-    height: 100%;
-    background-image: linear-gradient(to top, #68da23 20%, #412854 28%);
-    transform: rotate(180deg);
-}
+
 .bgFooterTop {
-    z-index: -1;
+    z-index: -2;
     opacity: 0.5;
 }
 .bgFooterMiddle {
-    z-index: -2;
+    z-index: -3;
     opacity: 0.75;
 }
 .bgFooterBottom {
-    z-index: -3;
+    z-index: -4;
 }
 .waveFooter {
     position: relative;
@@ -43,27 +30,53 @@
     background-position: 0 bottom;
     transform-origin: center bottom;
 }
-.waveFooterTop {
-    background-size: 50% 100px;
-    background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png');
+
+.waveFooterWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    background-image: linear-gradient(to top, #68da23 10%, #412854 25%);
+    transform: rotate(180deg);
 }
+
+.waveFooterTop {
+    background-size: 50% 75px;
+    background-image: url('../../../static/wave/wave-top.png');
+}
+.waveFooterMiddle {
+    background-size: 50% 80px;
+    background-image: url('../../../static/wave/wave-top.png');
+}
+.waveFooterBottom {
+    background-size: 50% 75px;
+    background-image: url('../../../static/wave/wave-bot.png');
+}
+
 .waveFooterAnimation .waveFooterTop {
   animation: move-waveFooter 3s;
    -webkit-animation: move-waveFooter 3s;
    -webkit-animation-delay: 1s;
    animation-delay: 1s;
 }
-.waveFooterMiddle {
-    background-size: 50% 120px;
-    background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png');
-}
 .waveFooterAnimation .waveFooterMiddle {
     animation: move_waveFooter 10s linear infinite;
 }
-.waveFooterBottom {
-    background-size: 50% 100px;
-    background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png');
-}
 .waveFooterAnimation .waveFooterBottom {
     animation: move_waveFooter 15s linear infinite;
+}
+
+@media (min-width: 640px) {
+  .waveTop {
+      background-size: 50% 100px;
+      background-image: url('../../../static/wave/wave-top.png');
+  }
+  .waveMiddle {
+      background-size: 50% 120px;
+      background-image: url('../../../static/wave/wave-mid.png');
+  }
+  .waveBottom {
+      background-size: 50% 100px;
+      background-image: url('../../../static/wave/wave-bot.png');
+  }
 }

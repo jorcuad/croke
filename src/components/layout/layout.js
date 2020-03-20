@@ -6,21 +6,17 @@ import Footer from "../footer";
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-import BgItem1 from "../../../static/Bg1.png"
-import BgItem2 from "../../../static/Bg2.png"
-import BgItem3 from "../../../static/Bg3.png"
-
 const Padding = styled.div`
-  ${tw`w-screen flex items-center justify-center mb-64`}
+  ${tw`w-screen flex items-center justify-center mb-32`}
 `;
 
-const Background = styled.div`
+/*const Background = styled.div`
   ${tw`block absolute -z-1 w-screen`}
 `;
 
 const LeftWrapper = styled.div`
   ${tw`block absolute left-0`}
-`;
+`;*/
 
 const RightWrapper = styled.div`
   ${tw`block absolute right-0`}
