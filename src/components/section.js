@@ -8,11 +8,11 @@ const Content = styled.div`
 `;
 
 const Title = styled.h1`
-  ${tw`text-5xl block mb-4 text-croke-purple`}
+  ${tw`text-2xl sm:text-4xl md:text-5xl block mb-4 text-croke-purple`}
 `;
 
 const Text = styled.p`
-  ${tw`text-xl block`}
+  ${tw`text-base sm:text-lg md:text-xl block text-justify`}
 `;
 
 export default props => (

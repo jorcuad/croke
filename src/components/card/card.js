@@ -2,14 +2,13 @@ import React from "react";
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
-import img from './card-left.jpg';
 
 const Card = styled.div`
-  ${tw`max-w-sm max-h-sm w-full h-48 flex mb-4 overflow-hidden`}
+  ${tw`max-w-sm max-h-sm w-full h-40 md:h-48 flex mb-4 overflow-hidden self-center`}
 `;
 
 const CardImage = styled.div`
-  ${tw`border-croke-purple lg:border-t lg:border lg:border-r-0 lg:border-croke-purple h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden`};
+  ${tw`border-croke-purple border-t border border-r-0 border-croke-purple w-32 h-40 sm:w-40 md:h-48 md:w-48 flex-none bg-cover rounded-t rounded-t-none rounded-l text-center overflow-hidden`};
   background-image: url(${props => props.image});
 `;
 
@@ -22,11 +21,11 @@ const CardTitleWrapper = styled.div`
 `;
 
 const CardTitle = styled.div`
-  ${tw`text-croke-purple font-bold text-xl mb-2`}
+  ${tw`text-croke-purple font-bold text-base sm:text-xl mb-2`}
 `;
 
 const CardText = styled.p`
-  ${tw`text-gray-700 text-base`}
+  ${tw`text-gray-700 text-xs sm:text-base`}
 `;
 
 const MetaCardWrapper = styled.div`

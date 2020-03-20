@@ -14,7 +14,7 @@ const Content = styled.div`
 `;
 
 const AvatarWrapper = styled.div`
-  ${tw`inline-block w-24 h-24 mr-12 relative justify-center items-center content-center justify-center flex-column`}
+  ${tw`inline-block w-24 h-24 mr-6 sm:mr-12 relative justify-center items-center content-center justify-center flex-column`}
 `;
 
 const Headline = styled.div`
@@ -22,11 +22,11 @@ const Headline = styled.div`
 `;
 
 const Title = styled.h1`
-  ${tw`flex flex-row mb-1 text-4xl text-croke-white`}
+  ${tw`flex flex-row mb-1 text-croke-white text-base sm:text-2xl md:text-3xl lg:text-4xl`}
 `;
 
 const Subtitle = styled.h2`
-  ${tw`flex flex-row text-2xl text-croke-white`}
+  ${tw`flex flex-row text-croke-white text-xs sm:text-lg md:text-xl lg:text-2xl`}
 `;
 
 export default () => (
