@@ -63,7 +63,7 @@ export default () => (
           </a>
         </LicenseIcon>
         <LicenseText>
-          This license covers the use of the content present in the domain croke.es. The projects and technologies showed here has its own license.
+          This license covers the use of the content present in the domain croke.es. The projects and technologies showed here has its own license, otherwise, this licence will aply them.
         </LicenseText>
       </License>
     </Content>
