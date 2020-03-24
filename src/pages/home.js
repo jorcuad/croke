@@ -24,7 +24,7 @@ export default () => (
       <Section header="Projects" content={projects}/>
       <Projects/>
       <Section header="Blog" content={blog}/>
-      <Blog last={5}/>
+      <Blog last={3}/>
       <Section header="Get In Touch" content={inmail}/>
       <Contact/>
   </Wrapper>
