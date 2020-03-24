@@ -3,6 +3,7 @@ import Section from "../components/section";
 import Projects from "../components/projects";
 import Areas from "../components/areas";
 import Contact from "../components/contact";
+import Blog from "../components/blog";
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -23,6 +24,7 @@ export default () => (
       <Section header="Projects" content={projects}/>
       <Projects/>
       <Section header="Blog" content={blog}/>
+      <Blog last={5}/>
       <Section header="Get In Touch" content={inmail}/>
       <Contact/>
   </Wrapper>

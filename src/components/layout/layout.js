@@ -16,7 +16,7 @@ const Padding = styled.div`
 
 const LeftWrapper = styled.div`
   ${tw`block absolute left-0`}
-`;*/
+`;
 
 const RightWrapper = styled.div`
   ${tw`block absolute right-0`}
@@ -24,7 +24,7 @@ const RightWrapper = styled.div`
 
 const MiddleWrapper = styled.div`
   ${tw`block absolute`}
-`;
+`;*/
 
 export default ({ children }) => (
   <div>

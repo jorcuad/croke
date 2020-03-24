@@ -12,10 +12,10 @@ import FreePhone from "../../static/projects/freephone.png"
 import Cryptex from "../../static/projects/cryptex.jpg"
 
 const Content = styled.div`
-  ${tw`overflow-hidden flex flex-col md:mb-20 md:justify-between`}
+  ${tw`overflow-hidden flex flex-col mb-20 md:justify-between`}
 `;
 const Row = styled.div`
-  ${tw`mb-20 flex flex-col md:flex-row md:justify-between`}
+  ${tw`flex flex-col md:flex-row md:justify-between`}
 `;
 
 export default props => (
