@@ -17,7 +17,7 @@ const Content = styled.div`
 `;
 
 const PostImage = styled.div`
-  ${tw`flex  w-32 h-32 sm:w-40 sm:h-40 md:h-48 md:w-48 flex-none bg-cover rounded-t rounded-t-none rounded-l overflow-hidden`};
+  ${tw`flex  w-32 h-32 sm:w-40 sm:h-40 md:h-48 md:w-48 flex-none bg-cover rounded overflow-hidden`};
   background-image: url(${props => props.image});
 `;
 

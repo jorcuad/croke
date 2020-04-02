@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 `;
 
 const Contact = styled.form`
-  ${tw`flex w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4`}
+  ${tw`flex w-full bg-white rounded px-8 pt-6 pb-8 mb-4`}
 `;
 
 const Fields = styled.div`
