@@ -46,7 +46,7 @@ export default () => (
         <Title>You can contact me here:</Title>
         <SocialReferences>
           <ReferenceColumn>
-            <Rrss icon="mail" link="mailto:jorge.cuadrado.saez@gmail.com" rrss="jorge.cuadrado.saez [at] gmail.com"/>
+            <Rrss icon="mail" link="mailto:jorge.cuadrado.saez@gmail.com" rrss="jorge.cuadrado.saez [at] gmail [dot] com"/>
             <Rrss icon="twitter" link="https://twitter.com/Coke727" rrss="@coke727"/>
           </ReferenceColumn>
           <ReferenceColumn>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby"
 import Sectionbutton from "./sectionbutton";
 
 import styled from 'styled-components';
@@ -15,11 +16,11 @@ export default props => (
   <Row>
     <Content>
       <Sectionbutton section="PROJECTS"/>
-      <Sectionbutton section="BLOG"/>
+      <Link to="/blog"><Sectionbutton section="BLOG"/></Link>
     </Content>
     <Content>
       <Sectionbutton section="SERVICES"/>
-      <Sectionbutton section="PRESS"/>
+      <Link to="/press"><Sectionbutton section="PRESS"/></Link>
     </Content>
     <Content>
       <Sectionbutton section="PUBLICATIONS"/>

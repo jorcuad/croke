@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const Rrss = styled.div`
-  ${tw`flex flex-row mb-3 pt-2 items-center`}
+  ${tw`flex flex-row mb-3 pt-2 items-center hover:text-croke-green`}
 `;
 
 const Link = styled.div`

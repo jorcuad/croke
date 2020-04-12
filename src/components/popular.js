@@ -3,16 +3,14 @@ import React from "react";
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-import Post from "./post/post.js";
+import Post from "./post/popular-post.js";
 
 import Assap from "../../static/projects/assap.png"
 import Marimorena from "../../static/projects/marimorena.png"
 import Crokev2 from "../../static/projects/avatar.jpg"
-import FreePhone from "../../static/projects/freephone.png"
-import Cryptex from "../../static/projects/cryptex.jpg"
 
 const Content = styled.div`
-  ${tw`overflow-hidden flex flex-col mb-20`}
+  ${tw`overflow-hidden flex flex-col mb-20 md:flex-row justify-between`}
 `;
 
 export default props => (

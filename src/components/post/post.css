@@ -1,0 +1,13 @@
+.hover-transition {
+  height: 0px;
+  padding-top: 0px;
+  overflow:hidden;
+  -webkit-transition: all 0.75s linear;
+  -moz-transition: all 0.75s linear;
+  -o-transition: all 0.75s linear;
+  transition: all 0.75s linear;
+}
+
+.post-image:hover .hover-transition {
+  height:100%;
+}
