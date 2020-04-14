@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from "../components/section";
-import Projects from "../components/projects";
+import ProjectsList from "../components/projects/projectsList";
 import Areas from "../components/areas";
 import Contact from "../components/contact";
 import Blog from "../components/blog";
@@ -21,9 +21,9 @@ export default () => (
   <Wrapper>
       <Section header="Security, Electronics and Crazy projects" content={home}/>
       <Areas/>
-      <Section header="Projects" content={projects}/>
-      <Projects/>
-      <Section header="Blog" content={blog}/>
+      <Section header="Projects" content={projects} link="/projects"/>
+      <ProjectsList/>
+      <Section header="Blog" content={blog} link="/blog"/>
       <Blog last={3}/>
       <Section header="Get In Touch" content={inmail}/>
       <Contact/>

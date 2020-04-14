@@ -1,21 +1,21 @@
 import React from "react";
-import Card from "./card/card";
+import Card from "../card/card";
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-import Assap from "../../static/projects/assap.png"
-import Marimorena from "../../static/projects/marimorena.png"
-import VdeGuerra from "../../static/projects/wow.png"
-import Crokev2 from "../../static/projects/avatar.jpg"
-import FreePhone from "../../static/projects/freephone.png"
-import Cryptex from "../../static/projects/cryptex.jpg"
+import Assap from "../../../static/projects/assap.png"
+import Marimorena from "../../../static/projects/marimorena.png"
+import VdeGuerra from "../../../static/projects/wow.png"
+import Crokev2 from "../../../static/projects/avatar.jpg"
+import FreePhone from "../../../static/projects/freephone.png"
+import Cryptex from "../../../static/projects/cryptex.jpg"
 
 const Content = styled.div`
-  ${tw`overflow-hidden flex flex-col mb-20 md:justify-between`}
+  ${tw`overflow-hidden flex flex-col md:justify-between`}
 `;
 const Row = styled.div`
-  ${tw`flex flex-col md:flex-row md:justify-between`}
+  ${tw`flex flex-col md:flex-row md:justify-between mb-20`}
 `;
 
 export default props => (
@@ -27,7 +27,7 @@ export default props => (
     </Content>
     <Content>
       <Card image={FreePhone} title="FreePhone" description="Learn to create a mobile phone from scratch using a Raspberry Pi" link="Educational Project"/>
-      <Card image={Crokev2} title="Croke-v2" description="The second version of my personal site using GatsbyJS. You are in it." link="Open Source Project"/>
+      <Card image={Crokev2} title="Croke-V2" description="The second version of my personal site using GatsbyJS. You are in it." link="Open Source Project"/>
       <Card image={Cryptex} title="Cryptex" description="Guide about how to create and post-process a functional cryptex." link="3D Printing Project"/>
     </Content>
   </Row>

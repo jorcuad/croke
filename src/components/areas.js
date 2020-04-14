@@ -15,7 +15,7 @@ const Row = styled.div`
 export default props => (
   <Row>
     <Content>
-      <Sectionbutton section="PROJECTS"/>
+      <Link to="/projects"><Sectionbutton section="PROJECTS"/></Link>
       <Link to="/blog"><Sectionbutton section="BLOG"/></Link>
     </Content>
     <Content>

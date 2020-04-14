@@ -8,7 +8,7 @@ const Card = styled.div`
 `;
 
 const CardImage = styled.div`
-  ${tw`border-croke-purple border-t border border-r-0 border-croke-purple w-32 h-40 sm:w-40 md:h-48 md:w-48 flex-none bg-cover rounded-t rounded-t-none rounded-l text-center overflow-hidden`};
+  ${tw`border-croke-purple border-t border border-r-0 w-32 h-40 sm:w-40 md:h-48 md:w-48 flex-none bg-cover rounded-t rounded-t-none rounded-l text-center overflow-hidden`};
   background-image: url(${props => props.image});
 `;
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -8,7 +9,7 @@ const Content = styled.div`
 `;
 
 const Title = styled.h1`
-  ${tw`text-2xl sm:text-4xl md:text-5xl block mb-4 text-croke-purple`}
+  ${tw`text-5xl block mb-4 text-croke-purple`}
 `;
 
 const Text = styled.p`
@@ -17,7 +18,11 @@ const Text = styled.p`
 
 export default props => (
   <Content>
-    <Title>{props.header}</Title>
+    {props.link ?
+      <Link to={props.link}>
+        <Title>{props.header}</Title>
+      </Link> : <Title>{props.header}</Title>
+    }
     <Text>
       { props.content }
     </Text>
