@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const ProjectCard = styled.div`
-  ${tw`flex flex-col border-croke-purple border rounded w-100 mb-16`}
+  ${tw`flex flex-col border-croke-purple border rounded w-100 mb-16 justify-between`}
   margin-right: auto;
   margin-left:auto;
 `;
