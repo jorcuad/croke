@@ -6,7 +6,7 @@ import Waves from "./waves/waves.js"
 import Avatar from "../../static/avatar.jpg"
 
 const Wrapper = styled.div`
-  ${tw`flex items-center justify-center flex-col w-screen overflow-hidden`}
+  ${tw`flex items-center justify-center flex-col w-screen overflow-hidden`};
 `;
 
 const Content = styled.div`

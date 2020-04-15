@@ -15,16 +15,16 @@ const Row = styled.div`
 export default props => (
   <Row>
     <Content>
-      <Link to="/projects"><Sectionbutton section="PROJECTS"/></Link>
-      <Link to="/blog"><Sectionbutton section="BLOG"/></Link>
+      <Link to="/projects"><Sectionbutton background="projects" section="PROJECTS"/></Link>
+      <Link to="/blog"><Sectionbutton background="blog" section="BLOG"/></Link>
     </Content>
     <Content>
-      <Sectionbutton section="SERVICES"/>
-      <Link to="/press"><Sectionbutton section="PRESS"/></Link>
+      <Sectionbutton background="services" section="SERVICES"/>
+      <Link to="/press"><Sectionbutton background="press" section="PRESS"/></Link>
     </Content>
     <Content>
-      <Sectionbutton section="PUBLICATIONS"/>
-      <Sectionbutton section="SANDBOX"/>
+      <Sectionbutton background="publications" section="PUBLICATIONS"/>
+      <Sectionbutton background="sandbox" section="SANDBOX"/>
     </Content>
   </Row>
 )
