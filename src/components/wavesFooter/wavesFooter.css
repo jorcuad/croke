@@ -10,47 +10,21 @@
     }
 }
 
-.bgFooterTop {
-    z-index: -2;
-    opacity: 0.5;
-}
-.bgFooterMiddle {
-    z-index: -3;
-    opacity: 0.75;
-}
-.bgFooterBottom {
-    z-index: -4;
-}
-.waveFooter {
-    position: relative;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background-repeat: repeat no-repeat;
-    background-position: 0 bottom;
-    transform-origin: center bottom;
-}
-
-.waveFooterWrapperInner {
-    position: absolute;
-    width: 100%;
-    overflow: hidden;
-    height: 100%;
-    background-image: linear-gradient(to top, #68da23 10%, #412854 25%);
-    transform: rotate(180deg);
+.gradientFooter {
+  background-image: linear-gradient(to top, #68da23 10%, #412854 25%);
 }
 
 .waveFooterTop {
     background-size: 50% 75px;
-    background-image: url('../../../static/wave/wave-top.png');
+    background-image: url('../../../static/wave/wave-footer-top.png');
 }
 .waveFooterMiddle {
     background-size: 50% 80px;
-    background-image: url('../../../static/wave/wave-top.png');
+    background-image: url('../../../static/wave/wave-footer-mid.png');
 }
 .waveFooterBottom {
     background-size: 50% 75px;
-    background-image: url('../../../static/wave/wave-bot.png');
+    background-image: url('../../../static/wave/wave-footer-bot.png');
 }
 
 .waveFooterAnimation .waveFooterTop {
