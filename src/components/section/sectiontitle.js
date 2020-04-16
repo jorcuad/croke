@@ -4,27 +4,16 @@ import { Link } from "gatsby";
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-const Content = styled.div`
-  ${tw`overflow-hidden flex flex-col mb-20`}
-`;
-
 const Title = styled.h1`
-  ${tw`text-5xl block mb-4 text-croke-purple`}
-`;
-
-const Text = styled.p`
-  ${tw`text-base sm:text-lg md:text-xl block text-justify`}
+  ${tw`text-5xl block mb-6 text-croke-purple`}
 `;
 
 export default props => (
-  <Content>
+  <div>
     {props.link ?
       <Link to={props.link}>
         <Title>{props.header}</Title>
       </Link> : <Title>{props.header}</Title>
     }
-    <Text>
-      { props.content }
-    </Text>
-  </Content>
+  </div>
 )

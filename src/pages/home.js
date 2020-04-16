@@ -1,9 +1,14 @@
 import React from 'react';
-import Section from "../components/section";
+import {
+  SectionTitle,
+  SectionWrapper,
+  SectionText,
+} from 'components/section';
 import ProjectsList from "../components/projects/projectsList";
 import Areas from "../components/areas";
 import Contact from "../components/contact";
 import Blog from "../components/blog";
+import Parallax from "../components/parallax";
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -14,18 +19,30 @@ const projects = "I am always willing to start new projects, these are the last 
 const home = "I always wanted to share my interests following my own way and other blog platforms can't provide me that. I can do the same using Wordpress, Google Sites or whatever but... It's not enought, I need freedom to create and share my knowledge and experiences in the way I want each time. Today, I am writting this introduction but maybe tomorrow I will prefer to create a secret konami code or stream a podcast. This is my digital house and It will follow my rules, expect anything, expect everything.";
 
 const Wrapper = styled.div`
-  ${tw`flex flex-col relative w-screen mt-40 max-w-4xl px-4`}
+  ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
 
 export default () => (
   <Wrapper>
-      <Section header="Security, Electronics and Crazy projects" content={home}/>
-      <Areas/>
-      <Section header="Projects" content={projects} link="/projects"/>
-      <ProjectsList/>
-      <Section header="Blog" content={blog} link="/blog"/>
-      <Blog last={3}/>
-      <Section header="Get In Touch" content={inmail}/>
-      <Contact/>
+      <SectionWrapper>
+        <SectionTitle header="Security, Electronics and Crazy projects"/>
+        <SectionText content={home}/>
+        <Areas/>
+      </SectionWrapper>
+      <SectionWrapper>
+        <SectionTitle header="Projects" link="/projects"/>
+        <SectionText content={projects}/>
+        <ProjectsList/>
+      </SectionWrapper>
+      <SectionWrapper>
+        <SectionTitle header="Blog" link="/blog"/>
+        <SectionText  content={blog}/>
+        <Blog last={3}/>
+      </SectionWrapper>
+      <SectionWrapper>
+        <SectionTitle header="Get In Touch"/>
+        <SectionText  content={inmail}/>
+        <Contact/>
+      </SectionWrapper>
   </Wrapper>
 );

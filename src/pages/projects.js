@@ -1,5 +1,9 @@
 import React from 'react';
-import Section from "../components/section";
+import {
+  SectionTitle,
+  SectionWrapper,
+  SectionText,
+} from 'components/section';
 import Project from "../components/projects/project";
 import Layout from "../components/layout/layout"
 
@@ -22,7 +26,7 @@ const vdeguerraDesc = "Vientos de Guerra is a project born to contextualize and 
 const cryptexDesc ="In my spare time I enjoy to start this kind of freak/crazy projects with my 3D printer. Particularly, I love to print locks in order to learn how they work. If I have time, I will try to post some other locks I printed, but by now, I prefer to write about my last project of this kind. During the last week I had some extra remote working days. That allowed me to start printing a cryptex."
 
 const Wrapper = styled.div`
-  ${tw`flex flex-col relative w-screen mt-40 max-w-4xl px-4`}
+  ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
 
 const Row = styled.div`
@@ -32,7 +36,9 @@ const Row = styled.div`
 export default () => (
   <Layout>
     <Wrapper>
-        <Section header="Projects" content={projects}/>
+      <SectionWrapper>
+        <SectionTitle header="Projects"/>
+        <SectionText content={projects}/>
         <Row>
           <Project name="ASSAP" description={assapDesc} image={Assap} code="https://github.com/assap-org/assap/" demo="https://www.youtube.com/watch?v=SLJmaKYcqOg" documentation="https://github.com/assap-org/assap/wiki" contribute="https://github.com/assap-org/assap/projects/2"/>
           <Project name="FreePhone" description={freephoneDesc} image={FreePhone} code="https://github.com/jorcuad/FreePhone" demo="https://raw.githubusercontent.com/jorcuad/FreePhone/master/images/building_freephone.mp4" documentation="https://github.com/jorcuad/FreePhone/wiki"/>
@@ -45,6 +51,7 @@ export default () => (
           <Project name="Vientos de Guerra" description={vdeguerraDesc} image={VdeGuerra} code="https://github.com/jorcuad/VientosDeGuerra" demo="https://vientos-de-guerra.croke.es/"/>
           <Project name="Cryptex" description={cryptexDesc} image={Cryptex} code="https://www.thingiverse.com/thing:3074829" documentation="https://www.croke.es/post/cryptex/"/>
         </Row>
+      </SectionWrapper>
     </Wrapper>
   </Layout>
 )
