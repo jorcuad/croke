@@ -10,10 +10,6 @@
     }
 }
 
-.gradient {
-  background-image: linear-gradient(to top, #68da23 10%, #412854 22%);
-}
-
 .waveTop {
     background-size: 50% 75px;
     background-image: url('../../../static/wave/wave-top.png');

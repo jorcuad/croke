@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const Wave = styled.div`
-  ${tw`absolute left-0 w-2full h-full bg-repeat-x bg-left-bottom`};
+  ${tw`relative left-0 w-2full h-full bg-repeat-x bg-left-bottom`};
   transform-origin: center bottom;
 `;
 
@@ -33,14 +33,14 @@ const WaveWrapperBottom = styled.div`
 
 export default () => (
   <WaveWrapper className="waveAnimation">
-    <WaveWrapperTop className="gradient">
-      <Wave className="waveTop"></Wave>
-    </WaveWrapperTop>
-    <WaveWrapperMiddle className="gradient">
-      <Wave className="waveMiddle"></Wave>
-    </WaveWrapperMiddle>
     <WaveWrapperBottom className="gradient">
       <Wave className="waveBottom"></Wave>
     </WaveWrapperBottom>
+    <WaveWrapperMiddle className="gradient">
+      <Wave className="waveMiddle"></Wave>
+    </WaveWrapperMiddle>
+    <WaveWrapperTop className="gradient">
+      <Wave className="waveTop"></Wave>
+    </WaveWrapperTop>
   </WaveWrapper>
 )
