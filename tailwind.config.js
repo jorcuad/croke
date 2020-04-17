@@ -41,6 +41,7 @@ module.exports = {
     },
     extend: {
       width: {
+        '28': '7rem',
         '72': '18rem',
         '80': '20rem',
         '100': '25rem',
@@ -49,6 +50,7 @@ module.exports = {
         '2full': '200%',
       },
       height: {
+        '28': '7rem',
         '72': '18rem',
         '80': '20rem',
         '100': '25rem',

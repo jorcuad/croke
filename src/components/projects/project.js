@@ -4,17 +4,17 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const ProjectCard = styled.div`
-  ${tw`flex flex-col border-croke-purple border rounded w-80 sm:w-100 mb-16 justify-between`}
+  ${tw`flex flex-col border-croke-purple border rounded w-72 sm:w-100 mb-16 justify-between`}
   margin-right: auto;
   margin-left:auto;
 `;
 
 const ProjectHeader = styled.div`
-  ${tw`w-full h-32 sm:h-40 flex flex-row border-b border-croke-purple border-2`};
+  ${tw`w-full h-28 sm:h-40 flex flex-row border-b border-croke-purple border-2`};
 `;
 
 const ProjectImage = styled.img`
-  ${tw`h-full w-32 sm:h-full sm:w-40 border-r-4 border-croke-purple`}
+  ${tw`h-full w-28 sm:h-full sm:w-40 border-r-4 border-croke-purple`}
 `;
 
 const ProjectTitle = styled.div`
@@ -34,7 +34,7 @@ const ProjectLinks = styled.div`
 `;
 
 const Button = styled.button`
-  ${tw`flex bg-croke-purple hover:bg-croke-green text-croke-white font-bold py-2 px-4 border-b-4 border-croke-green hover:text-croke-purple hover:border-croke-purple rounded ml-1 text-xs sm:text-base`}
+  ${tw`flex bg-croke-purple hover:bg-croke-green text-croke-white font-bold py-2 px-3 border-b-4 border-croke-green hover:text-croke-purple hover:border-croke-purple rounded ml-1 text-xs sm:text-base`}
 `;
 
 export default props => (
