@@ -3,7 +3,7 @@ import {
   SectionTitle,
   SectionWrapper,
   SectionText,
-} from 'components/section';
+} from '../components/section';
 import Blog from "../components/blog";
 import Popular from "../components/popular";
 import Layout from "../components/layout/layout"
