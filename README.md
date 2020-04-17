@@ -9,7 +9,7 @@
 
 </h1>
 
-##Croke v2
+## Croke v2
 
 Una web personal creada de cero con Gatsby, Styled Components, Tailwindcss y Story Book en Netlify.
 
