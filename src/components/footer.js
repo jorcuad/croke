@@ -18,11 +18,11 @@ const Social = styled.div`
 `;
 
 const Title = styled.div`
-  ${tw`flex text-xl`}
+  ${tw`flex text-xl mb-4`}
 `;
 
 const SocialReferences = styled.div`
-  ${tw`flex justify-between`}
+  ${tw`flex justify-between flex-col sm:flex-row`}
 `;
 
 const ReferenceColumn = styled.div`
@@ -33,7 +33,7 @@ const License = styled.div`
   ${tw`flex flex-col text-sm sm:w-2/6 mt-6 sm:mt-0`}
 `;
 const LicenseIcon = styled.div`
-  ${tw`flex flex-col mt-6`}
+  ${tw`flex flex-col`}
 `;
 const LicenseText = styled.div`
   ${tw`flex text-xs mt-6 text-justify`}
@@ -46,7 +46,7 @@ export default () => (
         <Title>You can contact me here:</Title>
         <SocialReferences>
           <ReferenceColumn>
-            <Rrss icon="mail" link="mailto:jorge.cuadrado.saez@gmail.com" rrss="jorge.cuadrado.saez [at] gmail [dot] com"/>
+            <Rrss icon="mail" link="mailto:jorge.cuadrado.saez@gmail.com" rrss="jorge.cuadrado.saez@gmail.com"/>
             <Rrss icon="twitter" link="https://twitter.com/Coke727" rrss="@coke727"/>
           </ReferenceColumn>
           <ReferenceColumn>
