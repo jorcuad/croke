@@ -18,7 +18,7 @@ const ProjectImage = styled.img`
 `;
 
 const ProjectTitle = styled.div`
-  ${tw`flex content-center flex-wrap w-full h-full text-3xl text-croke-white px-4 bg-fixed justify-center`};
+  ${tw`flex content-center flex-wrap w-full h-full text-2xl sm:text-3xl text-croke-white px-4 bg-fixed justify-center`};
   box-shadow: inset 10px 9px 39px -15px rgba(0,0,0,1);
   background-color: #412854;
   text-shadow: 4px 4px 3px black;
