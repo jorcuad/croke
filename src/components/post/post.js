@@ -50,13 +50,21 @@ export default props => (
   <Post>
     <PostImage image={props.image}/>
     <Content>
-      <Title>{props.title}</Title>
+      {props.link ?
+        <a href={props.link}>
+          <Title>{props.title}</Title>
+        </a> : <Title>{props.title}</Title>
+      }
       <Text>{props.description}</Text>
       <Metadata>
-        <Tags>
-          <MetaIcon><TagIcon/></MetaIcon>
-          {props.tags}
-        </Tags>
+        {props.tags ?
+          <Tags>
+            <MetaIcon><TagIcon/></MetaIcon>
+            {props.tags}
+          </Tags>
+        :
+          <Tags></Tags>
+        }
         <Date>
           <MetaIcon><TimeIcon/></MetaIcon>
           {props.date}
