@@ -22,7 +22,7 @@ const Title = styled.div`
 `;
 
 const SocialReferences = styled.div`
-  ${tw`flex justify-between flex-col sm:flex-row`}
+  ${tw`flex justify-between flex-col md:flex-row`}
 `;
 
 const ReferenceColumn = styled.div`
