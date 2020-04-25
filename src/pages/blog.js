@@ -4,9 +4,11 @@ import {
   SectionWrapper,
   SectionText,
 } from '../components/section';
-import Blog from "../components/blog";
+import Post from "../components/post/post.js";
 import Popular from "../components/popular";
 import Layout from "../components/layout/layout"
+import { graphql } from "gatsby"
+
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -17,7 +19,7 @@ const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
 
-export default () => (
+export default ({ data }) => (
   <Layout>
     <Wrapper>
       <SectionWrapper>
@@ -30,8 +32,37 @@ export default () => (
       </SectionWrapper>
       <SectionWrapper>
         <SectionTitle header="Latest Posts"/>
-        <Blog last={3}/>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Post image={node.frontmatter.image.publicURL} link={node.fields.slug} date={node.frontmatter.date} title={node.frontmatter.title} tags={node.frontmatter.tags} description={node.frontmatter.description}/>
+        ))}
       </SectionWrapper>
     </Wrapper>
   </Layout>
 );
+
+export const query = graphql`
+query AllPost {
+  allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {draft: {eq: false}}}) {
+    edges {
+      node {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          date
+          description
+          banner
+          categories
+          tags
+          draft
+          image {
+            publicURL
+          }
+        }
+      }
+    }
+  }
+}
+`

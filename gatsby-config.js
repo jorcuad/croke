@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Tailwind CSS + Styled-Components + Storybook Starter`,
-    description: `A bare-bones Tailwind CSS + Styled-Components + Storybook starter to kickoff your project. `,
-    author: `@dennisvash`,
+    title: `Croke`,
+    description: `Security, Electronics and Crazy projects`,
+    author: `Jorge Cuadrado Saez (@Coke727)`,
   },
   plugins: [
     {
@@ -31,7 +31,7 @@ module.exports = {
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
-          ,
+          },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
