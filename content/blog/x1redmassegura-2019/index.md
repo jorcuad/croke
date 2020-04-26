@@ -33,9 +33,7 @@ The talk presents **Alfred**, the butler of Batman. Alfred is like a voice assis
 
 ## The Slides
 
-If you want to see **more** about the presentation, I encourage you to take a look on the **slides** of the talk.
-
-<center>**[-------> [SLIDES] <-------](https://drive.google.com/open?id=1exJhZqNJ8yu6hasiW14P0ckbgDfLMfQNW7VS2Jnc2TU)**</center>
+If you want to see **more** about the presentation, I encourage you to take a look on the [**slides**](https://drive.google.com/open?id=1exJhZqNJ8yu6hasiW14P0ckbgDfLMfQNW7VS2Jnc2TU) of the talk.
 
 **Thanks** for reading this post. If you have any **question**, annotation or you only want to say hello... you can **contact** me in [Twitter](https://twitter.com/coke727), a comment in this post or using smoke signals =P
 

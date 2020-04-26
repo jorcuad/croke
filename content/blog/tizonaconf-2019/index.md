@@ -100,9 +100,7 @@ Furthermore, it was awesome to meet [@TheXXLMAN](https://twitter.com/TheXXLMAN),
 
 ## The Slides
 
-If you are concerned about **privacy** and **security**, I encourage you to take a look on the **slides** of the talk.
-
-<center>**[-------> [SLIDES] <-------](https://docs.google.com/presentation/d/1qguUIEktor6wzUed0-gMfRtfOTAUK1QzwtI2StDeZQU/edit?usp=sharing)**</center>
+If you are concerned about **privacy** and **security**, I encourage you to take a look on the [**slides**](https://docs.google.com/presentation/d/1qguUIEktor6wzUed0-gMfRtfOTAUK1QzwtI2StDeZQU/edit?usp=sharing) of the talk.
 
 **Thanks** for reading this post. If you have any questions, annotation or you only want to say hello... you can **contact** me in [Twitter](https://twitter.com/coke727), a comment in this post or using smoke signals =P
 

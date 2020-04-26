@@ -22,6 +22,13 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: true,
+              noInlineHighlight: false,
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
@@ -33,7 +40,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
+          'gatsby-remark-code-titles',
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],

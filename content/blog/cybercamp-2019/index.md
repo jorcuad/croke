@@ -38,9 +38,7 @@ From **aircraft** and **cars** control panels to mobile applications which allow
 
 If you look at the slides or the conference video, we talk about some examples were this technology represent a **threat** in privacy, marketing or vandalism. Those are not common incidents nowadays but they are incoming threats that will affect us in the future. As an example of this, [Hyper-Reality](https://youtu.be/YJg02ivYzSs) is a great **short movie** to watch.
 
-<center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YJg02ivYzSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
 
 ### Developing Augmented Reality with web technologies
 AR is a quite complex technology if you are trying to start a new project using frameworks such _Unreal Engine_ or _Unity_ since you will need to prepare all the scaffolding and learn many specific concepts and tools. Keeping that in mind and with the two hours limitation for our workshop, I decided to use a simpler option, [_AR.js_](https://github.com/jeromeetienne/AR.js).
@@ -55,10 +53,10 @@ _Ar.js_ is extreamly **easy** to use, well documented and **powerful**. The func
 
 #### AR.js components
 
-* **a-scene** is the virtual scenario where we place the objects.
-* **a-assets** multimedia content that we want to use in the application.
-* **a-marker** represents the marker where our digital content will be placed in the real world.
-* **a-entity camera** point of view from where the screen is showing the model.
+- **a-scene** is the virtual scenario where we place the objects.
+- **a-assets** multimedia content that we want to use in the application.
+- **a-marker** represents the marker where our digital content will be placed in the real world.
+- **a-entity camera** point of view from where the screen is showing the model.
 
 #### Markers
 
@@ -68,10 +66,8 @@ Markers are the points where digital content is placed, a marker doesn't store a
 
 Instead of a **QRcode** or **Barcode** there are applications that can use pictures as markers or even the **coordinates** of the device which is showing the AR content. That is the case of _Pokemon GO_ or _Minecraft Earth_.
 
-<center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2sj2iQyBTQs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tzCBCoC2bjs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
 
 #### Application parts
 Our project is a web applicatión, so, at the end we will have the same files as a normal web application:
@@ -91,7 +87,7 @@ The simplest structure will look like this one:
 
 As an example of hello world project we will create an spinning red cube which will be shown when a [_Hiro_](https://commons.wikimedia.org/wiki/File:Hiro_marker_ARjs.png) marker appears in the camera.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -115,23 +111,15 @@ As an example of hello world project we will create an spinning red cube which w
 
 And thats all, 19 lines only and there we have an AR web application. If you want to continue creating AR applications with AR.js you can watch the record of the workshop dubbed to english here:
 
-<center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TJirrht7MuQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
 
-Also you can access the code of the three proofs of concepts here:
-
-<center>
-[https://github.com/jorcuad/Cybercamp2019-SecurityAR-Workshop](https://github.com/jorcuad/Cybercamp2019-SecurityAR-Workshop)
-</center>
+Also you can access the code of the three proofs of concepts **[here](https://github.com/jorcuad/Cybercamp2019-SecurityAR-Workshop)**.
 
 Apart of the workshop, this year I also participated in the cybersecurity hackathon. After three days of non stop coding we managed to achieve our objectives for the second versión of [ASSAP](https://github.com/assap-org/assap/). We got the **third price**! I will write another post talking about ASSAP and the competition in the next weeks.
 
 
 ## The Slides
-If you want to see **more** about the presentation, I encourage you to take a look on the **slides** of the talk.
-
-<center>**[-------> [SLIDES] <-------](https://drive.google.com/open?id=1sH-SjuVkZ67sR6k7g4E_DoGPN9EJdJE6b6nxHV4Fn8E)**</center>
+If you want to see **more** about the presentation, I encourage you to take a look on the **[slides](https://drive.google.com/open?id=1sH-SjuVkZ67sR6k7g4E_DoGPN9EJdJE6b6nxHV4Fn8E)** of the talk.
 
 **Thanks** for reading this post. If you have any **question**, annotation or you only want to say hello... you can **contact** me in [Twitter](https://twitter.com/coke727), a comment in this post or using smoke signals =P
 
