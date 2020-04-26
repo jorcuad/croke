@@ -6,16 +6,17 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-typography`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        pathToConfigModule: `src/utils/typography`,
       },
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-resolve-src',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -23,7 +24,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 800,
             },
           },
           {
@@ -38,7 +39,12 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
+    },
   ],
 };

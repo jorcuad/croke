@@ -11,9 +11,7 @@ image: "./images/post-image.jpg"
 
 Two month ago [Miguel](https://twitter.com/MiguelHzBz) and I were giving a two hours workshop/talk in Valencia about augmented reality mixed with cybersecurity and the objective of improving the physical places and documents security. Cybercamp is organized by [INCIBE](https://www.incibe.es), "_Instituto Nacial de Ciberseguridad_" (National Cybersecurity Institute), which is an organization dependent on the National Ministry of Economy and Business with the aim of increasing the cybersecurity level in the digital market and cyberspace in Spain. INCIBE gives different cybersecurity services like its [CERT](https://www.incibe-cert.es/), free cybersecurity [services](https://www.incibe.es/protege-tu-empresa) for companies and cybersecurity focused on kids ([IS4K](https://www.is4k.es/)).
 
-<span class="all-width-container">
-![Cybercamp](/images/cybercamp2019/cybercamp.jpg)
-</span>
+![Cybercamp](./images/cybercamp.jpg)
 
 As INCIBE says:
 
@@ -34,9 +32,7 @@ Augmented Reality (AR) is the term used to describe the set of technologies whic
 
 As [Miguel](https://twitter.com/MiguelHzBz) stated in this timeline, during the last decade this technology has greatly improved, allowing users to get a real benefit in their daily life.
 
-<span class="all-width-container">
-![Timeline](/images/cybercamp2019/timeline.png)
-</span>
+![Timeline](./images/timeline.png)
 
 From **aircraft** and **cars** control panels to mobile applications which allows user to get more information about **monuments** or **products** the augmented reality is **inadvertently becoming our daily life context**. Like in most of the technologies, when a technology increase in importance, **cybersecurity risks** starts to become real incidents. AR is involved in the physical world, thus, it can **affect physically the world**. For example, the AR assistants of a car or a fake GPS indications can compromise the safety of the user if hacked.
 
@@ -51,9 +47,7 @@ AR is a quite complex technology if you are trying to start a new project using 
 
 Why is this a good choice? _AR.js_ is a **Javascript library**, Javascript is a greatly spread language which is known for most of the developers. This web language allowed us to share the example applications world around without getting into troubles creating accounts in an _app_ store or compiling executable files. For sure, there are options to get these problems done in a simple and fast way but two hours is not enough time for explaining how to achieve that to a variety of people who is potentially composed by highschoolers, graduates or even families without technical knowledge.
 
-<span class="all-width-container">
-![Technologies](/images/cybercamp2019/technologies.png)
-</span>
+![Technologies](./images/technologies.png)
 
 Some time ago, I used [_Three.js_](https://threejs.org/) in one of the Laboratory researches I was involved. This was a great experience and I learnt many new concepts about 3D programing. _Three.js_ allows to create 3D applications for web environments in a simple way but it can be a little tricky to use. Years after that, I discovered _AR.js_, a library meant to create AR applications using **Aframe** and **Three.js** and after a couple of hours trying it, the decision was clear.
 
@@ -70,9 +64,7 @@ _Ar.js_ is extreamly **easy** to use, well documented and **powerful**. The func
 
 Markers are the points where digital content is placed, a marker doesn't store any information but you can use the image of a QR code as a marker, the marker is only the shape of the QR but you can also recover the information stored in that shape.
 
-<span class="all-width-container">
-![Markers](/images/cybercamp2019/markers.png)
-</span>
+![Markers](./images/markers.png)
 
 Instead of a **QRcode** or **Barcode** there are applications that can use pictures as markers or even the **coordinates** of the device which is showing the AR content. That is the case of _Pokemon GO_ or _Minecraft Earth_.
 
@@ -84,9 +76,7 @@ Instead of a **QRcode** or **Barcode** there are applications that can use pictu
 #### Application parts
 Our project is a web applicatión, so, at the end we will have the same files as a normal web application:
 
-<span class="all-width-container">
-![Parts](/images/cybercamp2019/parts.png)
-</span>
+![Parts](./images/parts.png)
 
 We will need to import the aframe and AR.js scripts.
 
@@ -97,9 +87,7 @@ https://aframe.io/releases/0.9.2/aframe.min.js
 
 The simplest structure will look like this one:
 
-<span class="all-width-container">
-![Structure](/images/cybercamp2019/structure.png)
-</span>
+![Structure](./images/structure.png)
 
 As an example of hello world project we will create an spinning red cube which will be shown when a [_Hiro_](https://commons.wikimedia.org/wiki/File:Hiro_marker_ARjs.png) marker appears in the camera.
 
@@ -147,8 +135,6 @@ If you want to see **more** about the presentation, I encourage you to take a lo
 
 **Thanks** for reading this post. If you have any **question**, annotation or you only want to say hello... you can **contact** me in [Twitter](https://twitter.com/coke727), a comment in this post or using smoke signals =P
 
-<span class="all-width-container">
-![Thanks](/images/cybercamp2019/thanks.png)
-</span>
+![Thanks](./images/thanks.png)
 
 **Don't doubt asking me any question using the comments or my mail in the home page.**

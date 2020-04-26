@@ -11,9 +11,7 @@ image: "./images/post-image.jpg"
 
 Day by day I'm getting used to going CONS on the weekends and the ones I like the most are the ones where I can feel a friendship mood surrounding the place and where people are open to talk, hangout and share. Last 17 and 18 of October I attended to **TizonaConf**, a newborn conference with that *feeling* I described.... and **¡IN [BURGOS](https://es.wikipedia.org/wiki/Burgos)!** I am so proud of being part of a conference which is teaching and sharing knowledge about cybersecurity in [my region](https://en.wikipedia.org/wiki/Castile_and_Le%C3%B3n).
 
-<span class="all-width-container">
-![Tizona](/images/tizona/tizona.PNG)
-</span>
+![Tizona](/images/tizona.PNG)
 
 **Tizona** appart of an unexpected surprise is quite unique. This conference is not the typical event which is born after a large group of professionals decide to start something bigger... is just the opposite, Tizona is an event which aims to gather professionals in order to **create a hacking community**, [burgos4hack](http://www.burgos4hack.com).
 
@@ -27,9 +25,7 @@ I don't know if you think in this prediction as crazy, possible or certain but I
 
 I already have talked about the **privacy** risks in home places. As I listed in [JASyP]({{< ref "jasyp2019.md" >}}), these devices have a large list of risks which are interconnected and links the physical and the digital environment.
 
-<span class="all-width-container">
-![Risks list](/images/tizona/risks.png)
-</span>
+![Risks list](/images/risks.png)
 
 Looking at the list, We can imagine the kind of problems which can emerge of these risks. Even more, in an industrial system we can also add **new risks** not listed in the picture:
 
@@ -49,9 +45,7 @@ As a new interface, security products and companies are not well prepared to mon
 
 Definitely... both of them. Smart assistants are without any doubt a **rule changer** if we are talking about **UX**. This kind of interface is an excellent example of how to **simplify complex tasks** for the final user. Using natural language, avoiding the use of any physical hardware, abstracting difficult concepts. The idea behind the device is awesome and the user cases shown in the media are great: help disabled people, bring new technologies to the elders or help in the daily tasks using IoT are some of them.
 
-<span class="all-width-container">
-![Incidents](/images/tizona/incidents.png)
-</span>
+![Incidents](/images/incidents.png)
 
 Regarding the lastest news about this topic, It is clear that assistants are also a **thread**. All the main actors in this technology have admitted **data leaks**, third-party security flaws and people listening to conversations in order to improve the service. Here are the **links** to the picture's headers.
 
@@ -76,9 +70,7 @@ There aren't any commercial products which improves the security of the assistan
 
 Alias is made using a Raspberry Pi, a microphone array and a couple of speakers. Alias is trained with a custom activation command trained by ourselves using a web application. For example we can call it *Croke*. Once it is trained, We have to place the device on top of the assistant, placing the speakers just above the assistant microphones. In that moment, the device will start to play a noisy sound that will neutralize the assistant microphones waiting for our custom command. If We pronounce our command *Croke, what time is it?*, Alias will stop the noise and will play the real activation command of the assistant, letting the assistant hear the rest of the command of our mouth. For example:
 
-<span class="all-width-container">
-![Alias](/images/tizona/alias.png)
-</span>
+![Alias](/images/alias.png)
 
 *Croke...* (Alias stops the noise and play *Ok Google*) *...what time is it?* (Google home answer us with the time)
 
@@ -89,9 +81,7 @@ If you want to try by yourself, there is a tutorial about how to make it in [Ins
 ## Open Source alternatives: Mycroft
 Talking about voice virtual assistants, It's needed to mention **Mycroft**. This is an open source alternative prepared to run in a Raspberry Pi. This project counts with the collaboration of Mozilla Things, DeepSpeech and KDE and also offer two models of specialized hardware called Mark I and Mark II. If you are thinking about starting a project related to smart assistants I encourage you to first try Mycroft.
 
-<span class="all-width-container">
-![Mycroft](/images/tizona/mycroft.png)
-</span>
+![Mycroft](/images/mycroft.png)
 
 You can find the official page of the project [here](https://mycroft.ai/).
 
@@ -102,11 +92,11 @@ New technologies can be an awesome tool capable of solving problems in new, easi
 ## All the text was great but... how about the congress?
 I have to thank the organization of the congress, especially, [@manuelbocos](https://twitter.com/manuelbocos) for all the help and the warming welcome. The organization was excellent and it was only the first edition, I'm looking forward to the next edition of TizonaConf.
 
-![Gifts](/images/tizona/branding.jpg)
+![Gifts](/images/branding.jpg)
 
 Furthermore, it was awesome to meet [@TheXXLMAN](https://twitter.com/TheXXLMAN), [@RadioHacking](https://twitter.com/RadioHacking), Carlos Rioja, Paco Montserrat or [@javioreto](https://twitter.com/javioreto). A good beer is not the same without good company and a good talk.
 
-![The beers](/images/tizona/tizona.jpg)
+![The beers](/images/tizona.jpg)
 
 ## The Slides
 
@@ -116,8 +106,6 @@ If you are concerned about **privacy** and **security**, I encourage you to take
 
 **Thanks** for reading this post. If you have any questions, annotation or you only want to say hello... you can **contact** me in [Twitter](https://twitter.com/coke727), a comment in this post or using smoke signals =P
 
-<span class="all-width-container">
-![Thanks](/images/tizona/thanks.png)
-</span>
+![Thanks](/images/thanks.png)
 
 **Don't hesitate to ask me any question using the comments or my mail in the home page.**

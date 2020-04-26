@@ -11,7 +11,7 @@ image: "./images/post-image.jpg"
 
 In my spare time I enjoy to start this kind of freak/crazy projects with my 3D printer. Particularly, I love to print locks in order to learn how they work. If I have time, I will try to post some other locks I printed, but by now, I prefer to write about my last project of this kind. During the last week I had some extra remote working days. That allowed me to start printing a cryptex.
 
-![Example cryptex](/images/cryptex/cryptex.jpg)
+![Example cryptex](/images/cryptex.jpg)
 
 ## What the hell is a cryptex?
 
@@ -25,7 +25,7 @@ First, We have __two cylinders__, one goes inside the other. The external cylind
 
 I got the cryptex files from [Thingiverse](https://www.thingiverse.com/), a free repository of things ready to print. I really love this page, it has almost everything you need. I used the design from [Mason Stonehenge](https://www.thingiverse.com/MasonStonehenge/about).
 
-![Parts of the cryptex](/images/cryptex/parts.jpg)
+![Parts of the cryptex](/images/parts.jpg)
 
 The official summary has all the information, but I will try to tell my experience and how build it step by step. First of all, you will need:
 
@@ -63,35 +63,35 @@ This was the challenging part. It took me 49 hours of printing all the parts but
 
 * The first step to get a good quality printing is sanding the surfaces of all the pieces. There are another technics using some chemical products but I prefer this solution since i get a bit more control about what I'm doing.
 
-  ![Sanding the inner core](/images/cryptex/sanding1.jpg)
+  ![Sanding the inner core](/images/sanding1.jpg)
 
-  ![Sanding the retainer](/images/cryptex/sanding2.png)
+  ![Sanding the retainer](/images/sanding2.png)
 
 It's important to put an special effort sanding the screws, the external core rail and the internal core tube. Otherwise, the internal core will get locket inside of the external core. Other solution is to print the inner core escalated to 99%. This happens when the retainer and the gears are assembled, all the parts squeeze the external core, which reducts a bit its  size (remember the rail where the teeth of the internal core are keep) locking the internal core.
 
-  ![Sanding the outer core](/images/cryptex/sanding3.jpg)
+  ![Sanding the outer core](/images/sanding3.jpg)
 
 * My printer didn't print the rail where the inner core is joins the inner core decorator, so, I needed to carve it. At the end, I ended using my dremel. Then, i glued both parts.
 
-![Carving the decorator of the inner core](/images/cryptex/carving.jpg)
+![Carving the decorator of the inner core](/images/carving.jpg)
 
-![Glue the pieces](/images/cryptex/glue.jpg)
+![Glue the pieces](/images/glue.jpg)
 
 * In the design, the retainer has an embellisher which keep the outer core when it is screwed. I remove it since it get broke after a couple of times testing the screw.
 
-![Cutting the embellisher of the retainer](/images/cryptex/embellisher.jpg)
+![Cutting the embellisher of the retainer](/images/embellisher.jpg)
 
 * Also, I cut the corners of the teeth rail in order to make easier closing the cryptex.
 
-![Cutting the corners og the teeth rail](/images/cryptex/railcorner.jpg)
+![Cutting the corners og the teeth rail](/images/railcorner.jpg)
 
 * Introduce the steppers in the outer core holes, probably you will broke some of them doing it, so, printing more than 30 is recommendable.
 
 * Now, you should be able to assemble all the parts in a functional cryptex.
 
-![Assembled cryptex](/images/cryptex/rawcryptex.jpg)
+![Assembled cryptex](/images/rawcryptex.jpg)
 
-![Assembled cryptex](/images/cryptex/rawcryptex2.jpg)
+![Assembled cryptex](/images/rawcryptex2.jpg)
 
 ## Painting
 
@@ -105,31 +105,31 @@ Once the cryptex is assembled is time to disassemble it and paint all the pieces
 
 * Apply the black primer. I give it two layers of primer paint.
 
-![Primered cryptex](/images/cryptex/primer.jpg)
+![Primered cryptex](/images/primer.jpg)
 
 * Add one layer of copper paint. I decided to add only one since the traces of black paint was impressive.
 
-![Copper paint 1](/images/cryptex/copper1.jpg)
+![Copper paint 1](/images/copper1.jpg)
 
-![Copper paint 2](/images/cryptex/copper2.jpg)
+![Copper paint 2](/images/copper2.jpg)
 
-![Copper paint 3](/images/cryptex/copper3.jpg)
+![Copper paint 3](/images/copper3.jpg)
 
 * Then you can add the dyes. Here, I give some examples. I chose to add one layer of blue dye and then another one of green one. Other option is to use a red one, this option can give the cryptex an effect of shiny copper which can be really awesome with a wooden effect painted in the decorators. When you apply a dye, you have to add a layer of the dye and then use a rag to remove the excess of paint.
 
-![Dye tests](/images/cryptex/dyetest.jpg)
+![Dye tests](/images/dyetest.jpg)
 *The first one is the red dye, the second one is a blue+green dye and the third one is a green dye.*
 
 * Once all the parts are painted, you will get something like this:
 
-![Painted parts 1](/images/cryptex/painted1.jpg)
+![Painted parts 1](/images/painted1.jpg)
 
-![Painted parts 2](/images/cryptex/painted2.jpg)
+![Painted parts 2](/images/painted2.jpg)
 
 * Then, varnish all the pieces with the **matt varnish** and **enjoy your cryptex :)**
 
-![Finished result, close.](/images/cryptex/finalclosed.jpg)
+![Finished result, close.](/images/finalclosed.jpg)
 
-![Finished result, open.](/images/cryptex/finalopen.jpg)
+![Finished result, open.](/images/finalopen.jpg)
 
 **Don't doubt asking me any question using the comments or my mail in the home page.**
