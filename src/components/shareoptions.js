@@ -18,7 +18,7 @@ const Content = styled.div`
 `;
 
 const Header = styled.div`
-  ${tw`flex w-full justify-center`};
+  ${tw`flex w-full justify-center text-xl`};
 `;
 
 const ShareButtons = styled.div`
