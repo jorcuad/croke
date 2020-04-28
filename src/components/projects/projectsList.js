@@ -15,7 +15,7 @@ const Content = styled.div`
   ${tw`overflow-hidden flex flex-col md:justify-between`}
 `;
 const Row = styled.div`
-  ${tw`flex flex-col md:flex-row md:justify-between mb-20`}
+  ${tw`flex flex-col md:flex-row md:justify-between mb-10`}
 `;
 
 export default props => (

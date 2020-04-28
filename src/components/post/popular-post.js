@@ -10,7 +10,7 @@ import {
 } from 'components/icons';
 
 const Post = styled.div`
-  ${tw`overflow-hidden flex flex-row mb-10 justify-center`}
+  ${tw`overflow-hidden flex flex-row justify-center`}
 `;
 
 const Content = styled.div`
@@ -27,7 +27,7 @@ const Overlay = styled.div`
 `;
 
 const Title = styled.h1`
-  ${tw`text-lg block text-croke-white`}
+  ${tw`text-base block text-croke-white mt-3`}
 `;
 
 const Text = styled.p`
@@ -44,19 +44,3 @@ export default props => (
     </PostImage>
   </Post>
 )
-
-
-/*<Content>
-
-  <Text>{props.description}</Text>
-  <Metadata>
-    <Tags>
-      <MetaIcon><TagIcon/></MetaIcon>
-      {props.tags}
-    </Tags>
-    <Date>
-      <MetaIcon><TimeIcon/></MetaIcon>
-      {props.date}
-    </Date>
-  </Metadata>
-</Content>*/

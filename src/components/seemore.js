@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const SeeMoreContainer = styled.div`
-  ${tw`flex flex-row w-full h-8 items-center justify-around cursor-pointer`};
+  ${tw`flex flex-row w-full h-8 items-center justify-around cursor-pointer mb-10`};
 `;
 
 const Line = styled.div`
@@ -14,10 +14,10 @@ const MoreText = styled.div`
   ${tw`flex cursor-pointer text-croke-purple`};
 `;
 
-export default () => (
+export default props => (
   <SeeMoreContainer>
     <Line/>
-    <MoreText>See More Post</MoreText>
+    <MoreText>See more {props.section}</MoreText>
     <Line/>
   </SeeMoreContainer>
 );

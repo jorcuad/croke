@@ -25,6 +25,10 @@ const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
 
+const PostWrapper = styled.div`
+  ${tw`mb-10`}
+`;
+
 export default ({ data }) => (
   <Layout>
     <Wrapper>
@@ -37,15 +41,20 @@ export default ({ data }) => (
           <SectionTitle header="Projects" link="/projects"/>
           <SectionText content={projects}/>
           <ProjectsList/>
+          <Link to="/projects">
+            <SeeMore section="about them here"/>
+          </Link>
         </SectionWrapper>
         <SectionWrapper>
           <SectionTitle header="Blog" link="/blog"/>
           <SectionText  content={blogText}/>
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <Post image={node.frontmatter.image.publicURL} link={node.fields.slug} date={node.frontmatter.date} title={node.frontmatter.title} tags={node.frontmatter.tags} description={node.frontmatter.description}/>
-          ))}
+          <PostWrapper>
+            {data.allMarkdownRemark.edges.map(({ node }) => (
+              <Post image={node.frontmatter.image.publicURL} link={node.fields.slug} date={node.frontmatter.date} title={node.frontmatter.title} tags={node.frontmatter.tags} description={node.frontmatter.description}/>
+            ))}
+          </PostWrapper>
           <Link to="/blog">
-            <SeeMore/>
+            <SeeMore section="posts"/>
           </Link>
         </SectionWrapper>
         <SectionWrapper>

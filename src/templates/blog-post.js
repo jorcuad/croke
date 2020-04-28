@@ -184,11 +184,44 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             }
           </Date>
           <PostContent dangerouslySetInnerHTML={{ __html: post.html }}/>
+          <PostNav>
+            <Options>
+              <Option>
+                {previous && (
+                  <Link to={previous.fields.slug} rel="prev">
+                    ← Previous Post
+                  </Link>
+                )}
+              </Option>
+              <Option>
+                Share
+              </Option>
+              <Option>
+                {next && (
+                  <Link to={next.fields.slug} rel="next">
+                    Next Post→
+                  </Link>
+                )}
+              </Option>
+            </Options>
+          </PostNav>
         </SectionWrapper>
       </Wrapper>
     </Layout>
   )
 }
+
+const PostNav = styled.div `
+  ${tw`mt-20 w-full h-20`}
+`;
+
+const Options = styled.ul `
+  ${tw`flex flex-wrap justify-between list-none p-0`}
+`;
+
+const Option = styled.li `
+  ${tw`text-xl text-croke-purple`}
+`;
 
 export default BlogPostTemplate
 
