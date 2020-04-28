@@ -51,7 +51,7 @@ query AllPost {
         }
         frontmatter {
           title
-          date
+          date(formatString: "MMMM DD, YYYY")
           description
           banner
           categories
