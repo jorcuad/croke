@@ -16,6 +16,7 @@ import {
   TimeIcon,
 } from '../components/icons';
 import Layout from "../components/layout/layout"
+import ShareOptions from "../components/shareoptions"
 import SEO from "../components/seo"
 
 import styled from 'styled-components';
@@ -159,6 +160,18 @@ const PostContent = styled.div `
   }
 `
 
+const PostNav = styled.div `
+  ${tw`mt-20 w-full flex flex-col`}
+`;
+
+const Options = styled.ul `
+  ${tw`flex flex-wrap justify-between list-none p-0`}
+`;
+
+const Option = styled.li `
+  ${tw`text-xl text-croke-purple`}
+`;
+
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
@@ -194,9 +207,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 )}
               </Option>
               <Option>
-                Share
-              </Option>
-              <Option>
                 {next && (
                   <Link to={next.fields.slug} rel="next">
                     Next Post→
@@ -204,24 +214,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 )}
               </Option>
             </Options>
+            <ShareOptions message={post.frontmatter.title} link={location.href}/>
           </PostNav>
         </SectionWrapper>
       </Wrapper>
     </Layout>
   )
 }
-
-const PostNav = styled.div `
-  ${tw`mt-20 w-full h-20`}
-`;
-
-const Options = styled.ul `
-  ${tw`flex flex-wrap justify-between list-none p-0`}
-`;
-
-const Option = styled.li `
-  ${tw`text-xl text-croke-purple`}
-`;
 
 export default BlogPostTemplate
 
