@@ -10,7 +10,7 @@ const Wave = styled.div`
 `;
 
 const WaveWrapper = styled.div`
-  ${tw`absolute inset-0 overflow-hidden h-56 sm:h-64`}
+  ${tw`relative w-full h-full`}
 `;
 
 const WaveWrapperTop = styled.div`

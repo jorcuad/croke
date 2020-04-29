@@ -1,0 +1,37 @@
+.open {
+  height: 35rem;
+}
+
+.closed {
+  height: 25rem;
+}
+
+.waves-closed{
+  height: 16rem;
+}
+
+.waves-opened{
+  height: 35rem;
+}
+
+.menu-closed{
+  height: 0;
+  opacity: 0;
+}
+
+.menu-opened{
+  opacity: 1;
+  height: auto;
+}
+
+.menu-transition {
+  overflow:hidden;
+  -webkit-transition: all 0.75s linear;
+  -moz-transition: all 0.75s linear;
+  -o-transition: all 0.75s linear;
+  transition: all 0.75s linear;
+}
+
+.text-transition {
+  transition: all 1s linear;
+}
