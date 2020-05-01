@@ -39,6 +39,10 @@ const Subtitle = styled.h2`
   ${tw`flex flex-row text-croke-white text-xs sm:text-lg md:text-xl lg:text-2xl`}
 `;
 
+const Croke = styled.span`
+  ${tw`text-croke-green`}
+`;
+
 const MenuButton = styled.div`
   ${tw`flex w-20 h-20 text-croke-white cursor-pointer`};
 `;
@@ -77,13 +81,17 @@ const toggle = function() {
     wave.classList.add('waves-opened');
     menu.classList.remove('menu-closed');
     menu.classList.add('menu-opened');
+    setTimeout(() => {  menu.classList.add('text-shadow'); }, 750);
   } else {
-    content.classList.remove('open');
-    content.classList.add('closed');
-    wave.classList.remove('waves-opened');
-    wave.classList.add('waves-closed');
-    menu.classList.remove('menu-opened');
-    menu.classList.add('menu-closed');
+    menu.classList.remove('text-shadow');
+    setTimeout(() => {
+      content.classList.remove('open');
+      content.classList.add('closed');
+      wave.classList.remove('waves-opened');
+      wave.classList.add('waves-closed');
+      menu.classList.remove('menu-opened');
+      menu.classList.add('menu-closed');
+    }, 300);
   }
 };
 
@@ -95,9 +103,9 @@ export default () => (
           <AvatarWrapper>
             <img className="block relative rounded-full h-auto w-24" src={Avatar} alt="Avatar"/>
           </AvatarWrapper>
-          <Headline>
+          <Headline className="text-shadow">
             <Title>Jorge Cuadrado Saez</Title>
-            <Subtitle>I’m Jorge (AKA Coke), a security researcher working at BBVA Next.</Subtitle>
+            <Subtitle><Croke>I’m &nbsp;</Croke> Jorge (AKA <Croke>&nbsp; Coke</Croke>), a security researcher working at BBVA Next.</Subtitle>
           </Headline>
         </Bio>
         <MenuButton onClick={() => toggle()}>

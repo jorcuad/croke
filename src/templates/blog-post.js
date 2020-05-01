@@ -27,11 +27,19 @@ const Wrapper = styled.div `
 `;
 
 const Date = styled.div `
-  ${tw`block text-justify text-croke-purple`}
+  ${tw`flex text-justify text-croke-purple`}
 `;
 
 const MetaIcon = styled.div `
-  ${tw`h-4 w-4 inline-block mr-2`}
+  ${tw`h-5 w-5 inline-block mr-2`}
+`;
+
+const Back = styled.div `
+  ${tw`flex text-croke-purple`};
+`;
+
+const Subtitle = styled.div `
+  ${tw`flex flex-row justify-between mb-4`};
 `;
 
 const PostContent = styled.div `
@@ -188,14 +196,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <Wrapper>
         <SectionWrapper>
           <SectionTitle header = { post.frontmatter.title }/>
-          <Date>
-            <MetaIcon>
-              <TimeIcon/>
-            </MetaIcon>
-            {
-            post.frontmatter.date
-            }
-          </Date>
+          <Subtitle>
+            <Link to="/blog">
+              <Back>← Blog</Back>
+            </Link>
+            <Date>
+              <MetaIcon>
+                <TimeIcon/>
+              </MetaIcon>
+              {
+              post.frontmatter.date
+              }
+            </Date>
+          </Subtitle>
           <PostContent dangerouslySetInnerHTML={{ __html: post.html }}/>
           <PostNav>
             <Options>
