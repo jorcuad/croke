@@ -36,7 +36,7 @@ const Send = styled.button`
 
 export default props => (
   <Wrapper>
-    <Contact name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+    <Contact name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true">
       <Fields>
         <UpperFields>
           <Name name="name" placeholder="Your Name" type="text"/>
