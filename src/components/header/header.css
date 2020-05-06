@@ -3,11 +3,11 @@
 }
 
 .closed {
-  height: 25rem;
+  height: 20rem;
 }
 
 .waves-closed{
-  height: 16rem;
+  height: 12rem;
 }
 
 .waves-opened{
@@ -38,4 +38,14 @@
 
 .text-transition {
   transition: all 0.75s linear;
+}
+
+@media (min-width: 640px) {
+  .closed {
+    height: 25rem;
+  }
+
+  .waves-closed{
+    height: 16rem;
+  }
 }

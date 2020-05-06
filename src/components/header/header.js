@@ -24,19 +24,24 @@ const Content = styled.div`
 `;
 
 const AvatarWrapper = styled.div`
-  ${tw`inline-block w-24 h-24 mr-6 sm:mr-12 relative justify-center items-center content-center justify-center flex-column`}
+  ${tw`inline-block w-24 h-24 mr-6 sm:mr-12 relative justify-center flex-column`}
+`;
+
+const AvatarImage = styled.img`
+  ${tw`block relative rounded-full h-auto w-24 border-4 border-croke-purple`};
+  box-shadow: 10px 9px 29px -15px rgba(0,0,0,1);
 `;
 
 const Headline = styled.div`
-  ${tw`flex-column`}
+  ${tw`flex flex-col sm:justify-around`}
 `;
 
 const Title = styled.h1`
-  ${tw`flex flex-row mb-1 text-croke-white text-base sm:text-2xl md:text-3xl lg:text-4xl`}
+  ${tw`mb-1 text-croke-white text-base sm:text-2xl md:text-3xl lg:text-4xl`}
 `;
 
 const Subtitle = styled.h2`
-  ${tw`flex flex-row text-croke-white text-xs sm:text-lg md:text-xl lg:text-2xl`}
+  ${tw`text-croke-white text-xs sm:text-lg md:text-xl lg:text-2xl`}
 `;
 
 const Croke = styled.span`
@@ -44,7 +49,7 @@ const Croke = styled.span`
 `;
 
 const MenuButton = styled.div`
-  ${tw`flex w-20 h-20 text-croke-white cursor-pointer`};
+  ${tw`flex w-12 h-12 sm:w-20 sm:h-20 text-croke-white cursor-pointer`};
 `;
 
 const Header = styled.div`
@@ -52,7 +57,7 @@ const Header = styled.div`
 `;
 
 const Bio = styled.div`
-  ${tw`flex h-20`}
+  ${tw`flex h-24`}
 `;
 
 const WaveContainer = styled.div`
@@ -101,11 +106,11 @@ export default () => (
       <Header>
         <Bio>
           <AvatarWrapper>
-            <img className="block relative rounded-full h-auto w-24" src={Avatar} alt="Avatar"/>
+            <AvatarImage src={Avatar} alt="Avatar"/>
           </AvatarWrapper>
           <Headline className="text-shadow">
-            <Title>Jorge Cuadrado Saez</Title>
-            <Subtitle><Croke>I’m &nbsp;</Croke> Jorge (AKA <Croke>&nbsp; Coke</Croke>), a security researcher working at BBVA Next.</Subtitle>
+              <Title>Jorge Cuadrado Saez</Title>
+              <Subtitle><Croke>I’m &nbsp;</Croke> Jorge (AKA <Croke>&nbsp; Coke</Croke>), a security researcher working at BBVA Next.</Subtitle>
           </Headline>
         </Bio>
         <MenuButton onClick={() => toggle()}>
