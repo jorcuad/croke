@@ -43,7 +43,7 @@ export default props => (
           <Mail name="email" placeholder="Your Email" type="email"/>
         </UpperFields>
         <Message name="message"/>
-        <Send>Send Message</Send>
+        <Send name="contact-form" value="contact-form">Send</Send>
       </Fields>
     </Contact>
   </Wrapper>
