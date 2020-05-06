@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const SeeMoreContainer = styled.div`
-  ${tw`flex flex-row w-full h-8 items-center justify-around cursor-pointer mb-10`};
+  ${tw`flex flex-row w-full h-8 items-center justify-around cursor-pointer`};
 `;
 
 const Line = styled.div`

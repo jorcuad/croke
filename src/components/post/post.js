@@ -30,7 +30,7 @@ const Text = styled.p`
 `;
 
 const Metadata = styled.div`
-  ${tw`flex flex-row justify-between text-xs sm:text-sm md:text-base`}
+  ${tw`flex flex-col sm:flex-row justify-between text-xs sm:text-sm md:text-base`}
 `;
 
 const MetaIcon = styled.div`
@@ -38,11 +38,19 @@ const MetaIcon = styled.div`
 `;
 
 const Tags = styled.div`
-  ${tw`block text-justify text-croke-purple`}
+  ${tw`flex text-justify text-croke-purple items-center`}
 `;
 
 const Date = styled.div`
-  ${tw`block text-justify text-croke-purple`}
+  ${tw`flex text-justify text-croke-purple items-center`}
+`;
+
+const DateWrapper = styled.div`
+  ${tw`flex`}
+`;
+
+const TagWrapper = styled.p`
+  ${tw`flex m-0 p-0 break-all`}
 `;
 
 // title, tags, description, image
@@ -60,14 +68,14 @@ export default props => (
         {props.tags ?
           <Tags>
             <MetaIcon><TagIcon/></MetaIcon>
-            {props.tags}
+            <TagWrapper>{props.tags + " "}</TagWrapper>
           </Tags>
         :
           <Tags></Tags>
         }
         <Date>
           <MetaIcon><TimeIcon/></MetaIcon>
-          {props.date}
+          <DateWrapper>{props.date}</DateWrapper>
         </Date>
       </Metadata>
     </Content>

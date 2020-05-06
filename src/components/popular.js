@@ -11,7 +11,11 @@ import Marimorena from "../../static/popular/cybercamp.jpg"
 import X1red from "../../static/popular/x1redmassegura.png"
 
 const Content = styled.div`
-  ${tw`overflow-hidden flex flex-col mb-20 md:flex-row justify-between`};
+  ${tw`overflow-hidden flex flex-col md:flex-row justify-between`};
+
+  > a {
+    margin-bottom: 1rem;
+  }
 `;
 
 export default props => (

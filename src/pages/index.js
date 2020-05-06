@@ -42,7 +42,7 @@ export default ({ data }) => (
           <SectionText content={projects}/>
           <ProjectsList/>
           <Link to="/projects">
-            <SeeMore section="about them here"/>
+            <SeeMore section="here"/>
           </Link>
         </SectionWrapper>
         <SectionWrapper>

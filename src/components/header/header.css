@@ -3,7 +3,7 @@
 }
 
 .closed {
-  height: 20rem;
+  height: 12rem;
 }
 
 .waves-closed{
@@ -42,7 +42,7 @@
 
 @media (min-width: 640px) {
   .closed {
-    height: 25rem;
+    height: 20rem;
   }
 
   .waves-closed{

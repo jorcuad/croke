@@ -40,7 +40,7 @@ export default props => (
       <Fields>
         <UpperFields>
           <Name name="name" placeholder="Your Name" type="text"/>
-          <Mail name="email" placeholder="name@name.com" type="email"/>
+          <Mail name="email" placeholder="Your Email" type="email"/>
         </UpperFields>
         <Message name="message"/>
         <Send>Send Message</Send>
