@@ -90,7 +90,7 @@ export default () => (
         <input type="hidden" name="form-name" value="Contact Form"/>
         <LineFields>
           <input className="mail" type="email" name="email" placeholder="Your Email"/>
-          <input className="name" type="email" name="email" placeholder="Your Name"/>
+          <input className="name" type="text" name="name" placeholder="Your Name"/>
         </LineFields>
         <textarea className="message" name="message" placeholder="Thanks for you interest."/>
         <LineFields>
