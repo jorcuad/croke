@@ -117,6 +117,7 @@ export default () => (
           <li><Link to="/">Home</Link></li>
           <li><Link to="/blog">Blog</Link></li>
           <li><Link to="/projects">Projects</Link></li>
+          <li><Link to="/publications">Publications</Link></li>
           <li><Link to="/services">Services</Link></li>
           <li><Link to="/press">Press</Link></li>
           <li><Link to="/sandbox">Sandbox</Link></li>
