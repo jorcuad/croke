@@ -1,16 +1,11 @@
 import React from "react";
 import styled from 'styled-components';
 import { find } from 'styled-components/test-utils';
+import { Link } from "gatsby";
+import { MenuIcon } from '../icons';
 import tw from 'tailwind.macro';
 import './header.css'
 
-import {
-  MenuIcon,
-} from '../icons';
-
-import {
-  Link
-} from "gatsby"
 
 import Waves from "../waves/waves.js"
 import Avatar from "../../../static/avatar.jpg"
@@ -28,7 +23,7 @@ const AvatarWrapper = styled.div`
 `;
 
 const AvatarImage = styled.img`
-  ${tw`block relative rounded-full h-auto w-24 border-4 border-croke-purple`};
+  ${tw`block relative rounded-full h-auto w-24 border-4 border-croke-purple hover:border-croke-green`};
   box-shadow: 10px 9px 29px -15px rgba(0,0,0,1);
 `;
 
@@ -106,7 +101,7 @@ export default () => (
       <Header>
         <Bio>
           <AvatarWrapper>
-            <AvatarImage src={Avatar} alt="Avatar"/>
+            <Link to="/"><AvatarImage src={Avatar} alt="Avatar"/></Link>
           </AvatarWrapper>
           <Headline className="text-shadow">
               <Title>Jorge Cuadrado Saez</Title>
