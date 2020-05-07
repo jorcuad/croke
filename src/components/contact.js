@@ -35,52 +35,36 @@ const Send = styled.button`
   ${tw`flex justify-center w-1/5 bg-croke-purple hover:bg-croke-green text-croke-white hover:text-croke-purple font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
 `;
 
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
+{/*<Wrapper>
+  <ContactForm onSubmit={handleSubmit} name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+    <Fields>
+      <input type="hidden" name="form-name" value="contact-form" />
+      <p hidden>
+        <label>
+          Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+        </label>
+      </p>
+      <UpperFields>
+        <Name name="name" placeholder="Your Name" type="text" onChange={handleChange}/>
+        <Mail name="email" placeholder="Your Email" type="email" onChange={handleChange}/>
+      </UpperFields>
+      <Message name="message" onChange={handleChange}/>
+      <Send type="submit">Send</Send>
+    </Fields>
+  </ContactForm>
+</Wrapper>*/}
 
-export default function Contact() {
-  const [state, setState] = React.useState({})
-
-  const handleChange = (e) => {
-    setState({ ...state, [e.target.name]: e.target.value })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const form = e.target
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...state,
-      }),
-    })
-      .then(() => alert("Sended OK"))
-      .catch((error) => alert(error))
-  }
-
-  return (
-    <Wrapper>
-      <ContactForm onSubmit={handleSubmit} name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true">
-        <Fields>
-          <input type="hidden" name="form-name" value="contact" />
-          <p hidden>
-            <label>
-              Don’t fill this out: <input name="bot-field" onChange={handleChange} />
-            </label>
-          </p>
-          <UpperFields>
-            <Name name="name" placeholder="Your Name" type="text" onChange={handleChange}/>
-            <Mail name="email" placeholder="Your Email" type="email" onChange={handleChange}/>
-          </UpperFields>
-          <Message name="message" onChange={handleChange}/>
-          <Send name="form-name" value="contact-form" type="submit">Send</Send>
-        </Fields>
-      </ContactForm>
-    </Wrapper>
-  )
-}
+export default () => (
+    <form name="Contact Form" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="Contact Form"/>
+      <div>
+        <label>Your Email:</label>
+        <input type="email" name="email" />
+      </div>
+      <div>
+        <label>Message:</label>
+        <textarea name="message" />
+      </div>
+      <button type="submit">Send</button>
+    </form>
+)
