@@ -2,7 +2,7 @@
 banner: "banners/placeholder.png"
 categories: ["Congress"]
 date: "2019-04-27T10:00:00+01:00"
-description: ""
+description: "This weekend I went Granada to speak in JASyP (Jornadas de Anonimato, Seguridad y Privacidad) about Virtual Voice Assistants. If you are near Granada or yo are curious about security and privacy, I recommend you to contact with them."
 tags: ["JASyP", "Security", "Privacy"]
 draft: false
 title: "[CON] Espías domésticos: A talk about virtual voice assistants"

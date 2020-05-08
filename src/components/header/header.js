@@ -5,13 +5,11 @@ import { Link } from "gatsby";
 import { MenuIcon } from '../icons';
 import tw from 'tailwind.macro';
 import './header.css'
-
-
 import Waves from "../waves/waves.js"
 import Avatar from "../../../static/avatar.jpg"
 
 const Wrapper = styled.div`
-  ${tw`flex items-center justify-center flex-col w-screen overflow-hidden`};
+  ${tw`flex items-center justify-center flex-col w-screen`};
 `;
 
 const Content = styled.div`

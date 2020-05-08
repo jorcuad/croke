@@ -7,15 +7,19 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const Content = styled.div`
-  ${tw`w-screen flex mb-32`}
+  ${tw`flex w-screen mb-auto pb-32`}
+`;
+
+const Container = styled.div`
+  ${tw`flex flex-col justify-between h-screen`};
 `;
 
 export default ({ children }) => (
-  <div>
+  <Container>
     <Header/>
     <Content>
       {children}
     </Content>
     <Footer/>
-  </div>
+  </Container>
 )

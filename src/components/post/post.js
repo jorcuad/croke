@@ -2,6 +2,8 @@ import React from "react";
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
+import kebabCase from "lodash/kebabCase"
+import { Link } from "gatsby";
 
 import {
   TagIcon,
@@ -41,6 +43,10 @@ const Tags = styled.div`
   ${tw`flex text-justify text-croke-purple items-center`}
 `;
 
+const Tag = styled.div`
+  ${tw`flex ml-2`}
+`;
+
 const Date = styled.div`
   ${tw`flex text-justify text-croke-purple items-center`}
 `;
@@ -68,7 +74,15 @@ export default props => (
         {props.tags ?
           <Tags>
             <MetaIcon><TagIcon/></MetaIcon>
-            <TagWrapper>{props.tags + " "}</TagWrapper>
+            <TagWrapper>
+              {props.tags.map(tag => (
+                <Tag>
+                  <Link to={`/tags/${kebabCase(tag)}/`}>
+                    {tag+","}
+                  </Link>
+                </Tag>
+              ))}
+            </TagWrapper>
           </Tags>
         :
           <Tags></Tags>
