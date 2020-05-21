@@ -13,6 +13,7 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-postcss`,
+    `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-resolve-src',
     `gatsby-transformer-sharp`,
@@ -51,6 +52,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/publications`,
+        name: `publications`,
       },
     },
   ],
