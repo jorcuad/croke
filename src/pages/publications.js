@@ -39,7 +39,8 @@ export default ({ data }) => (
                         document={pub.document}
                         code={pub.code}
                         web={pub.web}
-                        slides={pub.slides}/>
+                        slides={pub.slides}
+                        category={pub.category}/>
         })}
       </SectionWrapper>
     </Wrapper>
@@ -67,6 +68,7 @@ query AllPublications {
             publicURL
           }
         }
+        category
       }
     }
   }

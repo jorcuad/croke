@@ -23,7 +23,7 @@ export default props => (
       <Link to="/press"><Sectionbutton background="press" section="PRESS"/></Link>
     </Content>
     <Content>
-      <Sectionbutton background="publications" section="PUBLICATIONS"/>
+      <Link to="/publications"><Sectionbutton background="publications" section="PUBLICATIONS"/></Link>
       <Sectionbutton background="sandbox" section="SANDBOX"/>
     </Content>
   </Row>

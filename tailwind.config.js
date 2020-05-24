@@ -50,6 +50,7 @@ module.exports = {
         '2full': '200%',
       },
       height: {
+        '14': '3.5rem',
         '28': '7rem',
         '72': '18rem',
         '80': '20rem',
