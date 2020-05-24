@@ -19,7 +19,7 @@ export default props => (
       <Link to="/blog"><Sectionbutton background="blog" section="BLOG"/></Link>
     </Content>
     <Content>
-      <Sectionbutton background="services" section="SERVICES"/>
+      <Link to="/services"><Sectionbutton background="services" section="SERVICES"/></Link>
       <Link to="/press"><Sectionbutton background="press" section="PRESS"/></Link>
     </Content>
     <Content>
