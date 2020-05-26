@@ -2,6 +2,8 @@ import React from "react";
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
+import kebabCase from "lodash/kebabCase"
+import { Link } from "gatsby";
 
 import {
   TagIcon,
@@ -13,7 +15,7 @@ const Publication = styled.div`
 `;
 
 const Content = styled.div`
-  ${tw`flex flex-col ml-4 justify-between sm:h-48`}
+  ${tw`flex flex-col px-4 justify-between sm:h-48`}
 `;
 
 const PublicationImage = styled.div`
@@ -26,7 +28,7 @@ const Title = styled.h1`
 `;
 
 const Text = styled.p`
-  ${tw`sm:block text-xs sm:text-sm md:text-base text-justify my-2`}
+  ${tw`flex text-xs sm:text-sm md:text-base text-justify my-2`}
 `;
 
 const Metadata = styled.div`
@@ -50,7 +52,11 @@ const DateWrapper = styled.div`
 `;
 
 const TagWrapper = styled.p`
-  ${tw`flex m-0 p-0 break-all`}
+  ${tw`block overflow-hidden m-0 p-0 break-all text-left`}
+`;
+
+const Tag = styled.span`
+  ${tw`ml-2`}
 `;
 
 const Button = styled.button`
@@ -61,8 +67,12 @@ const Row = styled.div`
   ${tw`flex w-full h-full flex-row`}
 `;
 
-const Col = styled.div`
+const ColLeft = styled.div`
   ${tw`flex flex-col`}
+`;
+
+const ColRight = styled.div`
+  ${tw`flex flex-col w-2/3 sm:w-auto`}
 `;
 
 const PublicationLinks = styled.div`
@@ -92,7 +102,7 @@ const CategoryText = styled.span`
 export default props => (
   <Publication>
     <Row>
-      <Col>
+      <ColLeft>
         <PublicationImage image={props.image}/>
         <Category>
           <CategoryText>{props.category}</CategoryText>
@@ -150,8 +160,8 @@ export default props => (
             }
           </ButtonContainer>
         </PublicationLinksSmall>
-      </Col>
-      <Col>
+      </ColLeft>
+      <ColRight>
         <Content>
           {props.link ?
             <a href={props.link}>
@@ -162,7 +172,15 @@ export default props => (
             {props.tags ?
               <Tags>
                 <MetaIcon><TagIcon/></MetaIcon>
-                <TagWrapper>{props.tags + " "}</TagWrapper>
+                <TagWrapper>
+                {props.tags.map(tag => (
+                  <Tag>
+                    <Link to={`/tags/${kebabCase(tag)}/`}>
+                      {tag+","}
+                    </Link>
+                  </Tag>
+                ))}
+                </TagWrapper>
               </Tags>
             :
               <Tags></Tags>
@@ -225,7 +243,7 @@ export default props => (
           </a>
           }
         </PublicationLinks>
-      </Col>
+      </ColRight>
     </Row>
   </Publication>
 )
