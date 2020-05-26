@@ -3,7 +3,7 @@ banner: "banners/placeholder.png"
 categories: ["Congress"]
 date: "2020-01-29T10:00:00+01:00"
 description: "Two month ago Miguel and I were giving a two hours workshop/talk in Valencia about augmented reality mixed with cybersecurity and the objective of improving the physical places and documents security."
-tags: ["Cybercamp", "Security", "AR"]
+tags: ["Cybercamp", "security", "AR"]
 draft: false
 title: "[CON] ¡Y se ARmó la Marimorena! Cybersecurity in Augmented Reality"
 image: "./images/post-image.jpg"

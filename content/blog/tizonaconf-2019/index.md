@@ -3,7 +3,7 @@ banner: "banners/placeholder.png"
 categories: ["Congress"]
 date: "2019-10-28T12:00:00+01:00"
 description: "Day by day I’m getting used to going CONS on the weekends and the ones I like the most are the ones where I can feel a friendship mood surrounding the place and where people are open to talk, hangout and share."
-tags: ["Tizona", "Privacy", "Educational", "Industry"]
+tags: ["TizonaConf", "privacy", "educational", "industry", "security", "voice assistants"]
 draft: false
 title: "[CON] TizonaConf: Cybersecurity in industrial environments"
 image: "./images/post-image.jpg"

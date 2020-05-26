@@ -3,7 +3,7 @@ banner: "banners/placeholder.png"
 categories: ["Congress"]
 date: "2019-05-11T12:00:00+01:00"
 description: "Last Saturday, I was invited to talk about privacy in the x1RedMásSegura congress. This event aims to teach about the dangerous part of the internet and how to prevent the risks of surfing the net."
-tags: ["x1RedMásSegura", "Privacy", "Educational"]
+tags: ["X1RedMásSegura", "privacy", "educational", "security"]
 draft: false
 title: "[CON] ¿Qué hay detrás de los mayordomos virtuales?"
 image: "./images/post-image.png"

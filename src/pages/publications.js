@@ -26,21 +26,21 @@ export default ({ data }) => (
       <SectionWrapper>
         <SectionTitle header="Publications"/>
         <SectionText content={publications}/>
-        {data.allPublicationsJson.nodes[0].content.map((pub) => {
+        {data.allMarkdownRemark.nodes.map((pub) => {
           return <Publication
-                        image={pub.image.src.publicURL}
-                        title={pub.title}
-                        tags={pub.tags}
-                        date={pub.date}
-                        description={pub.description}
-                        con={pub.con}
-                        video={pub.video}
-                        blog={pub.blog}
-                        document={pub.document}
-                        code={pub.code}
-                        web={pub.web}
-                        slides={pub.slides}
-                        category={pub.category}/>
+                        image={pub.frontmatter.image.publicURL}
+                        title={pub.frontmatter.title}
+                        tags={pub.frontmatter.tags}
+                        date={pub.frontmatter.date}
+                        description={pub.frontmatter.description}
+                        con={pub.frontmatter.con}
+                        video={pub.frontmatter.video}
+                        blog={pub.frontmatter.blog}
+                        document={pub.frontmatter.document}
+                        code={pub.frontmatter.code}
+                        web={pub.frontmatter.web}
+                        slides={pub.frontmatter.slides}
+                        category={pub.frontmatter.category}/>
         })}
       </SectionWrapper>
     </Wrapper>
@@ -49,26 +49,24 @@ export default ({ data }) => (
 
 export const query = graphql`
 query AllPublications {
-  allPublicationsJson {
+  allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {type: {eq: "publication"}}}) {
     nodes {
-      content {
-        blog
-        code
-        con
-        date
+      frontmatter {
+        category
         description
-        document
         slides
         tags
         title
         video
         web
+        document
+        date
+        con
+        code
+        blog
         image {
-          src {
-            publicURL
-          }
+          publicURL
         }
-        category
       }
     }
   }

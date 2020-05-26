@@ -3,7 +3,7 @@ banner: "banners/placeholder.png"
 categories: ["DIY"]
 date: "2019-03-02T21:00:00+01:00"
 description: "I love to print locks in order to learn how they work. If I have time, I will try to post some other locks I printed, but by now, I prefer to write about my last project of this kind. During the last week I had some extra remote working days. That allowed me to start printing a cryptex."
-tags: ["3D Printing", "Cryptography"]
+tags: ["3D printing", "cryptography"]
 draft: false
 title: "[DIY] How to make a cryptex"
 image: "./images/post-image.jpg"

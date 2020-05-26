@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Layout from "../components/layout/layout"
 import Post from "../components/post/post.js";
+import Publication from "../components/publication/publication"
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import {
@@ -21,7 +22,7 @@ const Back = styled.div `
 
 const TagsTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
+  const { edges, totalCount } = data.blog
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
@@ -31,9 +32,42 @@ const TagsTemplate = ({ pageContext, data }) => {
         <SectionWrapper>
           <SectionTitle header={"Tag: " + tag}/>
           <SectionText content={"This is the content tagged with " + tag + ", here you can find content from the blog, projects and publications."}/>
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <Post image={node.frontmatter.image.publicURL} link={node.fields.slug} date={node.frontmatter.date} title={node.frontmatter.title} tags={node.frontmatter.tags} description={node.frontmatter.description}/>
-          ))}
+
+          <SectionTitle header={"Blog"}/>
+          {
+            data.blog.totalCount > 0 ?
+            data.blog.edges.map(({ node }) => (
+              <Post
+                  image={node. frontmatter.image.publicURL}
+                  link={node.fields.slug}
+                  date={node.frontmatter.date}
+                  title={node.frontmatter.title}
+                  tags={node.frontmatter.tags}
+                  description={node.frontmatter.description}/>
+              ))
+            : <SectionText content="There isn't any post in the blog about this tag"/>
+          }
+          <SectionTitle header={"Publications"}/>
+          {
+            data.publications.totalCount > 0 ?
+              data.publications.edges.map(({ node }) => (
+                <Publication
+                  image={node.frontmatter.image.publicURL}
+                  title={node.frontmatter.title}
+                  tags={node.frontmatter.tags}
+                  date={node.frontmatter.date}
+                  description={node.frontmatter.description}
+                  con={node.frontmatter.con}
+                  video={node.frontmatter.video}
+                  blog={node.frontmatter.blog}
+                  document={node.frontmatter.document}
+                  code={node.frontmatter.code}
+                  web={node.frontmatter.web}
+                  slides={node.frontmatter.slides}
+                  category={node.frontmatter.category}/>
+              ))
+            : <SectionText content="There isn't any publication in the web about this tag"/>
+          }
           <Link to="/tags"><Back>← All tags</Back></Link>
         </SectionWrapper>
       </Wrapper>
@@ -66,11 +100,7 @@ TagsTemplate.propTypes = {
 export default TagsTemplate
 export const tagQuery = graphql`
   query($tag: String) {
-    allMarkdownRemark(
-      limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
-    ) {
+    blog: allMarkdownRemark(limit: 2000, sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {draft: {eq: false}, type: {ne: "publication"}, tags: {in: [$tag]}}}) {
       totalCount
       edges {
         node {
@@ -88,6 +118,30 @@ export const tagQuery = graphql`
             image {
               publicURL
             }
+          }
+        }
+      }
+    }
+    publications: allMarkdownRemark(limit: 2000, sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {type: {eq: "publication"}, tags: {in: [$tag]}}}) {
+      totalCount
+      edges {
+        node {
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            description
+            category
+            tags
+            image {
+              publicURL
+            }
+            con
+            video
+            blog
+            document
+            code
+            web
+            slides
           }
         }
       }

@@ -42,27 +42,27 @@ export default ({ data }) => (
 
 export const query = graphql`
 query AllPost {
-  allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {draft: {eq: false}}}) {
-    edges {
-      node {
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          date(formatString: "MMMM DD, YYYY")
-          description
-          banner
-          categories
-          tags
-          draft
-          image {
-            publicURL
-          }
+  allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {draft: {eq: false}, tags: {ne: "publication"}}}) {
+  edges {
+    node {
+      id
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        description
+        banner
+        categories
+        tags
+        draft
+        image {
+          publicURL
         }
       }
     }
   }
+}
 }
 `
