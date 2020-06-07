@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const Frame = styled.div`
-  ${tw`w-24 h-24 sm:h-32 sm:w-32 md:w-48 md:h-48 lg:w-64 lg:h-64 flex overflow-hidden rounded bg-croke-purple mb-6`}
+  ${tw`flex h-full w-full overflow-hidden rounded bg-croke-purple`}
 `;
 
 const Text = styled.div`

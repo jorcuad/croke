@@ -11,20 +11,23 @@ const Content = styled.div`
 const Row = styled.div`
   ${tw`flex flex-row justify-around`}
 `;
+const Container = styled.div`
+  ${tw`w-24 h-24 sm:h-32 sm:w-32 md:w-48 md:h-48 lg:w-64 lg:h-64 mb-6`}
+`;
 
 export default props => (
   <Row>
     <Content>
-      <Link to="/projects"><Sectionbutton background="projects" section="PROJECTS"/></Link>
-      <Link to="/blog"><Sectionbutton background="blog" section="BLOG"/></Link>
+      <Link to="/projects"><Container><Sectionbutton background="projects" section="PROJECTS"/></Container></Link>
+      <Link to="/blog"><Container><Sectionbutton background="blog" section="BLOG"/></Container></Link>
     </Content>
     <Content>
-      <Link to="/services"><Sectionbutton background="services" section="SERVICES"/></Link>
-      <Link to="/press"><Sectionbutton background="press" section="PRESS"/></Link>
+      <Link to="/services"><Container><Sectionbutton background="services" section="SERVICES"/></Container></Link>
+      <Link to="/press"><Container><Sectionbutton background="press" section="PRESS"/></Container></Link>
     </Content>
     <Content>
-      <Link to="/publications"><Sectionbutton background="publications" section="PUBLICATIONS"/></Link>
-      <Sectionbutton background="sandbox" section="SANDBOX"/>
+      <Link to="/publications"><Container><Sectionbutton background="publications" section="PUBLICATIONS"/></Container></Link>
+      <Container><Sectionbutton background="sandbox" section="SANDBOX"/></Container>
     </Content>
   </Row>
 )
