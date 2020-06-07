@@ -27,7 +27,7 @@ export default props => (
     </Content>
     <Content>
       <Link to="/publications"><Container><Sectionbutton background="publications" section="PUBLICATIONS"/></Container></Link>
-      <Container><Sectionbutton background="sandbox" section="SANDBOX"/></Container>
+      <Link to="/sandbox"><Container><Sectionbutton background="sandbox" section="SANDBOX"/></Container></Link>
     </Content>
   </Row>
 )
