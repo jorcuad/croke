@@ -45,7 +45,7 @@ const Fields = styled.div`
 `;
 
 const LineFields = styled.div`
-  ${tw`flex flex-row justify-between w-full mb-4 justify-between`}
+  ${tw`flex flex-col sm:flex-row justify-between w-full mb-4 justify-between`}
 `;
 
 const Name = styled.input`
