@@ -17,6 +17,7 @@ const pentesting = "Four years working in a security laboratory and a Master Deg
 const mobile = "Native or multiplatform applications, always with a cybersecurity and usability focus. If you have some task that you think is possible to perform from your mobile or tablet, It is probably truth. This is the right start point for digital transformation in shops or small companies."
 const printing = "After 5 years 3D printing I'm willing to accept commissions. I have experience printing in ABS, PLA, FLEX, WOOD, PETG and RESIN. 3D printing gives you the possibility of bring your design to the physical wold. Unique bussiness image and decorations, costplay items or collectable figurines are some of the infinite options."
 const cv = "You can check all my professional career and experience through LinkedIn, Github and Twitter all the links are in the footer of this page. Feel free to ask me if you have any commission, doubt or request."
+const trainings = "I think a good professional shoul know how to transfer his knowledge. I like give talks and workshops in conferences, also I had the opportunity to teach about security in the university of valladolid. Are you interested in receive a formation in any of the toppics of this web page, security awareness or innovation?"
 
 const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
@@ -49,6 +50,11 @@ export default () => (
         <Row>
           <Container><Sectionbutton background="services" section="PENTESTING"/></Container>
           <TextContainer><SectionText content={pentesting}/></TextContainer>
+        </Row>
+
+        <Row>
+          <Container><Sectionbutton background="services" section="TRAININGS"/></Container>
+          <TextContainer><SectionText content={trainings}/></TextContainer>
         </Row>
 
         <Row>
