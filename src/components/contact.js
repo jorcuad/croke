@@ -45,6 +45,10 @@ const Fields = styled.div`
 `;
 
 const LineFields = styled.div`
+  ${tw`flex flex-row justify-between w-full mb-4 justify-between`}
+`;
+
+const LineFieldsResponsive = styled.div`
   ${tw`flex flex-col sm:flex-row justify-between w-full mb-4 justify-between`}
 `;
 
@@ -74,12 +78,12 @@ export default () => (
           <input className="name" type="text" name="name" placeholder="Your Name"/>
         </LineFields>
         <textarea className="message" name="message" placeholder="Thanks for you interest."/>
-        <LineFields>
+        <LineFieldsResponsive>
           <ReCAPTCHA sitekey={process.env.GATSBY_RECAPTCHA_KEY} />
           <div>
             <button className="send" type="submit">Send</button>
           </div>
-        </LineFields>
+        </LineFieldsResponsive>
       </div>
     </form>
   </Wrapper>
