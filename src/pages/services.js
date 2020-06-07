@@ -23,15 +23,15 @@ const Wrapper = styled.div`
 `;
 
 const Row = styled.div`
-  ${tw`flex flex-row justify-between`};
+  ${tw`flex flex-col sm:flex-row justify-between`};
 `;
 
 const TextContainer = styled.div`
-  ${tw`flex w-3/4 ml-6`}
+  ${tw`flex w-full sm:w-3/4 sm:ml-6`}
 `;
 
 const Container = styled.div`
-  ${tw`flex flex-grow w-56 h-48`}
+  ${tw`flex flex-grow w-full mb-3 h-12 sm:mb-0 sm:w-56 sm:h-48`}
 `;
 
 export default () => (
