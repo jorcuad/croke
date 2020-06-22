@@ -4,28 +4,23 @@ import { useTranslation } from "react-i18next"
 const LanguageMenu = (props) => {
   const { t, i18n } = useTranslation()
 
-  const [values, setValues] = useState({
-    language: 'en'
-  });
+  const getBrowserLanguage = () => navigator.language || navigator.browserLanguage || ( navigator.languages || [ "en" ] )[ 0 ]
+
+  var browserLanguage = i18n.language
 
   const handleInputChange = event => {
     const target = event.target
-    console.log(target)
+    browserLanguage = target.value
     i18n.changeLanguage(target.value)
-
-    setValues(oldValues => ({
-      ...oldValues,
-      [target.name]: target.value,
-    }));
   }
 
   return(
     <select
-      value={values.language}
+      name="Languages"
       onChange={(e) => handleInputChange(e)}
     >
-      <option value={'en'}>EN</option>
-      <option value={'es'}>ES</option>
+      <option selected={browserLanguage === 'en'} value={'en'}>EN</option>
+      <option selected={browserLanguage === 'es'} value={'es'}>ES</option>
     </select>
   )
 }

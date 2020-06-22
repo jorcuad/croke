@@ -10,7 +10,6 @@ import {
 import {
   SectionTitle,
   SectionWrapper,
-  SectionText,
 } from '../components/section';
 import {
   TimeIcon,
@@ -182,7 +181,6 @@ const Option = styled.li `
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
   return (

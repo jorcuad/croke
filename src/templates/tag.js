@@ -38,7 +38,7 @@ const TagsTemplate = ({ pageContext, data }) => {
             data.blog.totalCount > 0 ?
             data.blog.edges.map(({ node }) => (
               <Post
-                  image={node. frontmatter.image.publicURL}
+                  image={node.frontmatter.image.publicURL}
                   link={node.fields.slug}
                   date={node.frontmatter.date}
                   title={node.frontmatter.title}

@@ -11,11 +11,6 @@ import tw from 'tailwind.macro';
 
 import { useTranslation } from "react-i18next"
 
-import Xataka from "../../static/press/xataka.png"
-import Rt from "../../static/press/rt.png"
-import ElSalto from "../../static/press/elsalto.png"
-import HelpNet from "../../static/press/helpnetsecurity.jpg"
-
 const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
@@ -27,8 +22,9 @@ const PublicationsPage = ({data}) => {
       <SectionWrapper>
         <SectionTitle header={t("publications.title")}/>
         <SectionText content={t("publications.description")}/>
-        {data.allMarkdownRemark.nodes.map((pub) => {
+        {data.allMarkdownRemark.nodes.map((pub, i) => {
           return <Publication
+                        key={i}
                         image={pub.frontmatter.image.publicURL}
                         title={pub.frontmatter.title}
                         tags={pub.frontmatter.tags}

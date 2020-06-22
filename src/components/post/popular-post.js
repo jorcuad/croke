@@ -4,17 +4,8 @@ import "./post.css"
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-import {
-  TagIcon,
-  TimeIcon,
-} from 'components/icons';
-
 const Post = styled.div`
   ${tw`overflow-hidden flex flex-row justify-center`}
-`;
-
-const Content = styled.div`
-  ${tw`overflow-hidden flex flex-col ml-4 justify-between h-32 sm:h-40 md:h-48`}
 `;
 
 const PostImage = styled.div`

@@ -4,7 +4,6 @@ import {
   SectionWrapper,
   SectionText,
 } from '../components/section';
-import Press from "../components/press";
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';

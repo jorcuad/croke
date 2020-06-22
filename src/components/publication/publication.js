@@ -173,8 +173,8 @@ export default props => (
               <Tags>
                 <MetaIcon><TagIcon/></MetaIcon>
                 <TagWrapper>
-                {props.tags.map(tag => (
-                  <Tag>
+                {props.tags.map((tag, i) => (
+                  <Tag key={i}>
                     <Link to={`/tags/${kebabCase(tag)}/`}>
                       {tag+","}
                     </Link>
