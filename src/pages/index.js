@@ -28,36 +28,37 @@ const Home = ({ data }) => {
   const { t } = useTranslation()
 
   return (
-      <Wrapper>
-        <SectionWrapper>
-          <SectionTitle header={t("index.homeHeader")}/>
-          <SectionText content={t("index.home")}/>
-          <Areas/>
-        </SectionWrapper>
-        <SectionWrapper>
-          <SectionTitle header={t("index.projectsHeader")} link="/projects"/>
-          <SectionText content={t("index.projects")}/>
-          <ProjectsList/>
-          <Link to="/projects">
-            <SeeMore section="here"/>
-          </Link>
-        </SectionWrapper>
-        <SectionWrapper>
-          <SectionTitle header={t("index.blogHeader")} link="/blog"/>
-          <SectionText  content={t("index.blogHeader")}/>
-          <PostWrapper>
-            {data.allMarkdownRemark.edges.map(({ node }) => (
-              <Post image={node.frontmatter.image.publicURL} link={node.fields.slug} date={node.frontmatter.date} title={node.frontmatter.title} tags={node.frontmatter.tags} description={node.frontmatter.description}/>
-            ))}
-          </PostWrapper>
-          <Link to="/blog">
-            <SeeMore section="posts"/>
-          </Link>
-        </SectionWrapper>
-        <SectionWrapper>
-          <SectionTitle header={t("index.contactHeader")}/>
-          <SectionText  content={t("index.inmail")}/>
-        </SectionWrapper>
+    <Wrapper>
+      <SectionWrapper>
+        <SectionTitle header={t("index.homeHeader")}/>
+        <SectionText content={t("index.home")}/>
+        <Areas/>
+      </SectionWrapper>
+      <SectionWrapper>
+        <SectionTitle header={t("index.projectsHeader")} link="/projects"/>
+        <SectionText content={t("index.projects")}/>
+        <ProjectsList/>
+        <Link to="/projects">
+          <SeeMore section="here"/>
+        </Link>
+      </SectionWrapper>
+      <SectionWrapper>
+        <SectionTitle header={t("index.blogHeader")} link="/blog"/>
+        <SectionText  content={t("index.blogHeader")}/>
+        <PostWrapper>
+          {data.allMarkdownRemark.edges.map(({ node }, i) => (
+            <Post key={i} image={node.frontmatter.image.publicURL} link={node.fields.slug} date={node.frontmatter.date} title={node.frontmatter.title} tags={node.frontmatter.tags} description={node.frontmatter.description}/>
+          ))}
+        </PostWrapper>
+        <Link to="/blog">
+          <SeeMore section="posts"/>
+        </Link>
+      </SectionWrapper>
+      <SectionWrapper>
+        <SectionTitle header={t("index.contactHeader")}/>
+        <SectionText  content={t("index.inmail")}/>
+        <Contact/>
+      </SectionWrapper>
     </Wrapper>
   )
 }

@@ -55,7 +55,7 @@ const DateWrapper = styled.div`
   ${tw`flex`}
 `;
 
-const TagWrapper = styled.p`
+const TagWrapper = styled.div`
   ${tw`flex m-0 p-0 break-all`}
 `;
 
@@ -75,8 +75,8 @@ export default props => (
           <Tags>
             <MetaIcon><TagIcon/></MetaIcon>
             <TagWrapper>
-              {props.tags.map(tag => (
-                <Tag>
+              {props.tags.map((tag, i)=> (
+                <Tag key={i}>
                   <Link to={`/tags/${kebabCase(tag)}/`}>
                     {tag+","}
                   </Link>

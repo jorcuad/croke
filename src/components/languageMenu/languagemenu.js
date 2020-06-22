@@ -4,8 +4,6 @@ import { useTranslation } from "react-i18next"
 const LanguageMenu = (props) => {
   const { t, i18n } = useTranslation()
 
-  const getBrowserLanguage = () => navigator.language || navigator.browserLanguage || ( navigator.languages || [ "en" ] )[ 0 ]
-
   var browserLanguage = i18n.language
 
   const handleInputChange = event => {
