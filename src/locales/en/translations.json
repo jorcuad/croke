@@ -1,0 +1,92 @@
+{
+  "header": {
+    "title-p1": "I’m ",
+    "title-p2": "Jorge (AKA",
+    "title-p3": " Coke",
+    "title-p4": ", a security researcher working at BBVA Next.",
+    "home": "Home",
+    "blog": "Blog",
+    "projects": "Projects",
+    "publications": "Publications",
+    "services": "Services",
+    "press": "Press",
+    "sandbox": "Sandbox"
+  },
+  "projects": {
+    "title": "Projects",
+    "projects": "These are the projects in which I dedicated more time. It is not only about code, there are DIY stuff I made, workshops, educational content and so on. Feel free to contribute/ask/look on them.",
+    "assapDesc": "ASSAP is a multiplatform tool whose aim is to stablish deffensive measures against shoulder surfing attack, technique used for getting confidential information. The application has different security measures that can be configured by the users depending on the moment of use. ASSAP is designed to be simple to use so that anyone without knowledge can activate and use it, preventing other people from obtaining their confidential data such as passwords, bank accounts, private data, etc.",
+    "marmimorenaDesc": "Augmented Reality (AR) is a technology that allows us to show digital objects inside the physical reality using a special set of glasses or a smartphone. This appealing technology is closer than ever and in this workshop we would like to anticipate the future in an exercise of innovation. You will not only learn how this technology works and some keys to keep in mind when working with it but also how to develop different solutions to make our physical spaces more secure digitally.",
+    "freephoneDesc": "This project deals about how to make a phone form scratch and privacy. Some time ago I tried to understanding what are the core parts of an smartphone device, how they interact with the network and check if it's possible a non commercial smartphone, an open and controllable alternative. This project is the summary of a huge amount of knowledge that I learnt researching about GSM, electronics and steganography. For any question about the build up take a look on the documentation or contact me.",
+    "crokev2Desc": "I always wanted to share my interests following my own way and other blog platforms can't provide me that. I can do the same using Wordpress, Google Sites or whatever but... It's not enought, I need freedom to create and share my knowledge and experiences in the way I want each time. This is my digital house and It will follow my rules, expect anything, expect everything.",
+    "vdeguerraDesc": "Vientos de Guerra is a project born to contextualize and enrich a rol table game I mastered with another 3 friends. This was a huge game for 16 people divided in 4 groups of 4 with a custom strategy system mixed with dungeon and dragons misions. All the game was created using the Warcraft Lore and an original history contextualized by the resurection of Ala Muerte, the black dragon.",
+    "cryptexDesc": "In my spare time I enjoy to start this kind of freak/crazy projects with my 3D printer. Particularly, I love to print locks in order to learn how they work. If I have time, I will try to post some other locks I printed, but by now, I prefer to write about my last project of this kind. During the last week I had some extra remote working days. That allowed me to start printing a cryptex."
+  },
+  "press": {
+    "title": "Press",
+    "description": "Somethimes I appear in the media as an invited expert, speaker or even as a reference when some of my personal projects catch the attention of someone. I think that is important to record these little moments when someone is considered as an expert and their contributions are valuable enought to be share in the media."
+  },
+  "publications": {
+    "title": "Publications",
+    "description": "One of my interest is pointed in share my knowledge and experiences. In these years, I had the opportunity and the honor to be accepted in several congresses as speaker. Here, you can find the slides, videos, demos, papers and other press clipping that maybe can be of your interest."
+  },
+  "sandbox": {
+    "title": "Sandbox",
+    "description": "Sometimes I develop little proofs of concept with different technologies. If any of them is interesting and suitable to be public, I will let the code here ready to test. Right now I have nothing prepared, but, in a not so far future I will release some of them."
+  },
+  "services": {
+    "title": "Profesional Services",
+    "description":"Right now I'm working in BBVA Next Technologies as a Cybersecuirty Researcher but time to time I get hired as a freelancer for small and medium projects. I have a strong background in security technologies and I have experience working in web and mobile development. If you are interested in hire me as a freelance don't doubt to contact me, right now I'm open to new commissions. Here you can find my profesional profile and usual cost-per-service list.",
+    "web": "I have been developing web pages for 6 years now as a freelance and also as a consultant in some of my previous jobs. I have a strong knowledge about design, front-end and backend development. I wouldn't consider myself as a full-stack developer but I know enought technologies to develop a wide range of projects with the highest level of quality.",
+    "pentesting": "Four years working in a security laboratory and a Master Degree in Cybersecurity gives me a deep understanding of security auditing metodologies and technologies. Security consulting, risk assenssments or ethical hacking are some of the services I offer regularly.",
+    "mobile": "Native or multiplatform applications, always with a cybersecurity and usability focus. If you have some task that you think is possible to perform from your mobile or tablet, It is probably truth. This is the right start point for digital transformation in shops or small companies.",
+    "printing": "After 5 years 3D printing I'm willing to accept commissions. I have experience printing in ABS, PLA, FLEX, WOOD, PETG and RESIN. 3D printing gives you the possibility of bring your design to the physical wold. Unique bussiness image and decorations, costplay items or collectable figurines are some of the infinite options.",
+    "cv": "You can check all my professional career and experience through LinkedIn, Github and Twitter all the links are in the footer of this page. Feel free to ask me if you have any commission, doubt or request.",
+    "trainings": "I think a good professional shoul know how to transfer his knowledge. I like give talks and workshops in conferences, also I had the opportunity to teach about security in the university of valladolid. Are you interested in receive a formation in any of the toppics of this web page, security awareness or innovation?",
+    "webHeader": "WEB DESIGN",
+    "pentestingHeader": "PENTESTING",
+    "mobileHeader": "MOBILE APPS",
+    "printingHeader": "3D PRINTING",
+    "trainingsHeader": "TRAININGS"
+  },
+  "thanks": {
+    "title": "The email has been sended. Thanks for your support.",
+    "description": "Thank you for you interest and support, this simple interactions encourage me to continue this and other projects. I will try to contact you back soon. Meanwhile, you can take a look in the rest of the webpage, I will try to continue upgrading and updating the content so stay tuned.",
+    "popular":"Most Popular Posts"
+  },
+  "notfound": {
+    "title": "I can't find this page :(",
+    "back": "Go Back Home"
+  },
+  "index": {
+    "blogText":"Here you should find some interesting topics about security. I love that point when the software touch the physical world, so, you should expect finding here some interesting hardware projects (or that’s my hope). Right now, the web is under construction so let’s cross our fingers in order to see this site working safe and sound.",
+    "inmail":"You can use this form, my mail or Twitter at @Coke727. Please, feel free to use them if you have any question.",
+    "projects":"I am always willing to start new projects, these are the last ones. As you can see, the topics of the projects are always different. I love to discover new technologies and I tend to start projects related to my interests: Security, Privacy, 3D printing and electronics. You can look here to see all the projects.",
+    "home":"I always wanted to share my interests following my own way and other blog platforms can't provide me that. I can do the same using Wordpress, Google Sites or whatever but... It's not enought, I need freedom to create and share my knowledge and experiences in the way I want each time. Today, I am writting this introduction but maybe tomorrow I will prefer to create a secret konami code or stream a podcast. This is my digital house and It will follow my rules, expect anything, expect everything.",
+    "homeHeader":"Security, Electronics and Crazy projects",
+    "projectsHeader":"Projects",
+    "blogHeader":"Blog",
+    "contactHeader":"Get In Touch"
+  },
+  "areas": {
+    "projects": "PROJECTS",
+    "blog": "BLOG",
+    "services":"SERVICES",
+    "press":"PRESS",
+    "publications":"PUBLICATIONS",
+    "sandbox":"SANDBOX"
+  },
+  "projectsList": {
+    "assap":"Software that helps end user to protect his privacy aginst shoulder surfing.",
+    "marimorena":"A practical workshop to learn how to use Augmented Reallity in Security.",
+    "vdeguerra":"A custom web page made for a D&D campaign inspired in Warcraft.",
+    "freephone":"Learn to create a mobile phone from scratch using a Raspberry Pi.",
+    "crokev2":"The second version of my personal site using GatsbyJS. You are in it.",
+    "cryptex":"Guide about how to create and post-process a functional cryptex.",
+    "linkWorkshop": "Security Workshop",
+    "linkServices": "Professional Services",
+    "linkEducationl": "Educational Project",
+    "linkOpenSource": "Open Source Project",
+    "link3dPrinting": "3D Printing Project"
+  }
+}

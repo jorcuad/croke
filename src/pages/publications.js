@@ -4,28 +4,29 @@ import {
   SectionWrapper,
   SectionText,
 } from '../components/section';
-import Layout from "../components/layout/layout"
 import Publication from "../components/publication/publication"
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
+
+import { useTranslation } from "react-i18next"
 
 import Xataka from "../../static/press/xataka.png"
 import Rt from "../../static/press/rt.png"
 import ElSalto from "../../static/press/elsalto.png"
 import HelpNet from "../../static/press/helpnetsecurity.jpg"
 
-const publications = "One of my interest is pointed in share my knowledge and experiences. In these years, I had the opportunity and the honor to be accepted in several congresses as speaker. Here, you can find the slides, videos, demos, papers and other press clipping that maybe can be of your interest."
-
 const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
-export default ({ data }) => (
-  <Layout>
+const PublicationsPage = ({data}) => {
+  const { t } = useTranslation()
+
+  return (
     <Wrapper>
       <SectionWrapper>
-        <SectionTitle header="Publications"/>
-        <SectionText content={publications}/>
+        <SectionTitle header={t("publications.title")}/>
+        <SectionText content={t("publications.description")}/>
         {data.allMarkdownRemark.nodes.map((pub) => {
           return <Publication
                         image={pub.frontmatter.image.publicURL}
@@ -44,8 +45,10 @@ export default ({ data }) => (
         })}
       </SectionWrapper>
     </Wrapper>
-  </Layout>
-)
+  )
+}
+
+export default PublicationsPage
 
 export const query = graphql`
 query AllPublications {

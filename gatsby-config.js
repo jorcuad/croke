@@ -61,5 +61,12 @@ module.exports = {
         name: `publications`,
       },
     },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        // add relative path to your layout component
+        component: `${__dirname}/src/components/layout/layout.js`
+      }
+    },
   ],
 };

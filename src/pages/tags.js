@@ -7,7 +7,6 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout/layout"
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import {
@@ -28,7 +27,6 @@ const TagTemplate = ({
     },
   },
 }) => (
-  <Layout>
     <Wrapper>
       <SectionWrapper>
         <SectionTitle header="Tags"/>
@@ -47,7 +45,6 @@ const TagTemplate = ({
       </SectionWrapper>
       <Helmet title={title} />
     </Wrapper>
-  </Layout>
 )
 
 TagTemplate.propTypes = {

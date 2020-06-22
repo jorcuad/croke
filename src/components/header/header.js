@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react"
 import styled from 'styled-components';
 import { find } from 'styled-components/test-utils';
 import { Link } from "gatsby";
@@ -7,6 +7,9 @@ import tw from 'tailwind.macro';
 import './header.css'
 import Waves from "../waves/waves.js"
 import Avatar from "../../../static/avatar.jpg"
+
+import { useTranslation } from "react-i18next"
+import LanguageMenu from '../languageMenu/languagemenu.js'
 
 const Wrapper = styled.div`
   ${tw`flex items-center justify-center flex-col w-screen`};
@@ -45,7 +48,7 @@ const MenuButton = styled.div`
   ${tw`flex w-12 h-12 sm:w-20 sm:h-20 text-croke-white cursor-pointer`};
 `;
 
-const Header = styled.div`
+const HeaderWrapper = styled.div`
   ${tw`flex flex-row justify-between w-full`}
 `;
 
@@ -93,37 +96,44 @@ const toggle = function() {
   }
 };
 
-export default () => (
-  <Wrapper>
-    <Content className="closed menu-transition">
-      <Header>
-        <Bio>
-          <AvatarWrapper>
-            <Link to="/"><AvatarImage src={Avatar} alt="Avatar"/></Link>
-          </AvatarWrapper>
-          <Headline className="text-shadow">
-              <Title>Jorge Cuadrado Saez</Title>
-              <Subtitle><Croke>I’m &nbsp;</Croke> Jorge (AKA <Croke>&nbsp; Coke</Croke>), a security researcher working at BBVA Next.</Subtitle>
-          </Headline>
-        </Bio>
-        <MenuButton onClick={() => toggle()}>
-          <MenuIcon/>
-        </MenuButton>
-      </Header>
-      <Menu className="menu-closed text-transition">
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
-          <li><Link to="/projects">Projects</Link></li>
-          <li><Link to="/publications">Publications</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/press">Press</Link></li>
-          <li><Link to="/sandbox">Sandbox</Link></li>
-        </ul>
-      </Menu>
-    </Content>
-    <WaveContainer className="waves-closed menu-transition">
-      <Waves/>
-    </WaveContainer>
-  </Wrapper>
-)
+const Header = (props) =>  {
+  const { t } = useTranslation()
+
+  return (
+    <Wrapper>
+      <Content className="closed menu-transition">
+        <HeaderWrapper>
+          <Bio>
+            <AvatarWrapper>
+              <Link to="/"><AvatarImage src={Avatar} alt="Avatar"/></Link>
+            </AvatarWrapper>
+            <Headline className="text-shadow">
+                <Title>Jorge Cuadrado Saez</Title>
+                <Subtitle><Croke>{t("header.title-p1")}</Croke>{t("header.title-p2")}<Croke>{t("header.title-p3")}</Croke>){t("header.title-p4")}</Subtitle>
+            </Headline>
+          </Bio>
+          <LanguageMenu/>
+          <MenuButton onClick={() => toggle()}>
+            <MenuIcon/>
+          </MenuButton>
+        </HeaderWrapper>
+        <Menu className="menu-closed text-transition">
+          <ul>
+            <li><Link to="/">{t("header.home")}</Link></li>
+            <li><Link to="/blog">{t("header.blog")}</Link></li>
+            <li><Link to="/projects">{t("header.projects")}</Link></li>
+            <li><Link to="/publications">{t("header.publications")}</Link></li>
+            <li><Link to="/services">{t("header.services")}</Link></li>
+            <li><Link to="/press">{t("header.press")}</Link></li>
+            <li><Link to="/sandbox">{t("header.sandbox")}</Link></li>
+          </ul>
+        </Menu>
+      </Content>
+      <WaveContainer className="waves-closed menu-transition">
+        <Waves/>
+      </WaveContainer>
+    </Wrapper>
+  )
+}
+
+export default Header

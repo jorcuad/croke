@@ -6,7 +6,6 @@ import {
 } from '../components/section';
 import Post from "../components/post/post.js";
 import Popular from "../components/popular";
-import Layout from "../components/layout/layout"
 import { graphql } from "gatsby"
 
 
@@ -20,7 +19,6 @@ const Wrapper = styled.div`
 `;
 
 export default ({ data }) => (
-  <Layout>
     <Wrapper>
       <SectionWrapper>
         <SectionTitle header="Blog"/>
@@ -37,7 +35,6 @@ export default ({ data }) => (
         ))}
       </SectionWrapper>
     </Wrapper>
-  </Layout>
 );
 
 export const query = graphql`

@@ -1,0 +1,93 @@
+{
+  "header": {
+    "title-p1": "Soy ",
+    "title-p2": "Jorge (AKA",
+    "title-p3": " Coke",
+    "title-p4": ", un investigador en ciberseguridad de BBVA Next.",
+    "home": "Inicio",
+    "blog": "Blog",
+    "projects": "Proyectos",
+    "publications": "Publicaciones",
+    "services": "Servicios",
+    "press": "Prensa",
+    "sandbox": "Sandbox"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "projects": "eyyy",
+    "assapDesc": "eyyy2",
+    "marmimorenaDesc": "eyyy2",
+    "freephoneDesc": "eyyy2",
+    "crokev2Desc": "eyyy2",
+    "vdeguerraDesc": "eyyy2",
+    "cryptexDesc": "eyyy2"
+  },
+  "press": {
+    "title": "Prensa",
+    "description": "presssssssss"
+  },
+  "publications": {
+    "title": "Publicaciones",
+    "description": "pubbbbbbbbbbbb"
+  },
+  "sandbox": {
+    "title": "Laboratorio",
+    "description": "saaaaaaa"
+  },
+  "services": {
+    "title": "Servicios Profesionales",
+    "description": "ssssseeer",
+    "web": "ssssseeer",
+    "pentesting": "ssssseeer",
+    "mobile": "ssssseeer",
+    "printing": "ssssseeer",
+    "cv": "ssssseeer",
+    "trainings": "ssssseeer",
+    "webHeader": "DISEÑO WEB",
+    "pentestingHeader": "PENTESTING",
+    "mobileHeader": "APLICACIONES",
+    "printingHeader": "3D PRINTING",
+    "cvHeader": "ssssseeer",
+    "trainingsHeader": "FORMACIÓN"
+  },
+  "thanks": {
+    "title": "El email se ha enviado. Gracias por tu interés.",
+    "description": "tttttttttttt",
+    "popular":"Los post más populares"
+  },
+  "notfound": {
+    "title": "No puedo encontrar esta página :(",
+    "back": "Volver Al Inicio"
+  },
+  "index": {
+    "blogText":"asdasd",
+    "inmail":"asdasd",
+    "projects":"asdasd",
+    "home":"asdasd",
+    "homeHeader":"Seguridad, Electronica y Proyectos locos",
+    "projectsHeader":"Proyectos",
+    "blogHeader":"Blog",
+    "contactHeader":"¿Algún proyecto en mente?"
+  },
+  "areas": {
+    "projects": "PROYECTOS",
+    "blog": "BLOG",
+    "services":"SERVICIOS",
+    "press":"PRENSA",
+    "publications":"PUBLICACIONES",
+    "sandbox":"LABORATORIO"
+  },
+  "projectsList": {
+    "assap":"asdasd",
+    "marimorena":"asdasdasdasdasdasd asdasd.",
+    "vdeguerra":"asdasdasdasdasdasd asdasd.",
+    "freephone":"asdasdasdasdasd asdasd.",
+    "crokev2":"asdasdasd. asdasdadsd.",
+    "cryptex":"asdasdasdasd. asdasdasd",
+    "linkWorkshop": "Taller de Seguridad",
+    "linkServices": "Servicios Profesionales",
+    "linkEducationl": "Divulgación",
+    "linkOpenSource": "Proyecto Open Source",
+    "link3dPrinting": "Impresión 3D"
+  }
+}

@@ -4,11 +4,13 @@ import {
   SectionWrapper,
   SectionText,
 } from '../components/section';
-import Layout from "../components/layout/layout"
 import { Link } from "gatsby"
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
+
+import { useTranslation } from "react-i18next"
+
 import Avatar from "../../static/error-404.gif"
 
 const Wrapper = styled.div`
@@ -23,20 +25,24 @@ const ButtonContainer = styled.button`
   ${tw`w-full`}
 `;
 
-export default () => (
-  <Layout>
+const NotFoundPage = (props) => {
+  const { t } = useTranslation()
+
+  return (
     <Wrapper>
       <SectionWrapper>
         <center>
-          <SectionTitle header="I can't find this page :("/>
+          <SectionTitle header={t("notfound.title")}/>
         </center>
         <img src={Avatar}/>
         <ButtonContainer>
           <Link to="/"><Button>
-            Go Back Home
+            {t("notfound.back")}
           </Button></Link>
         </ButtonContainer>
       </SectionWrapper>
     </Wrapper>
-  </Layout>
-)
+  )
+}
+
+export default NotFoundPage

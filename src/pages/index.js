@@ -11,10 +11,11 @@ import {
 import ProjectsList from "../components/projects/projectsList";
 import Areas from "../components/areas";
 import Contact from "../components/contact";
-import Layout from "../components/layout/layout"
 import Post from "../components/post/post.js";
 import Parallax from "../components/parallax";
 import SeeMore from "../components/seemore";
+
+import { useTranslation } from "react-i18next"
 
 const blogText = "Here you should find some interesting topics about security. I love that point when the software touch the physical world, so, you should expect finding here some interesting hardware projects (or that’s my hope). Right now, the web is under construction so let’s cross our fingers in order to see this site working safe and sound.";
 const inmail = "You can use this form, my mail or Twitter at @Coke727. Please, feel free to use them if you have any question."
@@ -29,25 +30,27 @@ const PostWrapper = styled.div`
   ${tw`mb-10`}
 `;
 
-export default ({ data }) => (
-  <Layout>
-    <Wrapper>
+const Home = ({ data }) => {
+  const { t } = useTranslation()
+
+  return (
+      <Wrapper>
         <SectionWrapper>
-          <SectionTitle header="Security, Electronics and Crazy projects"/>
-          <SectionText content={home}/>
+          <SectionTitle header={t("index.homeHeader")}/>
+          <SectionText content={t("index.home")}/>
           <Areas/>
         </SectionWrapper>
         <SectionWrapper>
-          <SectionTitle header="Projects" link="/projects"/>
-          <SectionText content={projects}/>
+          <SectionTitle header={t("index.projectsHeader")} link="/projects"/>
+          <SectionText content={t("index.projects")}/>
           <ProjectsList/>
           <Link to="/projects">
             <SeeMore section="here"/>
           </Link>
         </SectionWrapper>
         <SectionWrapper>
-          <SectionTitle header="Blog" link="/blog"/>
-          <SectionText  content={blogText}/>
+          <SectionTitle header={t("index.blogHeader")} link="/blog"/>
+          <SectionText  content={t("index.blogHeader")}/>
           <PostWrapper>
             {data.allMarkdownRemark.edges.map(({ node }) => (
               <Post image={node.frontmatter.image.publicURL} link={node.fields.slug} date={node.frontmatter.date} title={node.frontmatter.title} tags={node.frontmatter.tags} description={node.frontmatter.description}/>
@@ -58,13 +61,14 @@ export default ({ data }) => (
           </Link>
         </SectionWrapper>
         <SectionWrapper>
-          <SectionTitle header="Get In Touch"/>
-          <SectionText  content={inmail}/>
-          <Contact/>
+          <SectionTitle header={t("index.contactHeader")}/>
+          <SectionText  content={t("index.inmail")}/>
         </SectionWrapper>
     </Wrapper>
-  </Layout>
-);
+  )
+}
+
+export default Home
 
 export const query = graphql`
 query LastPost {
