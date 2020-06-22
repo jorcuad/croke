@@ -119,13 +119,13 @@ const Header = (props) =>  {
         </HeaderWrapper>
         <Menu className="menu-closed text-transition">
           <ul>
-            <li><Link to="/">{t("header.home")}</Link></li>
-            <li><Link to="/blog">{t("header.blog")}</Link></li>
-            <li><Link to="/projects">{t("header.projects")}</Link></li>
-            <li><Link to="/publications">{t("header.publications")}</Link></li>
-            <li><Link to="/services">{t("header.services")}</Link></li>
-            <li><Link to="/press">{t("header.press")}</Link></li>
-            <li><Link to="/sandbox">{t("header.sandbox")}</Link></li>
+            <li><Link onClick={() => toggle()} to="/">{t("header.home")}</Link></li>
+            <li><Link onClick={() => toggle()} to="/blog">{t("header.blog")}</Link></li>
+            <li><Link onClick={() => toggle()} to="/projects">{t("header.projects")}</Link></li>
+            <li><Link onClick={() => toggle()} to="/publications">{t("header.publications")}</Link></li>
+            <li><Link onClick={() => toggle()} to="/services">{t("header.services")}</Link></li>
+            <li><Link onClick={() => toggle()} to="/press">{t("header.press")}</Link></li>
+            <li><Link onClick={() => toggle()} to="/sandbox">{t("header.sandbox")}</Link></li>
           </ul>
         </Menu>
       </Content>

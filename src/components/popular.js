@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 import Post from "./post/popular-post.js";
+import { useTranslation } from "react-i18next"
 
 import Tizona from "../../static/popular/tizona.jpg"
 import Marimorena from "../../static/popular/cybercamp.jpg"
@@ -18,16 +19,22 @@ const Content = styled.div`
   }
 `;
 
-export default props => (
-  <Content>
-    <Link to="/blog/cybercamp-2019">
-      <Post date="02/02/2020" image={Marimorena} title="¡Se ARmó la Marimorena! Cybersecurity in AR" tags="Cybercamp · Security · AR" description="A two hours workshop/talk in Valencia about augmented reality mixed with cybersecurity witch the objective of improving the physical places."/>
-    </Link>
-    <Link to="/blog/tizonaconf-2019">
-      <Post date="02/02/2020" image={Tizona} title="TizonaConf: Cybersecurity in industrial environments" tags="Tizona · Privacy · Educational · Industry" description="Day by day I’m getting used to going CONS on the weekends and the ones I like the most are the ones where I can feel a friendship mood surrounding the place and where people are open to talk, hangout and share."/>
-    </Link>
-    <Link to="/blog/x1redmassegura2019">
-      <Post date="02/02/2020" image={X1red} title="¿Qué hay detrás de los mayordomos virtuales?" tags=" x1RedMásSegura · Privacy · Educational" description="I was invited to talk about privacy in x1RedMásSegura congress. This event aims to teach about the dangerous part of the internet and how to prevent the risks of surfing the net."/>
-    </Link>
-  </Content>
-)
+const Popular = (props) => {
+  const { t } = useTranslation()
+
+  return (
+    <Content>
+      <Link to="/blog/cybercamp-2019">
+        <Post date="02/02/2020" image={Marimorena} title={t("popular.titleMarimorena")} tags={t("popular.tagsMarimorena")} description={t("popular.descriptionMarimorena")}/>
+      </Link>
+      <Link to="/blog/tizonaconf-2019">
+        <Post date="02/02/2020" image={Tizona} title={t("popular.titleTizona")} tags={t("popular.tagsTizona")} description={t("popular.descriptionTizona")}/>
+      </Link>
+      <Link to="/blog/x1redmassegura2019">
+        <Post date="02/02/2020" image={X1red} title={t("popular.titleRedSegura")} tags={t("popular.tagsRedSegura")} description={t("popular.descriptionRedSegura")}/>
+      </Link>
+    </Content>
+  )
+}
+
+export default Popular

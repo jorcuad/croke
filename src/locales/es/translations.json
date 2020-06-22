@@ -14,35 +14,35 @@
   },
   "projects": {
     "title": "Proyectos",
-    "projects": "eyyy",
-    "assapDesc": "eyyy2",
-    "marmimorenaDesc": "eyyy2",
-    "freephoneDesc": "eyyy2",
-    "crokev2Desc": "eyyy2",
-    "vdeguerraDesc": "eyyy2",
-    "cryptexDesc": "eyyy2"
+    "projects": "Estos son los proyectos a los que he dedicado más cariño y tiempo. No es sólo sobre el código, tambien hay DIY, talleres, proyectos de divulgación y mucho más. Siente libre de contribuir, preguntar o compartirlos.",
+    "assapDesc": "Assap es una herramienta multiplataforma que busca esblecer medidas de defensa contra el ataque de shoulder surfing, una técnica para obtener información confidencial. La aplicación provee multiples medidas que pueden ser configuradas por el usuario dependiendo del contexto. ASSAP se ha diseñado para ser simple de usar por usuarios de todos los niveles. Esto previene el robo de contraseñas, cuentas bancarias o datos privados.",
+    "marmimorenaDesc": "La realidad aumentada (AR) es una tecnología que permite mostrar objetos digitales en el mundo físico a través de unas gafas especiales o un smartphone. Esta tecnología tan vistosa nos rodea cada vez más y en este taller queremos anticiparnos al futuro en un ejercicio de innovación. Aprenderás no solo sobre como funciona esta tecnologías y conceptos clave al trabajar con ella, sino también como desarrollar soluciones para crear espacios físicos más seguros digitalmente.",
+    "freephoneDesc": "Este proyecto trata sobre como crear un teléfono desde cero y sobre privacidad. Hace mucho timepo trate de entender cuales son las partes fundamentales de un smartphone, como interaccionan con la red y comprobar si es posible tener una alternativa no comercial, abierta y totalmente controlable por el usuario. Este proyecto es un compendio de todo el conocimiento que obtuve investigando sobre GSM, electrónica y esteganografía. Para cualquier duda sobre como construirlo, echa un vistazo a la documentación o contáctame.",
+    "crokev2Desc": "Siempre quise compartir mis intereses a mi propia manera y otras plataformas de blog no me daban esa opción. Podría hacer lo mismo usando Wordpress, Google Sites o cualquier otra pero... No es suficiente, necesito libertad para crear y compartir mi conocimiento y experiencia en la forma que yo quiera para cada situación. Hoy escribo esta introducción pero mañana quizá quiera crear un código konami secreto o un podcast. Esta es mi casa digital y sigue mis normas, no esperes nada, esperalo todo.",
+    "vdeguerraDesc": "Vientos de Guerra es un proyecto que nació para dar contexto y enriquecer una partida de rol de mesa que dirigí junto con tres compañeros. Fue una partida enorme planteada para 16 jugadores simultáneos divididos en 4 grupos de 4 personas, un sistema estratégico propio mezclado con misiones de dungeon a dragons. El juego fue creado usando el lore de Warcraft y una historia original enmarcada en la resurrectión de Ala Muerte, el dragón negro.",
+    "cryptexDesc": "En mi tiempo libre disfruto de empezar proyectos locos/frikis con mis impresoras 3D. Concretamente, me encanta imprimir cerraduras para saber como funcionan. Si tengo tiempo, intentaré publicar otras cerraduras que he impreso, pero de momento, prefiero escribir sobre mi último proyecto de este tipo. Durante la última semana he tenido algo de tiempo extra al trabajar en remoto. Esto me ha permitido empezar a imprimir un cryptex."
   },
   "press": {
     "title": "Prensa",
-    "description": "presssssssss"
+    "description": "A veces aparezco en los medios como experto invitado, ponente o referenciado si alguno de mis proyectos personales capta la atención del público. Creo que es importante el reflejar estos pequeños momentos en los que alguién considera que mi criterio como experto tiene valor suficiente para ser compartido en los medios de comunicación."
   },
   "publications": {
     "title": "Publicaciones",
-    "description": "pubbbbbbbbbbbb"
+    "description": "Uno de mis intereses es el de compartir mi conocimiento y experiencia. En estos años, he tenido la oportunidad y el honor de ser ponente en un gran número de congresos. Aquí están públicas las diapositivas, vídeos, demos, papers y otros enlaces que pueden ser de interés."
   },
   "sandbox": {
     "title": "Laboratorio",
-    "description": "saaaaaaa"
+    "description": "A veces desarrollo pequeñas pruebas de concepto con tecnologías que quiero probar. Si alguna de ellas es interesante y puede publicarse en esta web, dejaré aquí el código listo para probarlo. Ahora mismo no tengo nada preparado, pero, en un futuro no muy lejano liberaré algunas."
   },
   "services": {
     "title": "Servicios Profesionales",
-    "description": "ssssseeer",
-    "web": "ssssseeer",
-    "pentesting": "ssssseeer",
-    "mobile": "ssssseeer",
-    "printing": "ssssseeer",
-    "cv": "ssssseeer",
-    "trainings": "ssssseeer",
+    "description": "Actualmente trabajo en BBVA Next Technologies como investigador en ciberseguridad. En mi tiempo libre acepto comisiones como freelance para pequeños y medianos proyectos. Tengo un gran background en tecnologías de ciberseguridad, también tengo experiencia trabajando en desarrollo web y móvil. Si te interesa contratarme como freelance no dudes en contactarme, actualmente tengo las comisiones abiertas. Aquí puedes encontrar mi perfil profesional y el coste por servicio habitual.",
+    "web": "Llevo 6 años desarrollando webs como freelance y como consultor en trabajos pasados. Siempre usando las últimas tecnologías. Tengo un gran conocimiento sobre diseño, front-end y back-end. No me considero full.stack pero se las suficientes tecnologías para desarrollar un gran abanico de proyectos con un alto nivel de calidad.",
+    "pentesting": "4 años trabajando en un laboratorio de ciberseguridad y un master de especialización en ciberseguridad me atorgan un profundo conocimiento sobre auditoría, tecnologías y metodologías de ciberseguridad. Consultoría de ciberseguridad, auditoría de riesgos y hacking ético son algunos de los servicios que ofrezco regularmente.",
+    "mobile": "Aplicaciones nativas o multiplataforma, siempre con la ciberseguridad y usabilidad como foco. Si tienes alguna tarea que crees que se puede realizar en móvil o tablet, probablemente sea cierto. Este es el punto de partida para trasformar digitalmente tiendas o pequeñas compañías.",
+    "printing": "Después de 5 años imprimiendo en 3D acepto comisiones. Tengo experiencia imprimiendo en ABS, PLA, FLEX, WOOD, PETG y RESINA. La impresión 3D da la posibilidad the traer el diseño digital al mundo físico. Una imagen corporativa única, costplay o figuras de colección son algunas de las muchas opciones.",
+    "cv": "Puedes consultar mi perfil profesional y experiencia en LinkedIn, GitHub y Twitter. Todos los enlaces están en el pie de la página web. Siéntete libre de preguntarme si tienes alguna comisión, duda o petición.",
+    "trainings": "Creo que un buen profesional debe saber transferir su conocimiento. Me encanta dar charlas y talleres en conferencias, también tuve la oportunidad y el honor de impartir lecciones de ciberseguridad en la Universidad de Valladolid ¿Te interesa recibir formaciones en alguno de los temas que trata esta web, concienciación sobre ciberseguridad o innovación?",
     "webHeader": "DISEÑO WEB",
     "pentestingHeader": "PENTESTING",
     "mobileHeader": "APLICACIONES",
@@ -52,7 +52,7 @@
   },
   "thanks": {
     "title": "El email se ha enviado. Gracias por tu interés.",
-    "description": "tttttttttttt",
+    "description": "Muchas gracias por tu interes y apoyo, estas interacciones me animan a continuar este y otros proyectos. Intentaré contactarte lo antes posible. Mientras tanto, puedes echarle un vistazo al resto de la página web. Seguiré intentando mejorar y actualizar el contenido, estate atento.",
     "popular":"Los post más populares"
   },
   "notfound": {
@@ -60,10 +60,10 @@
     "back": "Volver Al Inicio"
   },
   "index": {
-    "blogText":"asdasd",
-    "inmail":"asdasd",
-    "projects":"asdasd",
-    "home":"asdasd",
+    "blogText":"En el blog puedede encontrar contenido sobre seguridad. Me gusta especialmente tratar el punto en que el software roza con el mundo físico, es por eso que (espero) aquí puedas encontrar proyectos relacionados con hardware. Ahora mismo la web sigue bajo construcción por lo que esperemos que todo funcione como debería, crucemos los dedos.",
+    "inmail":"Puedes usar este formulario, mi email o Twitter en @Coke727 para contactarme. Sientete libre de usarlo para cualquier duda o propuesta.",
+    "projects":"Siempre estoy abierto a nuevos proyectos, estos son los últimos. Como puedes ver, los temas de los proyectos son siempre diferentes. Me encanta descubrir nuevas tecnologías y tiendo a empezar nuevos proyectos relacionados con mis intereses: Seguridad, Privacidad, Impresión 3D y Electrónica. Puedes echar un vistazo aquí para ver todos los proyectos.",
+    "home":"Siempre busco compartir mis intereses a mi propia manera y las plataformas de blog no me permitían hacerlo como quiero. Podría hacer lo mismo usando Wordpress, Google Sites o cualquier otra pero... No es suficiente, necesito libertad para crear y compartir mi conocimiento y experiencia en la forma que yo quiera para cada situación. Hoy escribo esta introducción pero mañana quizá quiera crear un código konami secreto o un podcast. Esta es mi casa digital y sigue mis normas, no esperes nada, esperalo todo.",
     "homeHeader":"Seguridad, Electronica y Proyectos locos",
     "projectsHeader":"Proyectos",
     "blogHeader":"Blog",
@@ -78,16 +78,54 @@
     "sandbox":"LABORATORIO"
   },
   "projectsList": {
-    "assap":"asdasd",
-    "marimorena":"asdasdasdasdasdasd asdasd.",
-    "vdeguerra":"asdasdasdasdasdasd asdasd.",
-    "freephone":"asdasdasdasdasd asdasd.",
-    "crokev2":"asdasdasd. asdasdadsd.",
-    "cryptex":"asdasdasdasd. asdasdasd",
+    "assap":"Software que protege la privacidad contra el ataque de shoulder surfing.",
+    "marimorena":"Taller práctico para aprender a usar realidad aumentada en seguridad.",
+    "vdeguerra":"Web a medida para una campaña de D&D inspirada en Warcraft.",
+    "freephone":"Aprende a crear un teléfono móvil desde cero usando una Raspberry Pi.",
+    "crokev2":"La segunda versión de mi web personal hecha con GatsbyJS. Estas en ella.",
+    "cryptex":"Guía sobre como crear y post procesar un cryptex funcional.",
     "linkWorkshop": "Taller de Seguridad",
     "linkServices": "Servicios Profesionales",
     "linkEducationl": "Divulgación",
     "linkOpenSource": "Proyecto Open Source",
     "link3dPrinting": "Impresión 3D"
+  },
+  "footer": {
+    "title": "Puedes contactarme en:",
+    "licenseHeader": "Licencia:",
+    "licenseText": "Esta licencia cubre el uso de todo el contenido presente en el dominio croke.es.  Los proyectos y tecnologías mostrados aquí tienen sus propias licencias, en caso contrario, esta licencia será la que aplique sobre ellos."
+  },
+  "popular": {
+    "titleMarimorena": "¡Se ARmó la Marimorena! Cyberseguridad en AR",
+    "descriptionMarimorena": "Una charla taller de dos horas impartida en Valencia sobre realidad aumentada en el campo de la cyberseguridad de entornos físicos.",
+    "tagsMarimorena": "Cybercamp · Seguridad · AR",
+    "titleTizona": "TizonaConf: Ciberseguridad en entornos industriales",
+    "descriptionTizona": "Día a día me estoy acostumbrando a asistir a CONS los fines de semana. Las que más me gustan son en las que puedo sentir el compañerismo en el ambiente y la gente quiere hablar, compartir y tomar algo.",
+    "tagsTizona":"Tizona · Privacidad · Educación · Industria",
+    "titleRedSegura": "¿Qué hay detrás de los mayordomos virtuales?",
+    "descriptionRedSegura": "Me invitaron a participar en x1RedMásSegura. Este congreso busca concienciar sobre los peligros de internet y como prevenir los riesgos de navegar por la red.",
+    "tagsRedSegura": "x1RedMásSegura · Privacidad · Educacional"
+  },
+  "pressComponent": {
+    "titleSalto": "La comunidad maker se organiza y responde al covid19",
+    "descriptionSalto": "La impresión 3D tiene un potencial enorme y en casos de emergencia como este, grupos organizados de voluntarios pueden ayudar. Pero claro, en casos como este se necesita una sincronización con los organismos públicos de sanidad responsables",
+    "titleRT": "¿Progreso o regreso?",
+    "descriptionRT": "¿Un mecanismo de seguridad o una invasión de la privacidad? El creciente uso de cámaras inteligentes en las calles está creando en EE.UU. un estado policial que pone en peligro los derechos humanos.",
+    "titleXataka": "FreePhone es el smartphone casero que te puedes montar con una Raspberry Pi",
+    "descriptionXataka": "Se trata del FreePhone, un proyecto desarrollado por dos expertos en seguridad españoles que ahora han publicado su trabajo para que cualquiera pueda construirse un smartphone casero.",
+    "titleHelp": "Estableciendo canales encubiertos abusando de los comandos AT.",
+    "descriptionHelp": "Muchas investigaciones empiezan a raíz de algún hobby personal, no es diferente la investigación de Jorge Cuadrado y Alfonso Muñoz. La pareja, que mostrará su investigación en la conferencia Hack in the Box de Amsterdam la próxima semana, acabo por descubrir una forma de establecer un canal encubierto sobre la red GSM abusando de los commandos AT."
+  },
+  "blogPage":{
+    "title": "Blog",
+    "blog": "En el blog puedede encontrar contenido sobre seguridad. Me gusta especialmente tratar el punto en que el software roza con el mundo físico, es por eso que (espero) aquí puedas encontrar proyectos relacionados con hardware. Ahora mismo la web sigue bajo construcción por lo que esperemos que todo funcione como debería, crucemos los dedos.",
+    "popularTitle": "Los Posts Más Populares",
+    "latestTitle": "Últimos Posts"
+  },
+  "contact": {
+    "email": "Tú email",
+    "name": "Tú nombre",
+    "message": "¿Quieres hablarme de algún proyecto o tienes alguna duda?",
+    "button": "Enviar"
   }
 }

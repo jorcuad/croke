@@ -14,7 +14,7 @@
   },
   "projects": {
     "title": "Projects",
-    "projects": "These are the projects in which I dedicated more time. It is not only about code, there are DIY stuff I made, workshops, educational content and so on. Feel free to contribute/ask/look on them.",
+    "projects": "These are the projects in which I dedicated more time. It is not only about code, there are DIY stuff I made, workshops, educational content and so on. Feel free to contribute/ask/share them.",
     "assapDesc": "ASSAP is a multiplatform tool whose aim is to stablish deffensive measures against shoulder surfing attack, technique used for getting confidential information. The application has different security measures that can be configured by the users depending on the moment of use. ASSAP is designed to be simple to use so that anyone without knowledge can activate and use it, preventing other people from obtaining their confidential data such as passwords, bank accounts, private data, etc.",
     "marmimorenaDesc": "Augmented Reality (AR) is a technology that allows us to show digital objects inside the physical reality using a special set of glasses or a smartphone. This appealing technology is closer than ever and in this workshop we would like to anticipate the future in an exercise of innovation. You will not only learn how this technology works and some keys to keep in mind when working with it but also how to develop different solutions to make our physical spaces more secure digitally.",
     "freephoneDesc": "This project deals about how to make a phone form scratch and privacy. Some time ago I tried to understanding what are the core parts of an smartphone device, how they interact with the network and check if it's possible a non commercial smartphone, an open and controllable alternative. This project is the summary of a huge amount of knowledge that I learnt researching about GSM, electronics and steganography. For any question about the build up take a look on the documentation or contact me.",
@@ -41,7 +41,7 @@
     "pentesting": "Four years working in a security laboratory and a Master Degree in Cybersecurity gives me a deep understanding of security auditing metodologies and technologies. Security consulting, risk assenssments or ethical hacking are some of the services I offer regularly.",
     "mobile": "Native or multiplatform applications, always with a cybersecurity and usability focus. If you have some task that you think is possible to perform from your mobile or tablet, It is probably truth. This is the right start point for digital transformation in shops or small companies.",
     "printing": "After 5 years 3D printing I'm willing to accept commissions. I have experience printing in ABS, PLA, FLEX, WOOD, PETG and RESIN. 3D printing gives you the possibility of bring your design to the physical wold. Unique bussiness image and decorations, costplay items or collectable figurines are some of the infinite options.",
-    "cv": "You can check all my professional career and experience through LinkedIn, Github and Twitter all the links are in the footer of this page. Feel free to ask me if you have any commission, doubt or request.",
+    "cv": "You can check all my professional career and experience through LinkedIn, GitHub and Twitter. All the links are in the footer of this page. Feel free to ask me if you have any commission, doubt or request.",
     "trainings": "I think a good professional shoul know how to transfer his knowledge. I like give talks and workshops in conferences, also I had the opportunity to teach about security in the university of valladolid. Are you interested in receive a formation in any of the toppics of this web page, security awareness or innovation?",
     "webHeader": "WEB DESIGN",
     "pentestingHeader": "PENTESTING",
@@ -88,5 +88,43 @@
     "linkEducationl": "Educational Project",
     "linkOpenSource": "Open Source Project",
     "link3dPrinting": "3D Printing Project"
+  },
+  "footer": {
+    "title": "You can contact me here:",
+    "licenseHeader": "License:",
+    "licenseText": "This license covers the use of the content present in the domain croke.es. The projects and technologies showed here has its own license, otherwise, this licence will aply them."
+  },
+  "popular": {
+    "titleMarimorena": "¡Se ARmó la Marimorena! Cybersecurity in AR",
+    "descriptionMarimorena": "A two hours workshop/talk in Valencia about augmented reality mixed with cybersecurity witch the objective of improving the physical places.",
+    "tagsMarimorena": "Cybercamp · Security · AR",
+    "titleTizona": "TizonaConf: Cybersecurity in industrial environments",
+    "descriptionTizona": "Day by day I’m getting used to going CONS on the weekends and the ones I like the most are the ones where I can feel a friendship mood surrounding the place and where people are open to talk, hangout and share.",
+    "tagsTizona":"Tizona · Privacy · Educational · Industry",
+    "titleRedSegura": "¿Qué hay detrás de los mayordomos virtuales?",
+    "descriptionRedSegura": "I was invited to talk about privacy in x1RedMásSegura congress. This event aims to teach about the dangerous part of the internet and how to prevent the risks of surfing the net.",
+    "tagsRedSegura": "x1RedMásSegura · Privacy · Educational"
+  },
+  "pressComponent": {
+    "titleSalto": "Maker community get organized and respond to covid19",
+    "descriptionSalto": "3D printing has an enormous potential in emergency cases, organized groups of voluntiers can help. But, it is needed a syncronization with the public organisms of healthcare.",
+    "titleRT": "Progress or regress?",
+    "descriptionRT": "Security mechanismn or privacy invasion? The increasing smart camera use in the streets is causing a policial state in EE.UU. This put in danger human rights.",
+    "titleXataka": "FreePhone is a DIY smartphone that you can make using a Raspberry Pi",
+    "descriptionXataka": "This is FreePhone, a project developed by two cybersecurity spanish experts that have published their work in order to let anyone make their own DIY smartphone.",
+    "titleHelp": "Establishing covert communication channels by abusing GSM AT commands",
+    "descriptionHelp": "Security research often starts as a hobby project, and Alfonso Muñoz’s and Jorge Cuadrado’s probe into mobile privacy is no exception. The duo, who’s scheduled to reveal the results of their research at the Hack in the Box Conference in Amsterdam next week, ended up finding a way to establishing covert communication channels over GSM by abusing GSM AT commands."
+  },
+  "blogPage":{
+    "title": "Blog",
+    "blog": "Here you should find some interesting topics about security. I love that point when the software touch the physical world, so, you should expect finding here some interesting hardware projects (or that’s my hope). Right now, the web is under construction so let’s cross our fingers in order to see this site working safe and sound.",
+    "popularTitle": "Most Popular",
+    "latestTitle": "Latest Posts"
+  },
+  "contact": {
+    "email": "Your Email",
+    "name": "Your Name",
+    "message": "Thanks for you interest.",
+    "button": "Send"
   }
 }

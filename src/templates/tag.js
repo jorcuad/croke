@@ -27,51 +27,49 @@ const TagsTemplate = ({ pageContext, data }) => {
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
   return (
-    <Layout>
-      <Wrapper>
-        <SectionWrapper>
-          <SectionTitle header={"Tag: " + tag}/>
-          <SectionText content={"This is the content tagged with " + tag + ", here you can find content from the blog, projects and publications."}/>
+    <Wrapper>
+      <SectionWrapper>
+        <SectionTitle header={"Tag: " + tag}/>
+        <SectionText content={"This is the content tagged with " + tag + ", here you can find content from the blog, projects and publications."}/>
 
-          <SectionTitle header={"Blog"}/>
-          {
-            data.blog.totalCount > 0 ?
-            data.blog.edges.map(({ node }) => (
-              <Post
-                  image={node.frontmatter.image.publicURL}
-                  link={node.fields.slug}
-                  date={node.frontmatter.date}
-                  title={node.frontmatter.title}
-                  tags={node.frontmatter.tags}
-                  description={node.frontmatter.description}/>
-              ))
-            : <SectionText content="There isn't any post in the blog about this tag"/>
-          }
-          <SectionTitle header={"Publications"}/>
-          {
-            data.publications.totalCount > 0 ?
-              data.publications.edges.map(({ node }) => (
-                <Publication
-                  image={node.frontmatter.image.publicURL}
-                  title={node.frontmatter.title}
-                  tags={node.frontmatter.tags}
-                  date={node.frontmatter.date}
-                  description={node.frontmatter.description}
-                  con={node.frontmatter.con}
-                  video={node.frontmatter.video}
-                  blog={node.frontmatter.blog}
-                  document={node.frontmatter.document}
-                  code={node.frontmatter.code}
-                  web={node.frontmatter.web}
-                  slides={node.frontmatter.slides}
-                  category={node.frontmatter.category}/>
-              ))
-            : <SectionText content="There isn't any publication in the web about this tag"/>
-          }
-          <Link to="/tags"><Back>← All tags</Back></Link>
-        </SectionWrapper>
-      </Wrapper>
-    </Layout>
+        <SectionTitle header={"Blog"}/>
+        {
+          data.blog.totalCount > 0 ?
+          data.blog.edges.map(({ node }) => (
+            <Post
+                image={node.frontmatter.image.publicURL}
+                link={node.fields.slug}
+                date={node.frontmatter.date}
+                title={node.frontmatter.title}
+                tags={node.frontmatter.tags}
+                description={node.frontmatter.description}/>
+            ))
+          : <SectionText content="There isn't any post in the blog about this tag"/>
+        }
+        <SectionTitle header={"Publications"}/>
+        {
+          data.publications.totalCount > 0 ?
+            data.publications.edges.map(({ node }) => (
+              <Publication
+                image={node.frontmatter.image.publicURL}
+                title={node.frontmatter.title}
+                tags={node.frontmatter.tags}
+                date={node.frontmatter.date}
+                description={node.frontmatter.description}
+                con={node.frontmatter.con}
+                video={node.frontmatter.video}
+                blog={node.frontmatter.blog}
+                document={node.frontmatter.document}
+                code={node.frontmatter.code}
+                web={node.frontmatter.web}
+                slides={node.frontmatter.slides}
+                category={node.frontmatter.category}/>
+            ))
+          : <SectionText content="There isn't any publication in the web about this tag"/>
+        }
+        <Link to="/tags"><Back>← All tags</Back></Link>
+      </SectionWrapper>
+    </Wrapper>
   )
 }
 

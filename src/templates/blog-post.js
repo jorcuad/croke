@@ -184,14 +184,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext
 
   return (
-    <Layout>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description}
-        image={post.frontmatter.image}
-        meta={post.frontmatter.date}
-      />
       <Wrapper>
+        <SEO
+          title={post.frontmatter.title}
+          description={post.frontmatter.description}
+          image={post.frontmatter.image}
+          meta={post.frontmatter.date}
+        />
         <SectionWrapper>
           <SectionTitle header = { post.frontmatter.title }/>
           <Subtitle>
@@ -229,7 +228,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </PostNav>
         </SectionWrapper>
       </Wrapper>
-    </Layout>
   )
 }
 

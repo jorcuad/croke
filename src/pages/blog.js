@@ -8,34 +8,39 @@ import Post from "../components/post/post.js";
 import Popular from "../components/popular";
 import { graphql } from "gatsby"
 
-
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-const blog = "Here you should find some interesting topics about security. I love that point when the software touch the physical world, so, you should expect finding here some interesting hardware projects (or that’s my hope). Right now, the web is under construction so let’s cross our fingers in order to see this site working safe and sound."
+import { useTranslation } from "react-i18next"
 
 const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
 
-export default ({ data }) => (
+const BlogPage = ({ data }) => {
+  const { t } = useTranslation()
+
+  return (
     <Wrapper>
       <SectionWrapper>
-        <SectionTitle header="Blog"/>
-        <SectionText content={blog}/>
+        <SectionTitle header={t("blogPage.title")}/>
+        <SectionText content={t("blogPage.blog")}/>
       </SectionWrapper>
       <SectionWrapper>
-        <SectionTitle header="Most Popular"/>
+        <SectionTitle header={t("blogPage.popularTitle")}/>
         <Popular/>
       </SectionWrapper>
       <SectionWrapper>
-        <SectionTitle header="Latest Posts"/>
+        <SectionTitle header={t("blogPage.latestTitle")}/>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <Post image={node.frontmatter.image.publicURL} link={node.fields.slug} date={node.frontmatter.date} title={node.frontmatter.title} tags={node.frontmatter.tags} description={node.frontmatter.description}/>
         ))}
       </SectionWrapper>
     </Wrapper>
-);
+  )
+}
+
+export default BlogPage
 
 export const query = graphql`
 query AllPost {
