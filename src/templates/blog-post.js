@@ -14,7 +14,6 @@ import {
 import {
   TimeIcon,
 } from '../components/icons';
-import Layout from "../components/layout/layout"
 import ShareOptions from "../components/shareoptions"
 import SEO from "../components/seo"
 

@@ -16,16 +16,14 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled.div`
-  ${tw`w-screen text-white py-8 px-10 text-5xl flex align-middle flex-col`};
+  ${tw`w-screen text-white pb-8 pt-2 sm:py-8 px-1 sm:px-10 text-5xl flex align-middle flex-col`};
 `;
 
-const AvatarWrapper = styled.div`
-  ${tw`inline-block w-24 h-24 mr-6 sm:mr-12 relative justify-center flex-column`}
-`;
-
-const AvatarImage = styled.img`
-  ${tw`block relative rounded-full h-auto w-24 border-4 border-croke-purple hover:border-croke-green`};
+const AvatarImage = styled.div`
+  ${tw`flex rounded-full h-16 sm:h-20 md:h-24 w-16 sm:w-20 md:w-24 mr-2 sm:mr-4 border-4 border-croke-purple hover:border-croke-green`};
   box-shadow: 10px 9px 29px -15px rgba(0,0,0,1);
+  background-image: url(${props => props.image});
+  background-size: cover;
 `;
 
 const Headline = styled.div`
@@ -45,15 +43,15 @@ const Croke = styled.span`
 `;
 
 const MenuButton = styled.div`
-  ${tw`flex w-12 h-12 sm:w-20 sm:h-20 text-croke-white cursor-pointer`};
+  ${tw`flex w-12 h-12 sm:w-20 sm:h-20 text-croke-white cursor-pointer sm:mt-2`};
 `;
 
 const HeaderWrapper = styled.div`
-  ${tw`flex flex-row justify-between w-full`}
+  ${tw`flex flex-row justify-between w-full items-center`}
 `;
 
 const Bio = styled.div`
-  ${tw`flex h-24`}
+  ${tw`flex h-24 items-center`}
 `;
 
 const WaveContainer = styled.div`
@@ -61,11 +59,15 @@ const WaveContainer = styled.div`
 `;
 
 const Menu = styled.div`
-  ${tw` w-full flex justify-center text-2xl text-croke-white mt-10`};
+  ${tw`w-full flex justify-center text-2xl text-croke-white mt-10`};
 
   > ul li {
     ${tw`hover:text-croke-green flex justify-center cursor-pointer`};
   }
+`;
+
+const Options = styled.div`
+  ${tw`flex flex-row items-center`};
 `;
 
 let open = false;
@@ -104,18 +106,18 @@ const Header = (props) =>  {
       <Content className="closed menu-transition">
         <HeaderWrapper>
           <Bio>
-            <AvatarWrapper>
-              <Link to="/"><AvatarImage src={Avatar} alt="Avatar"/></Link>
-            </AvatarWrapper>
+            <Link to="/"><AvatarImage image={Avatar} alt="Avatar"/></Link>
             <Headline className="text-shadow">
                 <Title>Jorge Cuadrado Saez</Title>
                 <Subtitle><Croke>{t("header.title-p1")}</Croke>{t("header.title-p2")}<Croke>{t("header.title-p3")}</Croke>){t("header.title-p4")}</Subtitle>
             </Headline>
           </Bio>
-          <LanguageMenu/>
-          <MenuButton onClick={() => toggle()}>
-            <MenuIcon/>
-          </MenuButton>
+          <Options>
+            <LanguageMenu/>
+            <MenuButton onClick={() => toggle()}>
+              <MenuIcon/>
+            </MenuButton>
+          </Options>
         </HeaderWrapper>
         <Menu className="menu-closed text-transition">
           <ul>
