@@ -13,6 +13,8 @@ import {
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
+import { useTranslation } from "react-i18next"
+
 const Content = styled.div`
   ${tw`overflow-hidden flex flex-col justify-center mt-16`};
 `;
@@ -25,18 +27,24 @@ const ShareButtons = styled.div`
   ${tw`flex w-full justify-center`};
 `;
 
-export default props => (
-  <Content>
-    <Header>Share</Header>
-    <ShareButtons>
-      <Twitter solid small message={props.message + " @coke727"} link={props.link}/>
-      <Facebook solid small link={props.link}/>
-      <Mail solid small subject={props.message} link={props.link}/>
-      <Linkedin solid small message={props.message} link={props.link}/>
-      <Reddit solid small link={props.link}/>
-      <HackerNews solid small message={props.message} link={props.link}/>
-      <Whatsapp solid small message={props.message} link={props.link}/>
-      <Telegram solid small message={props.message} link={props.link}/>
-    </ShareButtons>
-  </Content>
-)
+const Share = (props) => {
+  const { t } = useTranslation()
+
+  return (
+    <Content>
+      <Header>{t("share.header")}</Header>
+      <ShareButtons>
+        <Twitter solid small message={props.message + " @coke727"} link={props.link}/>
+        <Facebook solid small link={props.link}/>
+        <Mail solid small subject={props.message} link={props.link}/>
+        <Linkedin solid small message={props.message} link={props.link}/>
+        <Reddit solid small link={props.link}/>
+        <HackerNews solid small message={props.message} link={props.link}/>
+        <Whatsapp solid small message={props.message} link={props.link}/>
+        <Telegram solid small message={props.message} link={props.link}/>
+      </ShareButtons>
+    </Content>
+  )
+}
+
+export default Share

@@ -126,5 +126,19 @@
     "name": "Your Name",
     "message": "Thanks for you interest.",
     "button": "Send"
+  },
+  "tagsTemplate": {
+    "blog": "This is the content tagged with {{tag}}, here you can find content from the blog, projects and publications.",
+    "noblog": "There isn't any post in the blog about this tag.",
+    "nopub": "There isn't any publication in the web about this tag.",
+    "all": "← All tags",
+    "publicationsHeader" : "Publications"
+  },
+  "postTemplate": {
+    "next": "Next Post →",
+    "previous": "← Previous Post"
+  },
+  "share": {
+    "header": "Share"
   }
 }

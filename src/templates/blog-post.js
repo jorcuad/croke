@@ -20,6 +20,8 @@ import SEO from "../components/seo"
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
+import { useTranslation } from "react-i18next"
+
 const Wrapper = styled.div `
   ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
@@ -179,6 +181,7 @@ const Option = styled.li `
 `;
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
+  const { t } = useTranslation()
   const post = data.markdownRemark
   const { previous, next } = pageContext
 
@@ -211,14 +214,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               <Option>
                 {previous && (
                   <Link to={previous.fields.slug} rel="prev">
-                    ← Previous Post
+                    {t("postTemplate.previous")}
                   </Link>
                 )}
               </Option>
               <Option>
                 {next && (
                   <Link to={next.fields.slug} rel="next">
-                    Next Post→
+                    {t("postTemplate.next")}
                   </Link>
                 )}
               </Option>

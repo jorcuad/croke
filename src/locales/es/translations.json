@@ -127,5 +127,19 @@
     "name": "Tú nombre",
     "message": "¿Quieres hablarme de algún proyecto o tienes alguna duda?",
     "button": "Enviar"
+  },
+  "tagsTemplate": {
+    "blog": "Este es el contenido tageado como {{tag}}, aquí se listan todos los post del blog, proyectos y publicaciones de la web.",
+    "noblog": "No hay ningún post en el blog sobre este tag.",
+    "nopub": "No hay ninguna publicación en la web sobre este tag.",
+    "all": "← Todos los tags",
+    "publicationsHeader" : "Publicaciones"
+  },
+  "postTemplate": {
+    "next": "Post Siguiente →",
+    "previous": "← Post Anterior"
+  },
+  "share": {
+    "header": "Compartir"
   }
 }

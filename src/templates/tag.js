@@ -11,6 +11,7 @@ import {
   SectionText,
 } from '../components/section';
 import { Link, graphql } from "gatsby"
+import { useTranslation } from "react-i18next"
 
 const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
@@ -23,6 +24,7 @@ const Back = styled.div `
 const TagsTemplate = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.blog
+  const { t } = useTranslation()
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
@@ -30,7 +32,7 @@ const TagsTemplate = ({ pageContext, data }) => {
     <Wrapper>
       <SectionWrapper>
         <SectionTitle header={"Tag: " + tag}/>
-        <SectionText content={"This is the content tagged with " + tag + ", here you can find content from the blog, projects and publications."}/>
+        <SectionText content={t("tagsTemplate.blog", {tag: tag})}/>
 
         <SectionTitle header={"Blog"}/>
         {
@@ -44,9 +46,9 @@ const TagsTemplate = ({ pageContext, data }) => {
                 tags={node.frontmatter.tags}
                 description={node.frontmatter.description}/>
             ))
-          : <SectionText content="There isn't any post in the blog about this tag"/>
+          : <SectionText content={t("tagsTemplate.noblog")}/>
         }
-        <SectionTitle header={"Publications"}/>
+        <SectionTitle header={t("tagsTemplate.publicationsHeader")}/>
         {
           data.publications.totalCount > 0 ?
             data.publications.edges.map(({ node }) => (
@@ -65,9 +67,9 @@ const TagsTemplate = ({ pageContext, data }) => {
                 slides={node.frontmatter.slides}
                 category={node.frontmatter.category}/>
             ))
-          : <SectionText content="There isn't any publication in the web about this tag"/>
+          : <SectionText content={t("tagsTemplate.nopub")}/>
         }
-        <Link to="/tags"><Back>← All tags</Back></Link>
+        <Link to="/tags"><Back>{t("tagsTemplate.all")}</Back></Link>
       </SectionWrapper>
     </Wrapper>
   )

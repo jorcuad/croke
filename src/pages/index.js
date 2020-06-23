@@ -44,7 +44,7 @@ const Home = ({ data }) => {
       </SectionWrapper>
       <SectionWrapper>
         <SectionTitle header={t("index.blogHeader")} link="/blog"/>
-        <SectionText  content={t("index.blogHeader")}/>
+        <SectionText  content={t("index.blogText")}/>
         <PostWrapper>
           {data.allMarkdownRemark.edges.map(({ node }, i) => (
             <Post key={i} image={node.frontmatter.image.publicURL} link={node.fields.slug} date={node.frontmatter.date} title={node.frontmatter.title} tags={node.frontmatter.tags} description={node.frontmatter.description}/>
