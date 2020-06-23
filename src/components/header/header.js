@@ -6,7 +6,7 @@ import { MenuIcon } from '../icons';
 import tw from 'tailwind.macro';
 import './header.css'
 import Waves from "../waves/waves.js"
-import Avatar from "../../../static/avatar.jpg"
+import Avatar from "../../../static/avatar.png"
 
 import { useTranslation } from "react-i18next"
 import LanguageMenu from '../languageMenu/languagemenu.js'

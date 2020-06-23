@@ -1,4 +1,5 @@
 import React from 'react';
+import CheckCV from "../components/checkcv";
 import {
   SectionTitle,
   SectionWrapper,
@@ -17,7 +18,7 @@ const Wrapper = styled.div`
 `;
 
 const Row = styled.div`
-  ${tw`flex flex-col sm:flex-row justify-between`};
+  ${tw`flex flex-col sm:flex-row justify-between items-stretch`};
 `;
 
 const TextContainer = styled.div`
@@ -27,6 +28,8 @@ const TextContainer = styled.div`
 const Container = styled.div`
   ${tw`flex flex-grow w-full mb-3 h-12 sm:mb-0 sm:w-56 sm:h-48`}
 `;
+
+
 
 const ServicesPage = (props) => {
   const { t } = useTranslation()
@@ -61,6 +64,8 @@ const ServicesPage = (props) => {
           <Container><Sectionbutton background="services" section={t("services.printingHeader")}/></Container>
           <TextContainer><SectionText content={t("services.printing")}/></TextContainer>
         </Row>
+
+        <CheckCV/>
 
         <SectionText content={t("services.cv")}/>
         <Contact/>
