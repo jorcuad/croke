@@ -3,11 +3,11 @@
 ## Croke v2
 This is the second version of my personal web page. This web was created using GatsbyJS, TailwindCSS, Storybook and Styled Components.
 
-I started with zero knowledge about these technologies. I heard about them and I decided learning how to use them in a practical way. After many hours and research this personal blog, portfolio and personal web page is the result.
+I started with zero knowledge about these technologies. I heard about them and I decided learning how to use them in a practical way. After many hours and research this personal blog, portfolio and personal web page... this is the result.
 
-The hosting and maintenance of this web is totally free. I use Netlify to serve the statics of this page which is automatically deployed with each commit in master.
+The hosting and maintenance of this web is totally free. I use Netlify to serve the statics of this page that is automatically deployed with each commit in the master branch.
 
-This web page is a personal project that I want to use as a sandbox. I will update components and designs of the web page in order to learn about new technologies.
+This web page is a personal project that I want to use as a sandbox. I will update the components and designs of the web page in order to learn about new technologies.
 
 ### Functionalities
 
@@ -34,16 +34,16 @@ This web page is a personal project that I want to use as a sandbox. I will upda
 
 ### Roadmap
 
-[ ] Next talks section.
-[ ] Twitter TL.
-[ ] First sandbox project.
-[ ] See more animated buttons.
-[ ] Achievements.
-[ ] Pagination.
-[ ] Hover progesive animatión in area buttons.
-[ ] All sections read from json file.
-[ ] Tags in blog preview.
-[ ] Pallette colors in all the gifs and images of the web.
+- [ ] Next talks section.
+- [ ] Twitter TL.
+- [ ] First sandbox project.
+- [ ] See more animated buttons.
+- [ ] Achievements.
+- [ ] Pagination.
+- [ ] Hover progesive animatión in area buttons.
+- [ ] All sections read from json file.
+- [ ] Tags in blog preview.
+- [ ] Pallette colors in all the gifs and images of the web.
 
 ## Run
 This platform is deployed into a static web page using GatsbyJS. You can try it using the next terminal commands:
