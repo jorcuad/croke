@@ -60,38 +60,52 @@ const TagWrapper = styled.div`
 `;
 
 // title, tags, description, image
-export default props => (
-  <Post>
-    <PostImage image={props.image}/>
-    <Content>
-      {props.link ?
-        <a href={props.link}>
-          <Title>{props.title}</Title>
-        </a> : <Title>{props.title}</Title>
-      }
-      <Text>{props.description}</Text>
-      <Metadata>
-        {props.tags ?
-          <Tags>
-            <MetaIcon><TagIcon/></MetaIcon>
-            <TagWrapper>
-              {props.tags.map((tag, i)=> (
-                <Tag key={i}>
-                  <Link to={`/tags/${kebabCase(tag)}/`}>
-                    {tag+","}
-                  </Link>
-                </Tag>
-              ))}
-            </TagWrapper>
-          </Tags>
-        :
-          <Tags></Tags>
+const PostComponent = (props) => {
+  const tagNumber = props.tags.length;
+
+  return (
+    <Post>
+      <PostImage image={props.image}/>
+      <Content>
+        {props.link ?
+          <a href={props.link}>
+            <Title>{props.title}</Title>
+          </a> : <Title>{props.title}</Title>
         }
-        <Date>
-          <MetaIcon><TimeIcon/></MetaIcon>
-          <DateWrapper>{props.date}</DateWrapper>
-        </Date>
-      </Metadata>
-    </Content>
-  </Post>
-)
+        <Text>{props.description}</Text>
+        <Metadata>
+          {props.tags ?
+            <Tags>
+              <MetaIcon><TagIcon/></MetaIcon>
+              <TagWrapper>
+                {props.tags.map((tag, i)=> {
+                  return tagNumber === i + 1 ?
+                    <Tag key={i}>
+                      <Link to={`/tags/${kebabCase(tag)}/`}>
+                        {tag}
+                      </Link>
+                    </Tag>
+                  :
+                    <Tag key={i}>
+                      <Link to={`/tags/${kebabCase(tag)}/`}>
+                        {tag+","}
+                      </Link>
+                    </Tag>
+
+                })}
+              </TagWrapper>
+            </Tags>
+          :
+            <Tags></Tags>
+          }
+          <Date>
+            <MetaIcon><TimeIcon/></MetaIcon>
+            <DateWrapper>{props.date}</DateWrapper>
+          </Date>
+        </Metadata>
+      </Content>
+    </Post>
+  )
+}
+
+export default PostComponent

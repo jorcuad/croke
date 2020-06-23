@@ -98,17 +98,110 @@ const CategoryText = styled.span`
   ${tw`flex self-center text-croke-white justify-center w-full`}
 `;
 
-// title, tags, description, image
-export default props => (
-  <Publication>
-    <Row>
-      <ColLeft>
-        <PublicationImage image={props.image}/>
-        <Category>
-          <CategoryText>{props.category}</CategoryText>
-        </Category>
-        <PublicationLinksSmall>
-          <ButtonContainer>
+const PublicationComponent = (props) => {
+  const tagNumber = props.tags.length;
+
+  return (
+    <Publication>
+      <Row>
+        <ColLeft>
+          <PublicationImage image={props.image}/>
+          <Category>
+            <CategoryText>{props.category}</CategoryText>
+          </Category>
+          <PublicationLinksSmall>
+            <ButtonContainer>
+              {props.code &&
+              <a href={props.code}>
+                <Button>
+                  Code
+                </Button>
+              </a>
+              }
+              {props.slides &&
+              <a href={props.slides}>
+                <Button>
+                  Slides
+                </Button>
+              </a>
+              }
+              {props.blog &&
+              <a href={props.blog}>
+                <Button>
+                  Blog
+                </Button>
+              </a>
+              }
+              {props.video &&
+              <a href={props.video}>
+                <Button>
+                  Video
+                </Button>
+              </a>
+              }
+              {props.web &&
+              <a href={props.web}>
+                <Button>
+                  Web
+                </Button>
+              </a>
+              }
+              {props.document &&
+              <a href={props.document}>
+                <Button>
+                  Document
+                </Button>
+              </a>
+              }
+              {props.con &&
+              <a href={props.con}>
+                <Button>
+                  Conference
+                </Button>
+              </a>
+              }
+            </ButtonContainer>
+          </PublicationLinksSmall>
+        </ColLeft>
+        <ColRight>
+          <Content>
+            {props.link ?
+              <a href={props.link}>
+                <Title>{props.title}</Title>
+              </a> : <Title>{props.title}</Title>
+            }
+            <Metadata>
+              {props.tags ?
+                <Tags>
+                  <MetaIcon><TagIcon/></MetaIcon>
+                  <TagWrapper>
+                  {props.tags.map((tag, i) => {
+                    return tagNumber === i + 1 ?
+                      <Tag key={i}>
+                        <Link to={`/tags/${kebabCase(tag)}/`}>
+                          {tag}
+                        </Link>
+                      </Tag>
+                    :
+                      <Tag key={i}>
+                        <Link to={`/tags/${kebabCase(tag)}/`}>
+                          {tag+","}
+                        </Link>
+                      </Tag>
+                  })}
+                  </TagWrapper>
+                </Tags>
+              :
+                <Tags></Tags>
+              }
+              <Date>
+                <MetaIcon><TimeIcon/></MetaIcon>
+                <DateWrapper>{props.date}</DateWrapper>
+              </Date>
+            </Metadata>
+            <Text>{props.description}</Text>
+          </Content>
+          <PublicationLinks>
             {props.code &&
             <a href={props.code}>
               <Button>
@@ -123,17 +216,17 @@ export default props => (
               </Button>
             </a>
             }
-            {props.blog &&
-            <a href={props.blog}>
-              <Button>
-                Blog
-              </Button>
-            </a>
-            }
             {props.video &&
             <a href={props.video}>
               <Button>
                 Video
+              </Button>
+            </a>
+            }
+            {props.con &&
+            <a href={props.con}>
+              <Button>
+                Conference
               </Button>
             </a>
             }
@@ -151,99 +244,18 @@ export default props => (
               </Button>
             </a>
             }
-            {props.con &&
-            <a href={props.con}>
+            {props.blog &&
+            <a href={props.blog}>
               <Button>
-                Conference
+                Blog
               </Button>
             </a>
             }
-          </ButtonContainer>
-        </PublicationLinksSmall>
-      </ColLeft>
-      <ColRight>
-        <Content>
-          {props.link ?
-            <a href={props.link}>
-              <Title>{props.title}</Title>
-            </a> : <Title>{props.title}</Title>
-          }
-          <Metadata>
-            {props.tags ?
-              <Tags>
-                <MetaIcon><TagIcon/></MetaIcon>
-                <TagWrapper>
-                {props.tags.map((tag, i) => (
-                  <Tag key={i}>
-                    <Link to={`/tags/${kebabCase(tag)}/`}>
-                      {tag+","}
-                    </Link>
-                  </Tag>
-                ))}
-                </TagWrapper>
-              </Tags>
-            :
-              <Tags></Tags>
-            }
-            <Date>
-              <MetaIcon><TimeIcon/></MetaIcon>
-              <DateWrapper>{props.date}</DateWrapper>
-            </Date>
-          </Metadata>
-          <Text>{props.description}</Text>
-        </Content>
-        <PublicationLinks>
-          {props.code &&
-          <a href={props.code}>
-            <Button>
-              Code
-            </Button>
-          </a>
-          }
-          {props.slides &&
-          <a href={props.slides}>
-            <Button>
-              Slides
-            </Button>
-          </a>
-          }
-          {props.video &&
-          <a href={props.video}>
-            <Button>
-              Video
-            </Button>
-          </a>
-          }
-          {props.con &&
-          <a href={props.con}>
-            <Button>
-              Conference
-            </Button>
-          </a>
-          }
-          {props.web &&
-          <a href={props.web}>
-            <Button>
-              Web
-            </Button>
-          </a>
-          }
-          {props.document &&
-          <a href={props.document}>
-            <Button>
-              Document
-            </Button>
-          </a>
-          }
-          {props.blog &&
-          <a href={props.blog}>
-            <Button>
-              Blog
-            </Button>
-          </a>
-          }
-        </PublicationLinks>
-      </ColRight>
-    </Row>
-  </Publication>
-)
+          </PublicationLinks>
+        </ColRight>
+      </Row>
+    </Publication>
+  )
+}
+
+export default PublicationComponent
