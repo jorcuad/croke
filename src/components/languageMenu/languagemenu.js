@@ -23,9 +23,6 @@ const LangIcon = styled.div`
 const LanguageMenu = props => {
   const { t, i18n } = useTranslation();
 
-  console.log('PRECARGA DEL COMPONENTE DE LENGUAJE');
-  console.log(i18n.language);
-
   const handleInputChange = lang => {
     i18n.changeLanguage(lang);
   };
@@ -33,12 +30,12 @@ const LanguageMenu = props => {
   return (
     <Wrapper>
       <LangIcon
-        className={`${i18n.language !== 'es' ? 'disabled' : ''}`}
+        className={i18n.language === 'es' ? '' : 'disabled'}
         onClick={() => handleInputChange('es')}
         image={EspIcon}
       />
       <LangIcon
-        className={`${i18n.language !== 'en' ? 'disabled' : ''}`}
+        className={`${i18n.language === 'en' ? '' : 'disabled'}`}
         onClick={() => handleInputChange('en')}
         image={EngIcon}
       />
