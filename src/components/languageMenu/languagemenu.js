@@ -1,12 +1,12 @@
-import React, { useState } from "react"
-import { useTranslation } from "react-i18next"
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-import EspIcon from "../../../static/esp.png"
-import EngIcon from "../../../static/eng.png"
+import EspIcon from '../../../static/esp.png';
+import EngIcon from '../../../static/eng.png';
 
-const Wrapper = styled.div `
+const Wrapper = styled.div`
   ${tw`w-8 md:w-40 h-auto cursor-pointer flex flex-col md:flex-row pt-0 sm:pt-3 md:pt-0`};
 `;
 
@@ -20,22 +20,30 @@ const LangIcon = styled.div`
   }
 `;
 
-const LanguageMenu = (props) => {
-  const { t, i18n } = useTranslation()
+const LanguageMenu = props => {
+  const { t, i18n } = useTranslation();
 
-  var browserLanguage = i18n.language
+  var browserLanguage = i18n.language;
 
   const handleInputChange = lang => {
-    browserLanguage = lang
-    i18n.changeLanguage(lang)
-  }
+    browserLanguage = lang;
+    i18n.changeLanguage(lang);
+  };
 
-  return(
+  return (
     <Wrapper>
-      <LangIcon className={`${browserLanguage !== "es" ? "disabled" : ""}`} onClick={() => handleInputChange("es")} image={EspIcon}/>
-      <LangIcon className={`${browserLanguage !== "en" ? "disabled" : ""}`} onClick={() => handleInputChange("en")} image={EngIcon}/>
+      <LangIcon
+        className={`${browserLanguage === 'es' ? '' : 'disabled'}`}
+        onClick={() => handleInputChange('es')}
+        image={EspIcon}
+      />
+      <LangIcon
+        className={`${browserLanguage === 'es' ? 'disabled' : ''}`}
+        onClick={() => handleInputChange('en')}
+        image={EngIcon}
+      />
     </Wrapper>
-  )
-}
+  );
+};
 
-export default LanguageMenu
+export default LanguageMenu;
