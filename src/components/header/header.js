@@ -1,15 +1,15 @@
-import React from "react"
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { find } from 'styled-components/test-utils';
-import { Link } from "gatsby";
-import { MenuIcon } from '../icons';
+import { Link } from 'gatsby';
+import { MenuIcon, CrossIcon } from '../icons';
 import tw from 'tailwind.macro';
-import './header.css'
-import Waves from "../waves/waves.js"
-import Avatar from "../../../static/avatar.png"
+import './header.css';
+import Waves from '../waves/waves.js';
+import Avatar from '../../../static/avatar.png';
 
-import { useTranslation } from "react-i18next"
-import LanguageMenu from '../languageMenu/languagemenu.js'
+import { useTranslation } from 'react-i18next';
+import LanguageMenu from '../languageMenu/languagemenu.js';
 
 const Wrapper = styled.div`
   ${tw`flex items-center justify-center flex-col w-screen`};
@@ -21,7 +21,7 @@ const Content = styled.div`
 
 const AvatarImage = styled.div`
   ${tw`flex rounded-full h-16 sm:h-20 md:h-24 w-16 sm:w-20 md:w-24 mr-2 sm:mr-4 border-4 border-croke-purple hover:border-croke-green`};
-  box-shadow: 10px 9px 29px -15px rgba(0,0,0,1);
+  box-shadow: 10px 9px 29px -15px rgba(0, 0, 0, 1);
   background-image: url(${props => props.image});
   background-size: cover;
 `;
@@ -44,6 +44,9 @@ const Croke = styled.span`
 
 const MenuButton = styled.div`
   ${tw`flex w-12 h-12 sm:w-20 sm:h-20 text-croke-white cursor-pointer sm:mt-2`};
+  &.hidden {
+    display: none;
+  }
 `;
 
 const HeaderWrapper = styled.div`
@@ -70,72 +73,111 @@ const Options = styled.div`
   ${tw`flex flex-row items-center`};
 `;
 
-let open = false;
-const toggle = function() {
-  open = !open;
-  let content = find(document.body, Content);
-  let wave = find(document.body, WaveContainer);
-  let menu = find(document.body, Menu);
+const Header = props => {
+  const { t } = useTranslation();
+  const [menuopen, setMenuopen] = useState(false);
 
-  if(open) {
-    content.classList.remove('closed');
-    content.classList.add('open');
-    wave.classList.remove('waves-closed');
-    wave.classList.add('waves-opened');
-    menu.classList.remove('menu-closed');
-    menu.classList.add('menu-opened');
-    setTimeout(() => {  menu.classList.add('text-shadow'); }, 750);
-  } else {
-    menu.classList.remove('text-shadow');
-    setTimeout(() => {
-      content.classList.remove('open');
-      content.classList.add('closed');
-      wave.classList.remove('waves-opened');
-      wave.classList.add('waves-closed');
-      menu.classList.remove('menu-opened');
-      menu.classList.add('menu-closed');
-    }, 300);
-  }
-};
+  const toggle = function() {
+    let content = find(document.body, Content);
+    let wave = find(document.body, WaveContainer);
+    let menu = find(document.body, Menu);
 
-const Header = (props) =>  {
-  const { t } = useTranslation()
+    if (!menuopen) {
+      content.classList.remove('closed');
+      content.classList.add('open');
+      wave.classList.remove('waves-closed');
+      wave.classList.add('waves-opened');
+      menu.classList.remove('menu-closed');
+      menu.classList.add('menu-opened');
+      setTimeout(() => {
+        menu.classList.add('text-shadow');
+      }, 750);
+    } else {
+      menu.classList.remove('text-shadow');
+      setTimeout(() => {
+        content.classList.remove('open');
+        content.classList.add('closed');
+        wave.classList.remove('waves-opened');
+        wave.classList.add('waves-closed');
+        menu.classList.remove('menu-opened');
+        menu.classList.add('menu-closed');
+      }, 300);
+    }
+    setMenuopen(!menuopen);
+  };
 
   return (
     <Wrapper>
       <Content className="closed menu-transition">
         <HeaderWrapper>
           <Bio>
-            <Link to="/"><AvatarImage image={Avatar} alt="Avatar"/></Link>
+            <Link to="/">
+              <AvatarImage image={Avatar} alt="Avatar" />
+            </Link>
             <Headline className="text-shadow">
-                <Title>Jorge Cuadrado Saez</Title>
-                <Subtitle><Croke>{t("header.title-p1")}</Croke>{t("header.title-p2")}<Croke>{t("header.title-p3")}</Croke>){t("header.title-p4")}</Subtitle>
+              <Title>Jorge Cuadrado Saez</Title>
+              <Subtitle>
+                <Croke>{t('header.title-p1')}</Croke>
+                {t('header.title-p2')}
+                <Croke>{t('header.title-p3')}</Croke>){t('header.title-p4')}
+              </Subtitle>
             </Headline>
           </Bio>
           <Options>
-            <LanguageMenu/>
-            <MenuButton onClick={() => toggle()}>
-              <MenuIcon/>
+            <LanguageMenu />
+            <MenuButton className={!menuopen ? '' : 'hidden'} onClick={() => toggle()}>
+              <MenuIcon />
+            </MenuButton>
+            <MenuButton className={!menuopen ? 'hidden' : ''} onClick={() => toggle()}>
+              <CrossIcon />
             </MenuButton>
           </Options>
         </HeaderWrapper>
         <Menu className="menu-closed text-transition">
           <ul>
-            <li><Link onClick={() => toggle()} to="/">{t("header.home")}</Link></li>
-            <li><Link onClick={() => toggle()} to="/blog">{t("header.blog")}</Link></li>
-            <li><Link onClick={() => toggle()} to="/projects">{t("header.projects")}</Link></li>
-            <li><Link onClick={() => toggle()} to="/publications">{t("header.publications")}</Link></li>
-            <li><Link onClick={() => toggle()} to="/services">{t("header.services")}</Link></li>
-            <li><Link onClick={() => toggle()} to="/press">{t("header.press")}</Link></li>
-            <li><Link onClick={() => toggle()} to="/sandbox">{t("header.sandbox")}</Link></li>
+            <li>
+              <Link onClick={() => toggle()} to="/">
+                {t('header.home')}
+              </Link>
+            </li>
+            <li>
+              <Link onClick={() => toggle()} to="/blog">
+                {t('header.blog')}
+              </Link>
+            </li>
+            <li>
+              <Link onClick={() => toggle()} to="/projects">
+                {t('header.projects')}
+              </Link>
+            </li>
+            <li>
+              <Link onClick={() => toggle()} to="/publications">
+                {t('header.publications')}
+              </Link>
+            </li>
+            <li>
+              <Link onClick={() => toggle()} to="/services">
+                {t('header.services')}
+              </Link>
+            </li>
+            <li>
+              <Link onClick={() => toggle()} to="/press">
+                {t('header.press')}
+              </Link>
+            </li>
+            <li>
+              <Link onClick={() => toggle()} to="/sandbox">
+                {t('header.sandbox')}
+              </Link>
+            </li>
           </ul>
         </Menu>
       </Content>
       <WaveContainer className="waves-closed menu-transition">
-        <Waves/>
+        <Waves />
       </WaveContainer>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
