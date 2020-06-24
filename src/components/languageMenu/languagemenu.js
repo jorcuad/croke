@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -22,20 +22,31 @@ const LangIcon = styled.div`
 
 const LanguageMenu = props => {
   const { t, i18n } = useTranslation();
+  const [esp, setEsp] = useState();
 
   const handleInputChange = lang => {
     i18n.changeLanguage(lang);
   };
 
+  var browserLanguage = i18n.language;
+
+  useEffect(() => {
+    if (browserLanguage === 'es') {
+      setEsp(true);
+    } else {
+      setEsp(false);
+    }
+  }, browserLanguage);
+
   return (
     <Wrapper>
       <LangIcon
-        className={i18n.language === 'es' ? '' : 'disabled'}
+        className={esp ? '' : 'disabled'}
         onClick={() => handleInputChange('es')}
         image={EspIcon}
       />
       <LangIcon
-        className={`${i18n.language === 'en' ? '' : 'disabled'}`}
+        className={!esp ? '' : 'disabled'}
         onClick={() => handleInputChange('en')}
         image={EngIcon}
       />
