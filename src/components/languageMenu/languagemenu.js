@@ -23,6 +23,9 @@ const LangIcon = styled.div`
 const LanguageMenu = props => {
   const { t, i18n } = useTranslation();
 
+  console.log('PRECARGA DEL COMPONENTE DE LENGUAJE');
+  console.log(i18n.language);
+
   const handleInputChange = lang => {
     i18n.changeLanguage(lang);
   };

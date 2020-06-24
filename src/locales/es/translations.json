@@ -3,7 +3,7 @@
     "title-p1": "Soy ",
     "title-p2": "Jorge (AKA",
     "title-p3": " Coke",
-    "title-p4": ", un investigador en ciberseguridad de BBVA Next.",
+    "title-p4": ", investigador en ciberseguridad de BBVA Next.",
     "home": "Inicio",
     "blog": "Blog",
     "projects": "Proyectos",
@@ -53,37 +53,37 @@
   "thanks": {
     "title": "El email se ha enviado. Gracias por tu interés.",
     "description": "Muchas gracias por tu interes y apoyo, estas interacciones me animan a continuar este y otros proyectos. Intentaré contactarte lo antes posible. Mientras tanto, puedes echarle un vistazo al resto de la página web. Seguiré intentando mejorar y actualizar el contenido, estate atento.",
-    "popular":"Los post más populares"
+    "popular": "Los post más populares"
   },
   "notfound": {
     "title": "No puedo encontrar esta página :(",
     "back": "Volver Al Inicio"
   },
   "index": {
-    "blogText":"En el blog puedede encontrar contenido sobre seguridad. Me gusta especialmente tratar el punto en que el software roza con el mundo físico, es por eso que (espero) aquí puedas encontrar proyectos relacionados con hardware. Ahora mismo la web sigue bajo construcción por lo que esperemos que todo funcione como debería, crucemos los dedos.",
-    "inmail":"Puedes usar este formulario, mi email o Twitter en @Coke727 para contactarme. Sientete libre de usarlo para cualquier duda o propuesta.",
-    "projects":"Siempre estoy abierto a nuevos proyectos, estos son los últimos. Como puedes ver, los temas de los proyectos son siempre diferentes. Me encanta descubrir nuevas tecnologías y tiendo a empezar nuevos proyectos relacionados con mis intereses: Seguridad, Privacidad, Impresión 3D y Electrónica. Puedes echar un vistazo aquí para ver todos los proyectos.",
-    "home":"Siempre busco compartir mis intereses a mi propia manera y las plataformas de blog no me permitían hacerlo como quiero. Podría hacer lo mismo usando Wordpress, Google Sites o cualquier otra pero... No es suficiente, necesito libertad para crear y compartir mi conocimiento y experiencia en la forma que yo quiera para cada situación. Hoy escribo esta introducción pero mañana quizá quiera crear un código konami secreto o un podcast. Esta es mi casa digital y sigue mis normas, no esperes nada, esperalo todo.",
-    "homeHeader":"Seguridad, Electronica y Proyectos locos",
-    "projectsHeader":"Proyectos",
-    "blogHeader":"Blog",
-    "contactHeader":"¿Algún proyecto en mente?"
+    "blogText": "En el blog puedede encontrar contenido sobre seguridad. Me gusta especialmente tratar el punto en que el software roza con el mundo físico, es por eso que (espero) aquí puedas encontrar proyectos relacionados con hardware. Ahora mismo la web sigue bajo construcción por lo que esperemos que todo funcione como debería, crucemos los dedos.",
+    "inmail": "Puedes usar este formulario, mi email o Twitter en @Coke727 para contactarme. Sientete libre de usarlo para cualquier duda o propuesta.",
+    "projects": "Siempre estoy abierto a nuevos proyectos, estos son los últimos. Como puedes ver, los temas de los proyectos son siempre diferentes. Me encanta descubrir nuevas tecnologías y tiendo a empezar nuevos proyectos relacionados con mis intereses: Seguridad, Privacidad, Impresión 3D y Electrónica. Puedes echar un vistazo aquí para ver todos los proyectos.",
+    "home": "Siempre busco compartir mis intereses a mi propia manera y las plataformas de blog no me permitían hacerlo como quiero. Podría hacer lo mismo usando Wordpress, Google Sites o cualquier otra pero... No es suficiente, necesito libertad para crear y compartir mi conocimiento y experiencia en la forma que yo quiera para cada situación. Hoy escribo esta introducción pero mañana quizá quiera crear un código konami secreto o un podcast. Esta es mi casa digital y sigue mis normas, no esperes nada, esperalo todo.",
+    "homeHeader": "Seguridad, Electronica y Proyectos locos",
+    "projectsHeader": "Proyectos",
+    "blogHeader": "Blog",
+    "contactHeader": "¿Algún proyecto en mente?"
   },
   "areas": {
     "projects": "PROYECTOS",
     "blog": "BLOG",
-    "services":"SERVICIOS",
-    "press":"PRENSA",
-    "publications":"PUBLICACIONES",
-    "sandbox":"LABORATORIO"
+    "services": "SERVICIOS",
+    "press": "PRENSA",
+    "publications": "PUBLICACIONES",
+    "sandbox": "LABORATORIO"
   },
   "projectsList": {
-    "assap":"Software que protege la privacidad contra el ataque de shoulder surfing.",
-    "marimorena":"Taller práctico para aprender a usar realidad aumentada en seguridad.",
-    "vdeguerra":"Web a medida para una campaña de D&D inspirada en Warcraft.",
-    "freephone":"Aprende a crear un teléfono móvil desde cero usando una Raspberry Pi.",
-    "crokev2":"La segunda versión de mi web personal hecha con GatsbyJS. Estas en ella.",
-    "cryptex":"Guía sobre como crear y post procesar un cryptex funcional.",
+    "assap": "Software que protege la privacidad contra el ataque de shoulder surfing.",
+    "marimorena": "Taller práctico para aprender a usar realidad aumentada en seguridad.",
+    "vdeguerra": "Web a medida para una campaña de D&D inspirada en Warcraft.",
+    "freephone": "Aprende a crear un teléfono móvil desde cero usando una Raspberry Pi.",
+    "crokev2": "La segunda versión de mi web personal hecha con GatsbyJS. Estas en ella.",
+    "cryptex": "Guía sobre como crear y post procesar un cryptex funcional.",
     "linkWorkshop": "Taller de Seguridad",
     "linkServices": "Servicios Profesionales",
     "linkEducationl": "Divulgación",
@@ -101,7 +101,7 @@
     "tagsMarimorena": "Cybercamp · Seguridad · AR",
     "titleTizona": "TizonaConf: Ciberseguridad en entornos industriales",
     "descriptionTizona": "Día a día me estoy acostumbrando a asistir a CONS los fines de semana. Las que más me gustan son en las que puedo sentir el compañerismo en el ambiente y la gente quiere hablar, compartir y tomar algo.",
-    "tagsTizona":"Tizona · Privacidad · Educación · Industria",
+    "tagsTizona": "Tizona · Privacidad · Educación · Industria",
     "titleRedSegura": "¿Qué hay detrás de los mayordomos virtuales?",
     "descriptionRedSegura": "Me invitaron a participar en x1RedMásSegura. Este congreso busca concienciar sobre los peligros de internet y como prevenir los riesgos de navegar por la red.",
     "tagsRedSegura": "x1RedMásSegura · Privacidad · Educacional"
@@ -116,7 +116,7 @@
     "titleHelp": "Estableciendo canales encubiertos abusando de los comandos AT.",
     "descriptionHelp": "Muchas investigaciones empiezan a raíz de algún hobby personal, no es diferente la investigación de Jorge Cuadrado y Alfonso Muñoz. La pareja, que mostrará su investigación en la conferencia Hack in the Box de Amsterdam la próxima semana, acabo por descubrir una forma de establecer un canal encubierto sobre la red GSM abusando de los commandos AT."
   },
-  "blogPage":{
+  "blogPage": {
     "title": "Blog",
     "blog": "En el blog puedede encontrar contenido sobre seguridad. Me gusta especialmente tratar el punto en que el software roza con el mundo físico, es por eso que (espero) aquí puedas encontrar proyectos relacionados con hardware. Ahora mismo la web sigue bajo construcción por lo que esperemos que todo funcione como debería, crucemos los dedos.",
     "popularTitle": "Los Posts Más Populares",
@@ -133,7 +133,7 @@
     "noblog": "No hay ningún post en el blog sobre este tag.",
     "nopub": "No hay ninguna publicación en la web sobre este tag.",
     "all": "← Todos los tags",
-    "publicationsHeader" : "Publicaciones"
+    "publicationsHeader": "Publicaciones"
   },
   "postTemplate": {
     "next": "Post Siguiente →",
