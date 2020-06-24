@@ -1,14 +1,11 @@
-import React from "react";
+import React from 'react';
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
-import kebabCase from "lodash/kebabCase"
-import { Link } from "gatsby";
+import kebabCase from 'lodash/kebabCase';
+import { Link } from 'gatsby';
 
-import {
-  TagIcon,
-  TimeIcon,
-} from 'components/icons';
+import { TagIcon, TimeIcon } from 'components/icons';
 
 const Publication = styled.div`
   ${tw`overflow-hidden flex flex-col mb-10`}
@@ -87,7 +84,7 @@ const ButtonContainer = styled.div`
   ${tw`w-full flex flex-row flex-wrap justify-between`};
   a {
     ${tw`mt-2 flex`}
-  };
+  }
 `;
 
 const Category = styled.div`
@@ -98,164 +95,142 @@ const CategoryText = styled.span`
   ${tw`flex self-center text-croke-white justify-center w-full`}
 `;
 
-const PublicationComponent = (props) => {
-  const tagNumber = props.tags.length;
+const PublicationComponent = props => {
+  let tagNumber = 0;
+  if (props.tags) {
+    tagNumber = props.tags.length;
+  }
 
   return (
     <Publication>
       <Row>
         <ColLeft>
-          <PublicationImage image={props.image}/>
+          <PublicationImage image={props.image} />
           <Category>
             <CategoryText>{props.category}</CategoryText>
           </Category>
           <PublicationLinksSmall>
             <ButtonContainer>
-              {props.code &&
-              <a href={props.code}>
-                <Button>
-                  Code
-                </Button>
-              </a>
-              }
-              {props.slides &&
-              <a href={props.slides}>
-                <Button>
-                  Slides
-                </Button>
-              </a>
-              }
-              {props.blog &&
-              <a href={props.blog}>
-                <Button>
-                  Blog
-                </Button>
-              </a>
-              }
-              {props.video &&
-              <a href={props.video}>
-                <Button>
-                  Video
-                </Button>
-              </a>
-              }
-              {props.web &&
-              <a href={props.web}>
-                <Button>
-                  Web
-                </Button>
-              </a>
-              }
-              {props.document &&
-              <a href={props.document}>
-                <Button>
-                  Document
-                </Button>
-              </a>
-              }
-              {props.con &&
-              <a href={props.con}>
-                <Button>
-                  Conference
-                </Button>
-              </a>
-              }
+              {props.code && (
+                <a href={props.code}>
+                  <Button>Code</Button>
+                </a>
+              )}
+              {props.slides && (
+                <a href={props.slides}>
+                  <Button>Slides</Button>
+                </a>
+              )}
+              {props.blog && (
+                <a href={props.blog}>
+                  <Button>Blog</Button>
+                </a>
+              )}
+              {props.video && (
+                <a href={props.video}>
+                  <Button>Video</Button>
+                </a>
+              )}
+              {props.web && (
+                <a href={props.web}>
+                  <Button>Web</Button>
+                </a>
+              )}
+              {props.document && (
+                <a href={props.document}>
+                  <Button>Document</Button>
+                </a>
+              )}
+              {props.con && (
+                <a href={props.con}>
+                  <Button>Conference</Button>
+                </a>
+              )}
             </ButtonContainer>
           </PublicationLinksSmall>
         </ColLeft>
         <ColRight>
           <Content>
-            {props.link ?
+            {props.link ? (
               <a href={props.link}>
                 <Title>{props.title}</Title>
-              </a> : <Title>{props.title}</Title>
-            }
+              </a>
+            ) : (
+              <Title>{props.title}</Title>
+            )}
             <Metadata>
-              {props.tags ?
+              {props.tags ? (
                 <Tags>
-                  <MetaIcon><TagIcon/></MetaIcon>
+                  <MetaIcon>
+                    <TagIcon />
+                  </MetaIcon>
                   <TagWrapper>
-                  {props.tags.map((tag, i) => {
-                    return tagNumber === i + 1 ?
-                      <Tag key={i}>
-                        <Link to={`/tags/${kebabCase(tag)}/`}>
-                          {tag}
-                        </Link>
-                      </Tag>
-                    :
-                      <Tag key={i}>
-                        <Link to={`/tags/${kebabCase(tag)}/`}>
-                          {tag+","}
-                        </Link>
-                      </Tag>
-                  })}
+                    {props.tags.map((tag, i) => {
+                      return tagNumber === i + 1 ? (
+                        <Tag key={i}>
+                          <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                        </Tag>
+                      ) : (
+                        <Tag key={i}>
+                          <Link to={`/tags/${kebabCase(tag)}/`}>{tag + ','}</Link>
+                        </Tag>
+                      );
+                    })}
                   </TagWrapper>
                 </Tags>
-              :
+              ) : (
                 <Tags></Tags>
-              }
+              )}
               <Date>
-                <MetaIcon><TimeIcon/></MetaIcon>
+                <MetaIcon>
+                  <TimeIcon />
+                </MetaIcon>
                 <DateWrapper>{props.date}</DateWrapper>
               </Date>
             </Metadata>
             <Text>{props.description}</Text>
           </Content>
           <PublicationLinks>
-            {props.code &&
-            <a href={props.code}>
-              <Button>
-                Code
-              </Button>
-            </a>
-            }
-            {props.slides &&
-            <a href={props.slides}>
-              <Button>
-                Slides
-              </Button>
-            </a>
-            }
-            {props.video &&
-            <a href={props.video}>
-              <Button>
-                Video
-              </Button>
-            </a>
-            }
-            {props.con &&
-            <a href={props.con}>
-              <Button>
-                Conference
-              </Button>
-            </a>
-            }
-            {props.web &&
-            <a href={props.web}>
-              <Button>
-                Web
-              </Button>
-            </a>
-            }
-            {props.document &&
-            <a href={props.document}>
-              <Button>
-                Document
-              </Button>
-            </a>
-            }
-            {props.blog &&
-            <a href={props.blog}>
-              <Button>
-                Blog
-              </Button>
-            </a>
-            }
+            {props.code && (
+              <a href={props.code}>
+                <Button>Code</Button>
+              </a>
+            )}
+            {props.slides && (
+              <a href={props.slides}>
+                <Button>Slides</Button>
+              </a>
+            )}
+            {props.video && (
+              <a href={props.video}>
+                <Button>Video</Button>
+              </a>
+            )}
+            {props.con && (
+              <a href={props.con}>
+                <Button>Conference</Button>
+              </a>
+            )}
+            {props.web && (
+              <a href={props.web}>
+                <Button>Web</Button>
+              </a>
+            )}
+            {props.document && (
+              <a href={props.document}>
+                <Button>Document</Button>
+              </a>
+            )}
+            {props.blog && (
+              <a href={props.blog}>
+                <Button>Blog</Button>
+              </a>
+            )}
           </PublicationLinks>
         </ColRight>
       </Row>
     </Publication>
-  )
-}
+  );
+};
 
-export default PublicationComponent
+export default PublicationComponent;

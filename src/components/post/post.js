@@ -1,14 +1,11 @@
-import React from "react";
+import React from 'react';
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
-import kebabCase from "lodash/kebabCase"
-import { Link } from "gatsby";
+import kebabCase from 'lodash/kebabCase';
+import { Link } from 'gatsby';
 
-import {
-  TagIcon,
-  TimeIcon,
-} from 'components/icons';
+import { TagIcon, TimeIcon } from 'components/icons';
 
 const Post = styled.div`
   ${tw`overflow-hidden flex flex-row mb-10`}
@@ -60,52 +57,57 @@ const TagWrapper = styled.div`
 `;
 
 // title, tags, description, image
-const PostComponent = (props) => {
-  const tagNumber = props.tags.length;
+const PostComponent = props => {
+  let tagNumber = 0;
+  if (props.tags) {
+    tagNumber = props.tags.length;
+  }
 
   return (
     <Post>
-      <PostImage image={props.image}/>
+      <PostImage image={props.image} />
       <Content>
-        {props.link ?
+        {props.link ? (
           <a href={props.link}>
             <Title>{props.title}</Title>
-          </a> : <Title>{props.title}</Title>
-        }
+          </a>
+        ) : (
+          <Title>{props.title}</Title>
+        )}
         <Text>{props.description}</Text>
         <Metadata>
-          {props.tags ?
+          {props.tags ? (
             <Tags>
-              <MetaIcon><TagIcon/></MetaIcon>
+              <MetaIcon>
+                <TagIcon />
+              </MetaIcon>
               <TagWrapper>
-                {props.tags.map((tag, i)=> {
-                  return tagNumber === i + 1 ?
+                {props.tags.map((tag, i) => {
+                  return tagNumber === i + 1 ? (
                     <Tag key={i}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>
-                        {tag}
-                      </Link>
+                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                     </Tag>
-                  :
+                  ) : (
                     <Tag key={i}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>
-                        {tag+","}
-                      </Link>
+                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag + ','}</Link>
                     </Tag>
-
+                  );
                 })}
               </TagWrapper>
             </Tags>
-          :
+          ) : (
             <Tags></Tags>
-          }
+          )}
           <Date>
-            <MetaIcon><TimeIcon/></MetaIcon>
+            <MetaIcon>
+              <TimeIcon />
+            </MetaIcon>
             <DateWrapper>{props.date}</DateWrapper>
           </Date>
         </Metadata>
       </Content>
     </Post>
-  )
-}
+  );
+};
 
-export default PostComponent
+export default PostComponent;
