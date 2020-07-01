@@ -21,32 +21,33 @@ const LangIcon = styled.div`
 `;
 
 const LanguageMenu = props => {
-  const { t, i18n } = useTranslation();
-  const [esp, setEsp] = useState();
+  /*const { t, i18n } = useTranslation();
+  const [esp, setEsp] = useState();*/
 
   const handleInputChange = lang => {
-    i18n.changeLanguage(lang);
+    //i18n.changeLanguage(lang);
+    const lantm = lang;
   };
 
-  var browserLanguage = i18n.language;
+  /*var browserLanguage = i18n.language;*/
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (browserLanguage === 'es') {
       setEsp(true);
     } else {
       setEsp(false);
     }
-  }, browserLanguage);
+  }, browserLanguage);*/
 
   return (
     <Wrapper>
       <LangIcon
-        className={esp ? '' : 'disabled'}
+        //className={esp ? '' : 'disabled'}
         onClick={() => handleInputChange('es')}
         image={EspIcon}
       />
       <LangIcon
-        className={!esp ? '' : 'disabled'}
+        //className={!esp ? '' : 'disabled'}
         onClick={() => handleInputChange('en')}
         image={EngIcon}
       />

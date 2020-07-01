@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
-import ReCAPTCHA from "react-google-recaptcha";
-import { useTranslation } from "react-i18next"
+import ReCAPTCHA from 'react-google-recaptcha';
+import useTranslations from './useTranslations';
 
 const Wrapper = styled.div`
   ${tw`flex content-center w-full`}
@@ -44,29 +44,36 @@ const LineFieldsResponsive = styled.div`
   ${tw`flex flex-col sm:flex-row justify-between w-full mb-4 justify-between`}
 `;
 
-const Contact = (props) => {
-  const { t } = useTranslation()
+const Contact = props => {
+  const t = useTranslations();
 
   return (
     <Wrapper>
-      <form className="contact" name="Contact Form" method="POST" data-netlify="true" action="/thank-you">
+      <form
+        className="contact"
+        name="Contact Form"
+        method="POST"
+        data-netlify="true"
+        action="/thank-you">
         <div className="fields">
-          <input type="hidden" name="form-name" value="Contact Form"/>
+          <input type="hidden" name="form-name" value="Contact Form" />
           <LineFields>
-            <input className="mail" type="email" name="email" placeholder={t("contact.email")}/>
-            <input className="name" type="text" name="name" placeholder={t("contact.name")}/>
+            <input className="mail" type="email" name="email" placeholder={t.contact.email} />
+            <input className="name" type="text" name="name" placeholder={t.contact.name} />
           </LineFields>
-          <textarea className="message" name="message" placeholder={t("contact.message")}/>
+          <textarea className="message" name="message" placeholder={t.contact.message} />
           <LineFieldsResponsive>
             <ReCAPTCHA sitekey={process.env.GATSBY_RECAPTCHA_KEY} />
             <div>
-              <button className="send" type="submit">{t("contact.button")}</button>
+              <button className="send" type="submit">
+                {t.contact.button}
+              </button>
             </div>
           </LineFieldsResponsive>
         </div>
       </form>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

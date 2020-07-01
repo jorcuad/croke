@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-import Waves from "./wavesFooter/wavesFooter.js"
-import Rrss from "./rrss.js"
+import Waves from './wavesFooter/wavesFooter.js';
+import Rrss from './rrss.js';
 
-import { useTranslation } from "react-i18next"
+import useTranslations from './useTranslations';
 
 const Wrapper = styled.div`
   ${tw`flex items-end justify-center flex-col w-screen text-croke-white self-end`}
@@ -41,40 +41,49 @@ const LicenseText = styled.div`
   ${tw`flex text-xs mt-6 text-justify`}
 `;
 
-const Footer = (props) => {
-  const { t } = useTranslation()
+const Footer = props => {
+  const t = useTranslations();
 
   return (
     <Wrapper>
       <Content>
         <Social>
-          <Title>{t("footer.title")}</Title>
+          <Title>{t.footer.title}</Title>
           <SocialReferences>
             <ReferenceColumn>
-              <Rrss icon="mail" link="mailto:jorge.cuadrado.saez@gmail.com" rrss="jorge.cuadrado.saez@gmail.com"/>
-              <Rrss icon="twitter" link="https://twitter.com/Coke727" rrss="@coke727"/>
+              <Rrss
+                icon="mail"
+                link="mailto:jorge.cuadrado.saez@gmail.com"
+                rrss="jorge.cuadrado.saez@gmail.com"
+              />
+              <Rrss icon="twitter" link="https://twitter.com/Coke727" rrss="@coke727" />
             </ReferenceColumn>
             <ReferenceColumn>
-              <Rrss icon="linkedin" link="https://www.linkedin.com/in/jorgecuadradosaez/" rrss="in/jorgecuadradosaez/"/>
-              <Rrss icon="github" link="https://github.com/jorcuad" rrss="@jorcuad"/>
+              <Rrss
+                icon="linkedin"
+                link="https://www.linkedin.com/in/jorgecuadradosaez/"
+                rrss="in/jorgecuadradosaez/"
+              />
+              <Rrss icon="github" link="https://github.com/jorcuad" rrss="@jorcuad" />
             </ReferenceColumn>
           </SocialReferences>
         </Social>
         <License>
-          <Title>{t("footer.licenseHeader")}</Title>
+          <Title>{t.footer.licenseHeader}</Title>
           <LicenseIcon>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-              <img alt="Licencia de Creative Commons" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+              <img
+                alt="Licencia de Creative Commons"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+              />
             </a>
           </LicenseIcon>
-          <LicenseText>
-            {t("footer.licenseText")}
-          </LicenseText>
+          <LicenseText>{t.footer.licenseText}</LicenseText>
         </License>
       </Content>
-      <Waves/>
+      <Waves />
     </Wrapper>
-    )
-}
+  );
+};
 
-export default Footer
+export default Footer;

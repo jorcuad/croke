@@ -1,9 +1,10 @@
-import React from "react";
-import "./layout.css"
-import Header from "../header/header";
-import Footer from "../footer";
+import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import './layout.css';
+import Header from '../header/header';
+import Footer from '../footer';
 
-import { withTrans } from '../../i18n/withTrans'
+import withI18next from '../../i18n/withI18next';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
@@ -15,16 +16,20 @@ const Container = styled.div`
   ${tw`flex flex-col justify-between h-screen`};
 `;
 
-const Layout = ({ children, t, i18n  }) => {
+const Layout = ({ children, location, pageContext: { locale } }) => {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage(locale);
+  }, [location, i18n, locale]);
+
   return (
     <Container>
-      <Header/>
-      <Content>
-        {children}
-      </Content>
-      <Footer/>
+      <Header />
+      <Content>{children}</Content>
+      <Footer />
     </Container>
-  )
-}
+  );
+};
 
-export default withTrans(Layout)
+export default withI18next()(Layout);

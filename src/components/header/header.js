@@ -8,7 +8,7 @@ import './header.css';
 import Waves from '../waves/waves.js';
 import Avatar from '../../../static/avatar.png';
 
-import { useTranslation } from 'react-i18next';
+import useTranslations from '../useTranslations';
 import LanguageMenu from '../languageMenu/languagemenu.js';
 
 const Wrapper = styled.div`
@@ -74,7 +74,7 @@ const Options = styled.div`
 `;
 
 const Header = props => {
-  const { t } = useTranslation();
+  const t = useTranslations();
   const [menuopen, setMenuopen] = useState(false);
 
   const toggle = function() {
@@ -117,9 +117,9 @@ const Header = props => {
             <Headline className="text-shadow">
               <Title>Jorge Cuadrado Saez</Title>
               <Subtitle>
-                <Croke>{t('header.title-p1')}</Croke>
-                {t('header.title-p2')}
-                <Croke>{t('header.title-p3')}</Croke>){t('header.title-p4')}
+                <Croke>{t.header.titlep1}</Croke>
+                {t.header.titlep2}
+                <Croke>{t.header.titlep3}</Croke>){t.header.titlep4}
               </Subtitle>
             </Headline>
           </Bio>
@@ -137,37 +137,37 @@ const Header = props => {
           <ul>
             <li>
               <Link onClick={() => toggle()} to="/">
-                {t('header.home')}
+                {t.header.home}
               </Link>
             </li>
             <li>
               <Link onClick={() => toggle()} to="/blog">
-                {t('header.blog')}
+                {t.header.blog}
               </Link>
             </li>
             <li>
               <Link onClick={() => toggle()} to="/projects">
-                {t('header.projects')}
+                {t.header.projects}
               </Link>
             </li>
             <li>
               <Link onClick={() => toggle()} to="/publications">
-                {t('header.publications')}
+                {t.header.publications}
               </Link>
             </li>
             <li>
               <Link onClick={() => toggle()} to="/services">
-                {t('header.services')}
+                {t.header.services}
               </Link>
             </li>
             <li>
               <Link onClick={() => toggle()} to="/press">
-                {t('header.press')}
+                {t.header.press}
               </Link>
             </li>
             <li>
               <Link onClick={() => toggle()} to="/sandbox">
-                {t('header.sandbox')}
+                {t.header.sandbox}
               </Link>
             </li>
           </ul>
