@@ -25,7 +25,7 @@ const Layout = ({ children, location, pageContext: { locale } }) => {
 
   return (
     <Container>
-      <Header />
+      <Header slug={location.pathname} locale={locale} />
       <Content>{children}</Content>
       <Footer />
     </Container>

@@ -24,7 +24,7 @@ const Popular = props => {
 
   return (
     <Content>
-      <Link to="/blog/cybercamp-2019">
+      <Link to={props.locale === 'es' ? '/es/blog/cybercamp-2019' : '/blog/cybercamp-2019'}>
         <Post
           date="02/02/2020"
           image={Marimorena}
@@ -33,7 +33,7 @@ const Popular = props => {
           description={t.popular.descriptionMarimorena}
         />
       </Link>
-      <Link to="/blog/tizonaconf-2019">
+      <Link to={props.locale === 'es' ? '/es/blog/tizonaconf-2019' : '/blog/tizonaconf-2019'}>
         <Post
           date="02/02/2020"
           image={Tizona}
@@ -42,7 +42,8 @@ const Popular = props => {
           description={t.popular.descriptionTizona}
         />
       </Link>
-      <Link to="/blog/x1redmassegura-2019">
+      <Link
+        to={props.locale === 'es' ? '/es/blog/x1redmassegura-2019' : '/blog/x1redmassegura-2019'}>
         <Post
           date="02/02/2020"
           image={X1red}

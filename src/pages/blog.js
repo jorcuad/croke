@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data, pageContext }) => {
   const t = useTranslations();
 
   return (
@@ -24,7 +24,7 @@ const BlogPage = ({ data }) => {
       </SectionWrapper>
       <SectionWrapper>
         <SectionTitle header={t.blogPage.popularTitle} />
-        <Popular />
+        <Popular locale={pageContext.locale} />
       </SectionWrapper>
       <SectionWrapper>
         <SectionTitle header={t.blogPage.latestTitle} />

@@ -175,10 +175,6 @@ const BlogPostTemplate = ({ data: { mdx }, pageContext, location }) => {
   const post = mdx;
   const { previous, next } = pageContext;
 
-  console.log(previous);
-  console.log(next);
-  console.log(mdx);
-
   return (
     <Wrapper>
       <SEO
@@ -190,7 +186,7 @@ const BlogPostTemplate = ({ data: { mdx }, pageContext, location }) => {
       <SectionWrapper>
         <SectionTitle header={post.frontmatter.title} />
         <Subtitle>
-          <Link to="/blog">
+          <Link to={pageContext.locale === 'es' ? '/es/blog' : '/blog'}>
             <Back>← Blog</Back>
           </Link>
           <Date>

@@ -111,7 +111,7 @@ const Header = props => {
       <Content className="closed menu-transition">
         <HeaderWrapper>
           <Bio>
-            <Link to="/">
+            <Link to={props.locale === 'es' ? '/es' : '/'}>
               <AvatarImage image={Avatar} alt="Avatar" />
             </Link>
             <Headline className="text-shadow">
@@ -124,7 +124,7 @@ const Header = props => {
             </Headline>
           </Bio>
           <Options>
-            <LanguageMenu />
+            <LanguageMenu slug={props.slug} />
             <MenuButton className={!menuopen ? '' : 'hidden'} onClick={() => toggle()}>
               <MenuIcon />
             </MenuButton>
@@ -136,37 +136,45 @@ const Header = props => {
         <Menu className="menu-closed text-transition">
           <ul>
             <li>
-              <Link onClick={() => toggle()} to="/">
+              <Link onClick={() => toggle()} to={props.locale === 'es' ? '/es' : '/'}>
                 {t.header.home}
               </Link>
             </li>
             <li>
-              <Link onClick={() => toggle()} to="/blog">
+              <Link onClick={() => toggle()} to={props.locale === 'es' ? '/es/blog' : '/blog'}>
                 {t.header.blog}
               </Link>
             </li>
             <li>
-              <Link onClick={() => toggle()} to="/projects">
+              <Link
+                onClick={() => toggle()}
+                to={props.locale === 'es' ? '/es/projects' : '/projects'}>
                 {t.header.projects}
               </Link>
             </li>
             <li>
-              <Link onClick={() => toggle()} to="/publications">
+              <Link
+                onClick={() => toggle()}
+                to={props.locale === 'es' ? '/es/publications' : '/publications'}>
                 {t.header.publications}
               </Link>
             </li>
             <li>
-              <Link onClick={() => toggle()} to="/services">
+              <Link
+                onClick={() => toggle()}
+                to={props.locale === 'es' ? '/es/services' : '/services'}>
                 {t.header.services}
               </Link>
             </li>
             <li>
-              <Link onClick={() => toggle()} to="/press">
+              <Link onClick={() => toggle()} to={props.locale === 'es' ? '/es/press' : '/press'}>
                 {t.header.press}
               </Link>
             </li>
             <li>
-              <Link onClick={() => toggle()} to="/sandbox">
+              <Link
+                onClick={() => toggle()}
+                to={props.locale === 'es' ? '/es/sandbox' : '/sandbox'}>
                 {t.header.sandbox}
               </Link>
             </li>
