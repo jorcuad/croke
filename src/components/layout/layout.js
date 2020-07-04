@@ -4,7 +4,7 @@ import './layout.css';
 import Header from '../header/header';
 import Footer from '../footer';
 
-import withI18next from '../../i18n/withI18next';
+import withI18next from '../../utils/withI18next';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 

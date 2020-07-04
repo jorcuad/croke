@@ -2,7 +2,7 @@ const path = require(`path`);
 const locales = require(`./config/i18n`);
 const { localizedSlug, findKey, removeTrailingSlash } = require(`./src/utils/gatsby-node-helpers`);
 
-const resources = require('./src/i18n/resources.json');
+const resources = require('./src/utils/resources.json');
 
 exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   // Hack due to Tailwind ^1.1.0 using `reduce-css-calc` which assumes node
@@ -15,23 +15,6 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
 
 const _ = require('lodash');
 const { createFilePath } = require(`gatsby-source-filesystem`);
-
-/*
-  // Extract tag data from query
-  const tags = result.data.tagsGroup.group
-
-  const tagTemplate = path.resolve(`./src/templates/tag.js`)
-  // Make tag pages
-  tags.forEach(tag => {
-    createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
-      component: tagTemplate,
-      context: {
-        tag: tag.fieldValue,
-      },
-    })
-  })
-}*/
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
