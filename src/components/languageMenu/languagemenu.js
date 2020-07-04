@@ -25,8 +25,8 @@ const LanguageMenu = props => {
   const { i18n } = useTranslation();
   const [esp, setEsp] = useState();
 
-  var i18nPath = props.slug.startsWith('/es/')
-    ? props.slug.replace('/es/', '/')
+  var i18nPath = props.slug.startsWith('/es')
+    ? props.slug.replace('/es', '')
     : props.slug.replace('/', '/es/');
   const handleInputChange = lang => {
     i18n.changeLanguage(lang);
