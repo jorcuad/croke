@@ -128,7 +128,8 @@
     "button": "Send"
   },
   "tagsTemplate": {
-    "blog": "This is the content tagged with {{tag}}, here you can find content from the blog, projects and publications.",
+    "blog1": "This is the content tagged with ",
+    "blog2": ", here you can find content from the blog, projects and publications.",
     "noblog": "There isn't any post in the blog about this tag.",
     "nopub": "There isn't any publication in the web about this tag.",
     "all": "← All tags",

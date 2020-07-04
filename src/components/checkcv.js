@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import { DocIcon } from './icons';
 
-const linkVar = "https://drive.google.com/drive/folders/1WJcAWAKFWo8KV9upLFVo8PUCjrcfglGc?usp=sharing"
+const linkVar =
+  'https://drive.google.com/drive/folders/1WJcAWAKFWo8KV9upLFVo8PUCjrcfglGc?usp=sharing';
 
 const IconContainer = styled.div`
   ${tw`flex h-20 w-20 text-croke-purple`}
@@ -28,10 +29,12 @@ const Cv = styled.div`
 export default props => (
   <Cv>
     <IconContainer>
-      <DocIcon/>
+      <DocIcon />
     </IconContainer>
     <CvText>
-      <a href={linkVar} target="_blank">Check here my curriculum.</a>
+      <a href={linkVar} target="_blank" rel="noopener noreferrer">
+        Check here my curriculum.
+      </a>
     </CvText>
   </Cv>
 );

@@ -129,7 +129,8 @@
     "button": "Enviar"
   },
   "tagsTemplate": {
-    "blog": "Este es el contenido tageado como {{tag}}, aquí se listan todos los post del blog, proyectos y publicaciones de la web.",
+    "blog1": "Este es el contenido tageado como ",
+    "blog2": ", aquí se listan todos los post del blog, proyectos y publicaciones de la web.",
     "noblog": "No hay ningún post en el blog sobre este tag.",
     "nopub": "No hay ninguna publicación en la web sobre este tag.",
     "all": "← Todos los tags",

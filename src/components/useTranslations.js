@@ -163,7 +163,8 @@ const query = graphql`
               header
             }
             tagsTemplate {
-              blog
+              blog1
+              blog2
               noblog
               nopub
               all

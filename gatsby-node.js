@@ -16,65 +16,7 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
 const _ = require('lodash');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-/*exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const result = await graphql(
-    `
-    {
-      allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {draft: {eq: false}, type: {ne: "publication"}}}) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              description
-              banner
-              categories
-              tags
-              draft
-              image {
-                publicURL
-              }
-              date(formatString: "MMMM DD, YYYY")
-            }
-          }
-        }
-      }
-      tagsGroup: allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___tags) {
-          fieldValue
-        }
-      }
-      }
-    `
-  )
-
-  if (result.errors) {
-    throw result.errors
-  }
-
-  // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges
-
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
-
-    createPage({
-      path: post.node.fields.slug,
-      component: blogPost,
-      context: {
-        slug: post.node.fields.slug,
-        previous,
-        next,
-      },
-    })
-  })
+/*
   // Extract tag data from query
   const tags = result.data.tagsGroup.group
 
@@ -121,19 +63,6 @@ exports.onCreatePage = ({ page, actions }) => {
     });
   });
 };
-
-/*exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value: `/blog${value}`,
-    })
-  }
-}*/
 
 // As you don't want to manually add the correct language to the frontmatter of each file
 // a new node is created automatically with the filename
@@ -245,9 +174,10 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      tagsGroup: allMdx(limit: 2000) {
+      tagsGroup: allMdx(limit: 2000, filter: { fields: { locale: { eq: "en" } } }) {
         group(field: frontmatter___tags) {
           fieldValue
+          totalCount
         }
       }
     }
@@ -331,5 +261,34 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       });
     }
+  });
+
+  // Extract tag data from query
+  const tags = result.data.tagsGroup.group;
+
+  const tagTemplate = path.resolve(`./src/templates/tag.js`);
+  // Make tag pages
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: tagTemplate,
+      context: {
+        locale: 'en',
+        tag: tag.fieldValue,
+        dateFormat: locales['en'].dateFormat,
+      },
+    });
+  });
+
+  tags.forEach(tag => {
+    createPage({
+      path: `/es/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: tagTemplate,
+      context: {
+        locale: 'es',
+        tag: tag.fieldValue,
+        dateFormat: locales['es'].dateFormat,
+      },
+    });
   });
 };

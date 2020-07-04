@@ -30,7 +30,6 @@ const LanguageMenu = props => {
     : props.slug.replace('/', '/es/');
   const handleInputChange = lang => {
     i18n.changeLanguage(lang);
-    const lantm = lang;
   };
 
   var browserLanguage = i18n.language;

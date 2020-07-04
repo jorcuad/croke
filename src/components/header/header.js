@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { find } from 'styled-components/test-utils';
 import { Link } from 'gatsby';
