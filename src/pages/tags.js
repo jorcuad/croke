@@ -18,11 +18,6 @@ const TagTemplate = ({ pageContext, data }) => {
   const groupPublications = data.publications.group;
   var group = data.blog.group;
 
-  console.log('------ BEF ------');
-  console.log(groupPublications);
-  console.log(group);
-  console.log('------ BEF ------');
-
   groupPublications.forEach((pub, i) => {
     var exist = false;
     group.forEach((blog, i) => {
@@ -42,11 +37,6 @@ const TagTemplate = ({ pageContext, data }) => {
       item['totalCount2'] = 0;
     }
   });
-
-  console.log('------ AFT ------');
-  console.log(groupPublications);
-  console.log(group);
-  console.log('------ AFT ------');
 
   const title = data.site.siteMetadata.title;
   return (
