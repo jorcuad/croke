@@ -2,7 +2,7 @@ const path = require(`path`);
 const locales = require(`./config/i18n`);
 const { localizedSlug, findKey, removeTrailingSlash } = require(`./src/utils/gatsby-node-helpers`);
 
-const resources = require('./src/utils/resources.json');
+const resources = require('./src/i18n/resources.json');
 
 exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   // Hack due to Tailwind ^1.1.0 using `reduce-css-calc` which assumes node
