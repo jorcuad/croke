@@ -36,6 +36,7 @@ const TagsTemplate = ({ pageContext, data }) => {
               title={node.frontmatter.title}
               tags={node.frontmatter.tags}
               description={node.frontmatter.description}
+              locale={pageContext.locale}
             />
           ))
         ) : (
@@ -58,6 +59,7 @@ const TagsTemplate = ({ pageContext, data }) => {
               web={node.frontmatter.web}
               slides={node.frontmatter.slides}
               category={node.frontmatter.category}
+              locale={pageContext.locale}
             />
           ))
         ) : (

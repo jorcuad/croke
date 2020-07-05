@@ -85,11 +85,25 @@ const PostComponent = props => {
                 {props.tags.map((tag, i) => {
                   return tagNumber === i + 1 ? (
                     <Tag key={i}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      <Link
+                        to={
+                          props.locale === 'es'
+                            ? `/es/tags/${kebabCase(tag)}/`
+                            : `/tags/${kebabCase(tag)}/`
+                        }>
+                        {tag}
+                      </Link>
                     </Tag>
                   ) : (
                     <Tag key={i}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag + ','}</Link>
+                      <Link
+                        to={
+                          props.locale === 'es'
+                            ? `/es/tags/${kebabCase(tag)}/`
+                            : `/tags/${kebabCase(tag)}/`
+                        }>
+                        {tag + ','}
+                      </Link>
                     </Tag>
                   );
                 })}

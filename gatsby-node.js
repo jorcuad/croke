@@ -157,7 +157,13 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      tagsGroup: allMdx(limit: 2000, filter: { fields: { locale: { eq: "en" } } }) {
+      tagsGroupEN: allMdx(limit: 2000, filter: { fields: { locale: { eq: "en" } } }) {
+        group(field: frontmatter___tags) {
+          fieldValue
+          totalCount
+        }
+      }
+      tagsGroupES: allMdx(limit: 2000, filter: { fields: { locale: { eq: "es" } } }) {
         group(field: frontmatter___tags) {
           fieldValue
           totalCount
@@ -247,11 +253,12 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // Extract tag data from query
-  const tags = result.data.tagsGroup.group;
+  const tagsEN = result.data.tagsGroupEN.group;
+  const tagsES = result.data.tagsGroupES.group;
 
   const tagTemplate = path.resolve(`./src/templates/tag.js`);
   // Make tag pages
-  tags.forEach(tag => {
+  tagsEN.forEach(tag => {
     createPage({
       path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,
@@ -263,7 +270,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  tags.forEach(tag => {
+  tagsES.forEach(tag => {
     createPage({
       path: `/es/tags/${_.kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,

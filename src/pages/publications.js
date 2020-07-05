@@ -10,7 +10,7 @@ import useTranslations from '../components/useTranslations';
 const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
-const PublicationsPage = ({ data }) => {
+const PublicationsPage = ({ data, pageContext }) => {
   const t = useTranslations();
 
   return (
@@ -35,6 +35,7 @@ const PublicationsPage = ({ data }) => {
               web={pub.frontmatter.web}
               slides={pub.frontmatter.slides}
               category={pub.frontmatter.category}
+              locale={pageContext.locale}
             />
           );
         })}

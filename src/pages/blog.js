@@ -37,6 +37,7 @@ const BlogPage = ({ data, pageContext }) => {
             title={node.frontmatter.title}
             tags={node.frontmatter.tags}
             description={node.frontmatter.description}
+            locale={pageContext.locale}
           />
         ))}
       </SectionWrapper>
