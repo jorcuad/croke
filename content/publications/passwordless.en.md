@@ -7,5 +7,6 @@ image: './images/passless.png'
 web: 'https://www.bbvanexttechnologies.com/passwordless-el-fin-de-las-contrasenas/'
 category: 'BBVA NEXT'
 type: 'publication'
+blog: 'https://www.croke.es/blog/passwordless'
 lang: 'en'
 ---
