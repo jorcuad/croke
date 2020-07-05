@@ -1,0 +1,148 @@
+---
+banner: 'banners/placeholder.png'
+categories: ['BBVA Next']
+date: '2020-05-20T12:00:00+01:00'
+description: 'Los servicios digitales nos han obligado a vivir rodeados de credenciales. Su mala gestión por parte de usuarios o proveedores representa un peligro para nuestra privacidad y puede suponer un gran costo el tener que almacenarlos. Continuamos profundizando sobre una nueva tecnología enfocada en resolver esto: Self Sovereign Identity.'
+tags: ['BBVA Next', 'security', 'identity', 'ssid']
+draft: false
+title: 'Self Sovereign Identity Identidad centralizada bajo el control de usuario'
+image: './images/post-image.jpg'
+type: 'blog'
+---
+
+**Este post originalmente se publicó en la web de BBVA Next Technologies. No dudes en ver el [original](https://www.bbvanexttechnologies.com/self-sovereign-identity-identidad-centralizada-bajo-el-control-de-usuario/).**
+
+![JASYP cover](/images/portada.jpg)
+
+**<center>Los servicios digitales nos han obligado a vivir rodeados de credenciales. Su mala gestión por parte de usuarios o proveedores representa un peligro para nuestra privacidad y puede suponer un gran costo el tener que almacenarlos. [Continuamos](https://www.bbvanexttechnologies.com/self-sovereign-identity-identidad-ciudadana-y-privacidad-en-un-mundo-sin-fronteras/) profundizando sobre una nueva tecnología enfocada en resolver esto: Self Sovereign Identity.</center>**
+
+Self Sovereign Identity (SSID) es un sistema de identificación que ha surgido recientemente y que, conceptualmente, cambia significativamente respecto a modelos más tradicionales de identificación con los que interactuamos en nuestro día a día, siendo el más clásico el de introducir nuestro usuario y contraseña.
+
+Los sistemas de identificación son una respuesta a uno de los grandes problemas que existen en el mundo del comercio y de la venta de servicios de forma electrónica, la de poder diferenciar entre dos usuarios distintos y saber que un usuario es siempre la misma persona por detrás.
+
+La autenticación es el proceso mediante el cual se comprueba la identidad de una persona física tras un perfil digital. Actualmente, hay muchos sistemas de autenticación usados por las diferentes arquitecturas de identidad. Estos procesos podemos clasificarlos en tres grandes familias según cual es la forma en que consigue verificar la identidad del usuario:
+
+- Sistemas basados en lo que solo el usuario **sabe**.
+- Sistemas basados en algo que solo el usuario **tiene**.
+- Sistemas basados en una **característica única** del usuario.
+
+En base a estas clasificaciones podemos ir agrupando sistemas de identificación como la [biometría](https://www.incibe.es/sites/default/files/contenidos/guias/doc/guia_tecnologias_biometricas_aplicadas_ciberseguridad_metad.pdf), la [firma manuscrita](http://webs.ucm.es/info/contratos/portada.php?id=266&modo=definicion&ok=1), [tarjetas de identidad](https://es.wikipedia.org/wiki/Documento_de_identidad), la [firma electrónica](https://www.incibe.es/protege-tu-empresa/blog/funciona-firma-electronica-y-usarla-asociaciones) o incluso el controvertido método de identificación mediante ADN.
+
+En el caso de Self Sovereign Identity nos encontramos con que emplea un sistema de autenticación que se basa en **algo que sólo el usuario puede tener**. En este sistema, el usuario genera mediante funciones criptográficas una credencial digital que podría ser comparada con una tarjeta de identidad, algo que guardamos nosotros y que al enseñarlo (pero no darlo) podemos demostrar quienes somos junto con otra serie de datos relevantes.
+
+## ¿Qué es Self Sovereign Identity?
+
+Entrando más al detalle, Self-Sovereign Identity es un **esquema de identificación digital** en que el usuario adquiere la responsabilidad de gestionar cómo y en qué cantidad se usan sus datos personales. Para ello, permite crear **“tarjetas de identidad” digitales** que pueden ser **generales** para cualquier servicio o **específicas** para cada caso. A modo de ejemplo, se podría crear una tarjeta de identidad con todos nuestros datos, una tarjeta de empleado en la que simplemente figure nuestro número de empleado y cargo pero no información innecesaria en ese contexto como nuestra religión y orientación sexual o la tarjeta de la biblioteca en la que sólo figura nuestro nombre y edad.
+
+Este ejemplo, quizá sobresimplificado, nos da una idea sobre cómo es el uso conceptual de este mecanismo. Para identificarnos, bastará con mandar al servicio nuestra “tarjeta” digital pero el servicio no se la quedará, no almacenará los datos, validará que la “tarjeta” no es falsa y asumirá que la información de la credencial es correcta. Más allá de los ejemplos dados, estas credenciales son digitales, por lo que también **podrían valer para modelar la identidad de un bien inmueble o de una licencia de software.**
+
+## Actores y componentes
+
+La forma más sencilla de entender el funcionamiento de esta tecnología es desglosar sus componentes y los actores que los usan junto con sus interrelaciones. Por un lado tenemos tres actores que intervienen en el proceso de identificación:
+
+- **Usuario:** ordena la creación de las credenciales. Las almacena solamente él en local. Tiene el poder de revocar el acceso a estas credenciales.
+- **Proveedor de servicios:** provee un servicio digital. Necesita identificar a sus usuarios. No necesita almacenar los datos del usuario (aunque podría hacerlo).
+- **Proveedor de credenciales:** crea las credenciales con los datos que le provee el usuario. No almacena los datos del usuario (aunque tiene acceso a ellos en el momento de creación de la credencial)
+
+![Actores del sistema](/images/actors.png)
+
+<div class="caption">
+  Actores que intervienen en SSID{' '}
+  <a href="https://sovrin.org/wp-content/uploads/Sovrin-Protocol-and-Token-White-Paper.pdf">
+    Fuente
+  </a>
+  .
+</div>
+
+Respecto a los componentes del sistema:
+
+- **Wallet**: sistema de almacenamiento seguro de credenciales. Puede o no ser local pero el usuario debe tener control de las credenciales que almacena.
+- **Decentralized Identity (DID)**: par de claves pública/privada que se usan para firmar las credenciales por parte del usuario y del proveedor de credenciales.
+- **Credencial**: certificado digital que contiene la información del usuario o el objeto que se quiere identificar.
+- **Blockchain**: almacenamiento seguro y público de las DID.
+- **SDK/API de Autenticación**: librería o API a la que conectar para proveer y verificar la credencial.
+
+## Funcionamiento
+
+En la mayoría de casos de uso que se plantea _blockchain_ en la arquitectura de la solución suele tenerse el objetivo de intentar eliminar terceros de confianza de la relación entre un usuario y un servicio. En Self Sovereign Identity, encontramos que esto no es así. En la arquitectura encontramos un proveedor de credenciales al que le corresponde firmar los datos provistos por el usuario creando un certificado. Este, a su vez, será firmado por el usuario, atestiguando que el certificado generado por el proveedor de identidad no contiene información faltante o alterada.
+
+![Esquema de funcionamiento](/images/funcionamiento.png)
+
+<div class="caption">
+  Esquema de funcionamiento de un sistema SSID.{' '}
+  <a href="https://www.idaptive.com/blog/self-sovereign-identity-distant-dream-immediate-possibility/">
+    Fuente
+  </a>
+  .
+</div>
+
+Las firmas tanto por parte del usuario como del proveedor de identidad son realizadas usando los DID, que son claves asimétricas tradicionales. La clave pública de ambos se almacena de forma pública en la _blockchain_. De esta forma, más adelante el proveedor de servicios que quiera identificar al usuario solo tendrá que verificar que las firmas son correctas y que, por lo tanto, la credencial no ha sido alterada y contiene la misma información que aportó el usuario al proveedor de identidad.
+
+Aquí hay una consideración a tener en cuenta, **la información enviada por el usuario no tiene por qué ser veraz**. El proveedor de identidad asegura que la información de la credencial ha sido provista por ese usuario pero no que el usuario haya provisto información cierta. Si el proveedor de identidad contrasta la veracidad de los datos contra la persona física es una decisión de negocio y puede que esto sea requerido en credenciales que identifiquen al usuario en procesos oficiales o en los que sea crítico contrastar la identidad real del usuario, pero no para otros procesos más mundanos como registrarse en un foro o red social con una identidad anónima o de alias.
+
+## Riesgos de seguridad
+
+Uno de los principales beneficios de Self Sovereign respecto a la seguridad es que la información personal de todos los usuarios de un servicio no se almacena en un sólo punto. **El usuario es quien tiene la responsabilidad de almacenar sus propios datos y le da el poder de decidir cómo se comparten**. Un atacante lo tendrá más difícil ya que para obtener los datos personales no servirá solo con atacar al proveedor del servicio sino que tendrá que atacar a cada cliente individualmente. Aún así, esto no es una barrera insuperable, el atacante puede seguir atacando la wallet del usuario, que de ser vulnerable, permitirá al atacante recabar las credenciales de todos los usuarios que usen el mismo software de wallet. Es por eso que **la wallet se convierte en un nuevo vector de ataque respecto a seguridad**.
+
+![Persona con máscara de Guy Fawkes](/images/guyfaukes.jpg)
+
+<div class="caption">
+  Riesgos de seguridad. Caption: Persona con máscara de Guy Fawkes.{' '}
+  <a href="https://unsplash.com/photos/EsBufnuK4NE">Fuente</a>.
+</div>
+
+Más allá de su almacenamiento, las credenciales almacenan información del usuario que tanto el proveedor de identidad como el proveedor de servicios serán capaces de ver en algún momento. En este modelo de identificación ninguno de estos dos actores necesita almacenar la información. En el caso del proveedor de servicios cuando el usuario accede al servicio le mandará siempre la credencial. Este obtendrá los datos necesarios de la credencial y creará una sesión efímera con esos datos. El proveedor de servicio puede que genere nuevos datos necesarios para futuras conexiones como preferencias de configuración sobre el servicio pero no hará falta que almacene la información de la credencial. Pese a esto, **ambos actores tienen acceso a la información y podrían seguir almacenándola** siendo esto un riesgo para la privacidad del usuario.
+
+Self Sovereign es una tecnología que tiene un gran potencial respecto a la usabilidad, mediante la wallet el hecho de crear certificados, almacenarlos o eliminarlos es muy sencillo y permite al usuario tener un mayor control de la información personal que comparte con terceros. Sin embargo, el uso cotidiano de esta tecnología tiene un gran riesgo de privacidad en caso de no usarse correctamente. El uso correcto de las credenciales para proteger la privacidad del usuario es el marcado por el principio de dar la mínima información necesaria a los servicios. Es por eso que deberían crearse subcertificados con los datos mínimos imprescindibles para cada servicio. Si un usuario solo genera un certificado con toda su información personal y por comodidad lo usa para identificarse en todos los servicios que consume, entonces, todos los servicios tendrán acceso a toda su información de manera directa, siendo esto un gran riesgo para la privacidad del usuario.
+
+## El Mercado
+
+Self Sovereign Identity es una tecnología, que pese a ser muy reciente en el mercado, está levantando gran interés debido a los **nuevos modelos de negocio** que podría fomentar y a las facilidades que podría traer a sectores en los que regulaciones como la GDPR suponen un impedimento legal para el desarrollo de sus funciones. Todo esto sin olvidar que su relación con la omnipresente _blockchain_ atrae, sin duda, un gran número de atenciones por si este fuese uno de esos casos de uso “dorados” que no han acabado de concretarse hasta ahora.
+
+Uno de los grandes cambios en las reglas que podría traer SSID es el de **ofrecer un servicio sin necesidad de almacenar datos personales de un cliente**, pero pese a ello, tener la posibilidad de verificar la identidad e historial de pedidos de nuestro cliente. Un caso de uso que podría simplificar en gran medida los requerimientos legales y los sistemas de seguridad necesarios en el offering de una organización.
+
+Dejando a un lado los cientos de empresas que están surgiendo alrededor de todo el mundo para tratar este problema creemos más interesante el plantear los **dos núcleos de influencia** alrededor de los cuales se aglutinan gran parte de estas empresas.
+
+El mercado en el que se mueve SSID es todavía muy volátil, un gran número de empresas aparecen y desaparecen todos los meses y muchas de ellas podemos observar que están estrechamente ligadas a una o varias organizaciones similares. Actualmente, los dos puntos que están desarrollando con mayor estabilidad esta tecnología son la [Decentralized Identity Foundation](https://identity.foundation/) (DIF) y [Sovrin](https://sovrin.org/).
+
+DIF es una fundación que se crea en 2017 para centralizar el **desarrollo de estándares open source** concernientes a sistemas de identificación descentralizados en el cual alrededor de ochenta empresas del sector de SSID están colaborando en alguno de sus siete grupos de trabajo. Algunas empresas relevantes en esta fundación son Microsoft, Mastercard, IBM o RSA.
+
+Por otro lado, [Sovrin](https://sovrin.org/library/sovrin-protocol-and-token-white-paper/), es una fundación que busca la **creación de una plataforma estándar** de nombre homónimo y que denominan como un [“metasistema”](https://www.windley.com/archives/2019/08/life-like_identity_why_the_internet_needs_an_identity_metasystem.shtml), en el cual, mediante protocolos estándar y ciertos servicios básicos provistos por el propio “metasistema” se permita a múltiples proveedores de SSID especializados el colaborar entre sí y establecer una red de confianza que permita contrastar credenciales expedidas por cualquiera de los miembros del “metasistema” de forma transparente para los usuarios. En Sovrin podemos encontrar también empresas relevantes del mundo de la tecnología como CISCO, MITRE o, de nuevo, IBM.
+
+## Sistemas alternativos
+
+Al ser un stack tecnológico de gran complejidad, pero de componentes bien diferenciados, Self Sovereign Identity, tiene la posibilidad de ser alterado y potenciar el desarrollo de soluciones de identidad que tengan casos de uso similares pero que hayan sido implementados mediante otros patrones tecnológicos.
+
+La pieza más maleable probablemente sea la propia blockchain. Este componente provee dos características bien definidas e imprescindibles para SSID, pero que pueden ser conseguidas mediante otros componentes tecnológicos con garantías de seguridad similares. En concreto, por un lado facilita la publicación de las claves públicas necesarias para contrastar las firmas de las credenciales y, por el otro, nos garantiza que las claves publicadas no han sido modificadas. Esto último es clave para garantizar que una credencial no ha sido creada de forma maliciosa para impersonar a otro usuario.
+
+Como se adelantaba, el componente de blockchain podría ser, teóricamente, intercambiado por un sistema de [Certificate Transparency](https://www.certificate-transparency.org/) (CT) que nos garantiza un nivel suficiente de confianza en la integridad de las claves públicas de las credenciales y como propiedad emergente nos da herramientas para monitorizar la expedición de credenciales robadas a nuestro nombre y de integrar este sistema de identidad con sistemas que ya acepten CT como el navegador Google Chrome.
+
+Esta es una de las muchas posibilidades que sacamos a debate desde el laboratorio de innovación en ciberseguridad de BBVA Next. Y, aunque quede fuera del foco de este post, podría hablarse de otras muchas permutaciones en los componentes de este stack tecnológico, como por ejemplo en el sistema de almacenamiento de credenciales (wallet) o del modo de funcionamiento del proveedor de identidad.
+
+**<center>¿Creéis que la sustitución de _blockchain_ por otros sistemas que garanticen en mayor o menor medida la integridad de las claves públicas (DIDs) puede suponer una ventaja?</center>**
+
+## Conclusiones
+
+Self Sovereign Identity es una tecnología aún reciente pese al gran empaque que está teniendo por parte de la comunidad tecnológica. El caso de uso que promete es alentador para las personas preocupadas por el control de su información personal y podría desbloquear modelos de negocio hasta ahora no contemplados debido a incompatibilidad con las regulaciones de protección de datos.
+
+![Korben Dallas (Bruce Willis) mira mientras Leelo (Mila Jovovich) muestra su tarjeta multipase.](/images/multipass.png)
+
+<div class="caption">
+  Imagen tomada de la película{' '}
+  <a href="https://es.wikipedia.org/wiki/El_quinto_elemento">El quinto Elemento</a>. Korben Dallas (
+  <a href="https://es.wikipedia.org/wiki/Bruce_Willis">Bruce Willis</a>) mira mientras Leelo (
+  <a href="https://es.wikipedia.org/wiki/Mila_Jovovich">Mila Jovovich</a>) muestra su tarjeta
+  multipase.
+</div>
+
+Quizá todavía poco maduro para adoptar comercialmente esta tecnología, aunque cuenta con características que de estandarizarse podría suponer un gran avance en la usabilidad de los sistemas de identificación y en el control de la difusión de información personal, un gran problema en la actualidad.
+
+Es interesante ver que debajo de toda la nomenclatura que la comunidad de SSID usa, nos encontramos con que sus elementos son un rebranding de elementos usados en los sistemas de certificación tradicionales pero con una arquitectura planteada con más foco en la usabilidad y cediendo gran parte del control al usuario.
+
+Si quieres saber más de esta tecnología, hay diversos recursos que resultan interesantes: [SSIMeetup](https://ssimeetup.org/), [Self Sovereign Identity](https://www.manning.com/books/self-sovereign-identity) (MEAP) o [A Comprehensive Guide to Self Sovereign Identity](https://www.amazon.es/Comprehensive-Guide-Sovereign-Identity-English-ebook/dp/B07Q3TXLDP).
+
+**<center>¿Crees que Self Sovereign Identity tendrá relevancia en los próximos años?</center>**
+
+Si te interesa adentrarte más en este tema, no dudéis en contarnos vuestras impresiones o respondernos a las preguntas que planteamos en el post mediante nuestra cuenta de [Twitter](https://twitter.com/Coke727).
+
+Fuente de la imagen de portada: [Unsplash](https://unsplash.com/). Mirrored, de Alex Iby.

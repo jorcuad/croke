@@ -77,7 +77,8 @@ const PostContent = styled.div`
   > ul {
     list-style-type: inherit;
     list-style-position: inside;
-    margin: ${rhythm(3 / 4)} auto;
+    margin: ${rhythm(1.5)} auto;
+    padding-left: 1rem;
   }
 
   > p {

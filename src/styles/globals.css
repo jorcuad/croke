@@ -7,3 +7,9 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.caption {
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: -2.75rem;
+}

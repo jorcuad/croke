@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
+import { removeTrailingSlash } from '../../utils/gatsby-node-helpers';
 
 import EspIcon from '../../../static/esp.png';
 import EngIcon from '../../../static/eng.png';
@@ -28,6 +29,8 @@ const LanguageMenu = props => {
   var i18nPath = props.slug.startsWith('/es')
     ? props.slug.replace('/es', '')
     : props.slug.replace('/', '/es/');
+  i18nPath = removeTrailingSlash(i18nPath);
+
   const handleInputChange = lang => {
     i18n.changeLanguage(lang);
   };
