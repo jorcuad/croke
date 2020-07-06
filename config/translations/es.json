@@ -78,16 +78,16 @@
     "sandbox": "LABORATORIO"
   },
   "projectsList": {
-    "assap": "Software que protege la privacidad contra el ataque de shoulder surfing.",
+    "assap": "Protege la privacidad contra el ataque de shoulder surfing.",
     "marimorena": "Taller práctico para aprender a usar realidad aumentada en seguridad.",
     "vdeguerra": "Web a medida para una campaña de D&D inspirada en Warcraft.",
     "freephone": "Aprende a crear un teléfono móvil desde cero usando una Raspberry Pi.",
     "crokev2": "La segunda versión de mi web personal hecha con GatsbyJS. Estas en ella.",
     "cryptex": "Guía sobre como crear y post procesar un cryptex funcional.",
-    "linkWorkshop": "Taller de Seguridad",
-    "linkServices": "Servicios Profesionales",
+    "linkWorkshop": "Taller",
+    "linkServices": "Servicios",
     "linkEducationl": "Divulgación",
-    "linkOpenSource": "Proyecto Open Source",
+    "linkOpenSource": "Open Source",
     "link3dPrinting": "Impresión 3D"
   },
   "footer": {

@@ -14,7 +14,7 @@ const Row = styled.div`
   ${tw`flex flex-row justify-around`}
 `;
 const Container = styled.div`
-  ${tw`w-24 h-24 sm:h-32 sm:w-32 md:w-48 md:h-48 lg:w-64 lg:h-64 mb-6`}
+  ${tw`w-20 h-20 sm:h-32 sm:w-32 md:w-48 md:h-48 lg:w-64 lg:h-64 mb-6`}
 `;
 
 const Areas = props => {
@@ -23,36 +23,36 @@ const Areas = props => {
   return (
     <Row>
       <Content>
-        <Link to="/projects">
+        <Link to={props.locale === 'es' ? '/es/projects' : '/projects'}>
           <Container>
             <Sectionbutton background="projects" section={t.areas.projects} />
           </Container>
         </Link>
-        <Link to="/blog">
+        <Link to={props.locale === 'es' ? '/es/blog' : '/blog'}>
           <Container>
             <Sectionbutton background="blog" section={t.areas.blog} />
           </Container>
         </Link>
       </Content>
       <Content>
-        <Link to="/services">
+        <Link to={props.locale === 'es' ? '/es/services' : '/services'}>
           <Container>
             <Sectionbutton background="services" section={t.areas.services} />
           </Container>
         </Link>
-        <Link to="/press">
+        <Link to={props.locale === 'es' ? '/es/press' : '/press'}>
           <Container>
             <Sectionbutton background="press" section={t.areas.press} />
           </Container>
         </Link>
       </Content>
       <Content>
-        <Link to="/publications">
+        <Link to={props.locale === 'es' ? '/es/publications' : '/publications'}>
           <Container>
             <Sectionbutton background="publications" section={t.areas.publications} />
           </Container>
         </Link>
-        <Link to="/sandbox">
+        <Link to={props.locale === 'es' ? '/es/sandbox' : '/sandbox'}>
           <Container>
             <Sectionbutton background="sandbox" section={t.areas.sandbox} />
           </Container>

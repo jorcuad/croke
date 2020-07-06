@@ -20,7 +20,7 @@ const PostWrapper = styled.div`
   ${tw`mb-10`}
 `;
 
-const Home = ({ data }) => {
+const Home = ({ data, pageContext }) => {
   const t = useTranslations();
 
   return (
@@ -28,18 +28,24 @@ const Home = ({ data }) => {
       <SectionWrapper>
         <SectionTitle header={t.index.homeHeader} />
         <SectionText content={t.index.home} />
-        <Areas />
+        <Areas locale={pageContext.locale} />
       </SectionWrapper>
       <SectionWrapper>
-        <SectionTitle header={t.index.projectsHeader} link="/projects" />
+        <SectionTitle
+          header={t.index.projectsHeader}
+          link={pageContext.locale === 'es' ? '/es/projects' : '/projects'}
+        />
         <SectionText content={t.index.projects} />
         <ProjectsList />
-        <Link to="/projects">
-          <SeeMore section="here" />
+        <Link to={pageContext.locale === 'es' ? '/es/projects' : '/projects'}>
+          <SeeMore />
         </Link>
       </SectionWrapper>
       <SectionWrapper>
-        <SectionTitle header={t.index.blogHeader} link="/blog" />
+        <SectionTitle
+          header={t.index.blogHeader}
+          link={pageContext.locale === 'es' ? '/es/blog' : '/blog'}
+        />
         <SectionText content={t.index.blogText} />
         <PostWrapper>
           {data.allMdx.edges.map(({ node }, i) => (
@@ -54,8 +60,8 @@ const Home = ({ data }) => {
             />
           ))}
         </PostWrapper>
-        <Link to="/blog">
-          <SeeMore section="posts" />
+        <Link to={pageContext.locale === 'es' ? '/es/blog' : '/blog'}>
+          <SeeMore section="" />
         </Link>
       </SectionWrapper>
       <SectionWrapper>

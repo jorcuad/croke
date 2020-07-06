@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 const Title = styled.h1`
-  ${tw`text-2xl sm:text-3xl md:text-5xl block text-croke-purple text-center sm:text-left`}
+  ${tw`text-3xl sm:text-3xl md:text-5xl block text-croke-purple text-center sm:text-left`}
 `;
 
 export default props => (
