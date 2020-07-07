@@ -19,7 +19,7 @@ const BlogPage = ({ data, pageContext, location }) => {
 
   return (
     <Wrapper>
-      <SEO lang={pageContext.locale} pathname={location.pathname} title={t.title} />
+      <SEO lang={pageContext.locale} pathname={location.pathname} title="Blog" />
       <SectionWrapper>
         <SectionTitle header={t.title} />
         <SectionText content={t.blogPage.blog} />
