@@ -8,7 +8,7 @@ import SEO from '../components/seo';
 import Assap from '../../static/projects/assap.png';
 import Marimorena from '../../static/projects/marimorena.png';
 import VdeGuerra from '../../static/projects/wow.png';
-import Crokev2 from '../../static/projects/avatar.jpg';
+import Crokev2 from '../../static/projects/avatar.png';
 import FreePhone from '../../static/projects/freephone.png';
 import Cryptex from '../../static/projects/cryptex.jpg';
 
