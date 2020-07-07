@@ -191,7 +191,7 @@ const BlogPostTemplate = ({ data: { mdx }, pageContext, location }) => {
       <SectionWrapper>
         <SectionTitle header={post.frontmatter.title} />
         <Subtitle>
-          <Link to={pageContext.locale === 'es' ? '/es/blog' : '/blog'}>
+          <Link to={pageContext.locale === 'en' ? '/en/blog' : '/blog'}>
             <Back>← Blog</Back>
           </Link>
           <Date>

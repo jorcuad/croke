@@ -37,7 +37,6 @@ function SEO({ description, lang, meta = [], image: metaImage, title, pathname, 
   const metaTitle = title || site.siteMetadata.title;
 
   if (!metaImage || !metaImage.src) {
-    console.log(avatar.childImageSharp.resize);
     metaImage = avatar.childImageSharp.resize;
   }
   const image = `${site.siteMetadata.siteUrl}${metaImage.src}`;

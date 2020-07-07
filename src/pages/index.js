@@ -35,18 +35,18 @@ const Home = ({ data, pageContext, location }) => {
       <SectionWrapper>
         <SectionTitle
           header={t.index.projectsHeader}
-          link={pageContext.locale === 'es' ? '/es/projects' : '/projects'}
+          link={pageContext.locale === 'en' ? '/en/projects' : '/projects'}
         />
         <SectionText content={t.index.projects} />
         <ProjectsList />
-        <Link to={pageContext.locale === 'es' ? '/es/projects' : '/projects'}>
+        <Link to={pageContext.locale === 'en' ? '/en/projects' : '/projects'}>
           <SeeMore />
         </Link>
       </SectionWrapper>
       <SectionWrapper>
         <SectionTitle
           header={t.index.blogHeader}
-          link={pageContext.locale === 'es' ? '/es/blog' : '/blog'}
+          link={pageContext.locale === 'en' ? '/en/blog' : '/blog'}
         />
         <SectionText content={t.index.blogText} />
         <PostWrapper>
@@ -62,7 +62,7 @@ const Home = ({ data, pageContext, location }) => {
             />
           ))}
         </PostWrapper>
-        <Link to={pageContext.locale === 'es' ? '/es/blog' : '/blog'}>
+        <Link to={pageContext.locale === 'en' ? '/en/blog' : '/blog'}>
           <SeeMore section="" />
         </Link>
       </SectionWrapper>

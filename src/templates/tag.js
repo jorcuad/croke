@@ -67,7 +67,7 @@ const TagsTemplate = ({ pageContext, data, location }) => {
         ) : (
           <SectionText content={t.tagsTemplate.nopub} />
         )}
-        <Link to={pageContext.locale === 'es' ? '/es/tags' : '/tags'}>
+        <Link to={pageContext.locale === 'en' ? '/en/tags' : '/tags'}>
           <Back>{t.tagsTemplate.all}</Back>
         </Link>
       </SectionWrapper>

@@ -22,7 +22,7 @@ exports.onCreatePage = ({ page, actions }) => {
   // First delete the incoming page that was automatically created by Gatsby
   // So everything in src/pages/
   deletePage(page);
-
+  console.log(page.path);
   // Grab the keys ('en' & 'de') of locales and map over them
   Object.keys(locales).map(lang => {
     // Use the values defined in "locales" to construct the path
@@ -191,22 +191,22 @@ exports.createPages = async ({ graphql, actions }) => {
       if (index !== 0) {
         const nextPost = postListES[index - 1].node;
         const nextSlug = nextPost.relativeDirectory;
-        next = `/${locale}/blog/${nextSlug}`;
+        next = `/blog/${nextSlug}`;
       }
 
       var previous = null;
       if (index !== postListES.length - 1) {
         const prevPost = postListES[index + 1].node;
         const prevSlug = prevPost.relativeDirectory;
-        previous = `/${locale}/blog/${prevSlug}`;
+        previous = `/blog/${prevSlug}`;
       }
 
       createPage({
-        path: `/${locale}/blog/${slug}`,
+        path: `/blog/${slug}`,
         component: postTemplate,
         context: {
           locale,
-          slug: `/${locale}/blog/${slug}`,
+          slug: `/blog/${slug}`,
           dateFormat: locales[locale].dateFormat,
           title,
           previous,
@@ -227,22 +227,22 @@ exports.createPages = async ({ graphql, actions }) => {
       if (index !== 0) {
         const nextPost = postListEN[index - 1].node;
         const nextSlug = nextPost.relativeDirectory;
-        next = `/blog/${nextSlug}`;
+        next = `/${locale}/blog/${nextSlug}`;
       }
 
       var previous = null;
       if (index !== postListEN.length - 1) {
         const prevPost = postListEN[index + 1].node;
         const prevSlug = prevPost.relativeDirectory;
-        previous = `/blog/${prevSlug}`;
+        previous = `/${locale}/blog/${prevSlug}`;
       }
 
       createPage({
-        path: `/blog/${slug}`,
+        path: `/${locale}/blog/${slug}`,
         component: postTemplate,
         context: {
           locale,
-          slug: `/blog/${slug}`,
+          slug: `/${locale}/blog/${slug}`,
           dateFormat: locales[locale].dateFormat,
           title,
           previous,
@@ -260,7 +260,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // Make tag pages
   tagsEN.forEach(tag => {
     createPage({
-      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/en/tags/${_.kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,
       context: {
         locale: 'en',
@@ -272,7 +272,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   tagsES.forEach(tag => {
     createPage({
-      path: `/es/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,
       context: {
         locale: 'es',

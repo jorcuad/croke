@@ -52,8 +52,8 @@ const TagTemplate = ({ pageContext, data, location }) => {
               <li key={tag.fieldValue}>
                 <Link
                   to={
-                    pageContext.locale === 'es'
-                      ? `/es/tags/${kebabCase(tag.fieldValue)}/`
+                    pageContext.locale === 'en'
+                      ? `/en/tags/${kebabCase(tag.fieldValue)}/`
                       : `/tags/${kebabCase(tag.fieldValue)}/`
                   }>
                   {tag.fieldValue} ({tag.totalCount + tag.totalCount2})

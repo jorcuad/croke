@@ -2,7 +2,6 @@
 
 module.exports = {
   en: {
-    default: true,
     path: `en`,
     locale: `en-US`,
     dateFormat: `DD/MM/YYYY`,
@@ -12,6 +11,7 @@ module.exports = {
     defaultDescription: `Gatsby example site using MDX and dependency-free i18n`,
   },
   es: {
+    default: true,
     path: `es`,
     locale: `es-ES`,
     dateFormat: `DD.MM.YYYY`,

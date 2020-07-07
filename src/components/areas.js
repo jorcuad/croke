@@ -23,36 +23,36 @@ const Areas = props => {
   return (
     <Row>
       <Content>
-        <Link to={props.locale === 'es' ? '/es/projects' : '/projects'}>
+        <Link to={props.locale === 'en' ? '/en/projects' : '/projects'}>
           <Container>
             <Sectionbutton background="projects" section={t.areas.projects} />
           </Container>
         </Link>
-        <Link to={props.locale === 'es' ? '/es/blog' : '/blog'}>
+        <Link to={props.locale === 'en' ? '/en/blog' : '/blog'}>
           <Container>
             <Sectionbutton background="blog" section={t.areas.blog} />
           </Container>
         </Link>
       </Content>
       <Content>
-        <Link to={props.locale === 'es' ? '/es/services' : '/services'}>
+        <Link to={props.locale === 'en' ? '/en/services' : '/services'}>
           <Container>
             <Sectionbutton background="services" section={t.areas.services} />
           </Container>
         </Link>
-        <Link to={props.locale === 'es' ? '/es/press' : '/press'}>
+        <Link to={props.locale === 'en' ? '/en/press' : '/press'}>
           <Container>
             <Sectionbutton background="press" section={t.areas.press} />
           </Container>
         </Link>
       </Content>
       <Content>
-        <Link to={props.locale === 'es' ? '/es/publications' : '/publications'}>
+        <Link to={props.locale === 'en' ? '/en/publications' : '/publications'}>
           <Container>
             <Sectionbutton background="publications" section={t.areas.publications} />
           </Container>
         </Link>
-        <Link to={props.locale === 'es' ? '/es/sandbox' : '/sandbox'}>
+        <Link to={props.locale === 'en' ? '/en/sandbox' : '/sandbox'}>
           <Container>
             <Sectionbutton background="sandbox" section={t.areas.sandbox} />
           </Container>

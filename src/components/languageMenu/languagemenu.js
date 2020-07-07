@@ -26,9 +26,9 @@ const LanguageMenu = props => {
   const { i18n } = useTranslation();
   const [esp, setEsp] = useState();
 
-  var i18nPath = props.slug.startsWith('/es')
-    ? props.slug.replace('/es', '')
-    : props.slug.replace('/', '/es/');
+  var i18nPath = props.slug.startsWith('/en')
+    ? props.slug.replace('/en', '')
+    : props.slug.replace('/', '/en/');
   i18nPath = removeTrailingSlash(i18nPath);
 
   const handleInputChange = lang => {

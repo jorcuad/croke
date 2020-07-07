@@ -64,12 +64,6 @@ module.exports = {
         name: `translations`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-page-creator',
-      options: {
-        path: `${__dirname}/content/blog`,
-      },
-    },
     `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-mdx`,

@@ -34,7 +34,12 @@ const Share = props => {
     <Content>
       <Header>{t.share.header}</Header>
       <ShareButtons>
-        <Twitter solid small message={props.message + ' @coke727'} link={props.link} />
+        <Twitter
+          solid
+          small
+          message={props.message + ' @coke727 ' + props.link}
+          link={props.link}
+        />
         <Facebook solid small link={props.link} />
         <Mail solid small subject={props.message} link={props.link} />
         <Linkedin solid small message={props.message} link={props.link} />

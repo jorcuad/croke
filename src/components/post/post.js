@@ -87,8 +87,8 @@ const PostComponent = props => {
                     <Tag key={i}>
                       <Link
                         to={
-                          props.locale === 'es'
-                            ? `/es/tags/${kebabCase(tag)}/`
+                          props.locale === 'en'
+                            ? `/en/tags/${kebabCase(tag)}/`
                             : `/tags/${kebabCase(tag)}/`
                         }>
                         {tag}
@@ -98,8 +98,8 @@ const PostComponent = props => {
                     <Tag key={i}>
                       <Link
                         to={
-                          props.locale === 'es'
-                            ? `/es/tags/${kebabCase(tag)}/`
+                          props.locale === 'en'
+                            ? `/en/tags/${kebabCase(tag)}/`
                             : `/tags/${kebabCase(tag)}/`
                         }>
                         {tag + ','}
