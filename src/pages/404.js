@@ -27,7 +27,7 @@ const NotFoundPage = ({ props, pageContext, location }) => {
 
   return (
     <Wrapper>
-      <SEO lang={pageContext.locale} pathname={location.pathname} />
+      <SEO lang={pageContext.locale} pathname={location.pathname} title="404" />
       <SectionWrapper>
         <center>
           <SectionTitle header={t.notfound.title} />

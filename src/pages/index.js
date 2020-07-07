@@ -26,7 +26,7 @@ const Home = ({ data, pageContext, location }) => {
 
   return (
     <Wrapper>
-      <SEO lang={pageContext.locale} pathname={location.pathname} />
+      <SEO lang={pageContext.locale} pathname={location.pathname} title="Home" />
       <SectionWrapper>
         <SectionTitle header={t.index.homeHeader} />
         <SectionText content={t.index.home} />

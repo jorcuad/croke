@@ -42,7 +42,7 @@ const TagTemplate = ({ pageContext, data, location }) => {
   const title = data.site.siteMetadata.title;
   return (
     <Wrapper>
-      <SEO lang={pageContext.locale} pathname={location.pathname} />
+      <SEO lang={pageContext.locale} pathname={location.pathname} title="Tags" />
       <SectionWrapper>
         <SectionTitle header="Tags" />
         <SectionText content="Here you can find the categories of all the contents of this webpage, from projects to blog posts and publications." />

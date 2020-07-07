@@ -16,7 +16,7 @@ const SandboxPage = ({ props, pageContext, location }) => {
 
   return (
     <Wrapper>
-      <SEO lang={pageContext.locale} pathname={location.pathname} />
+      <SEO lang={pageContext.locale} pathname={location.pathname} title={t.sandbox.title} />
       <SectionWrapper>
         <SectionTitle header={t.sandbox.title} />
         <SectionText content={t.sandbox.description} />

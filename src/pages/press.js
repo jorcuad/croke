@@ -16,7 +16,7 @@ const PressPage = ({ props, pageContext, location }) => {
 
   return (
     <Wrapper>
-      <SEO lang={pageContext.locale} pathname={location.pathname} />
+      <SEO lang={pageContext.locale} pathname={location.pathname} title={t.press.title} />
       <SectionWrapper>
         <SectionTitle header={t.press.title} />
         <SectionText content={t.press.description} />

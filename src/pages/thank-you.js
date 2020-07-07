@@ -17,7 +17,7 @@ const ThanksPage = ({ pageContext, data, location }) => {
 
   return (
     <Wrapper>
-      <SEO lang={pageContext.locale} pathname={location.pathname} />
+      <SEO lang={pageContext.locale} pathname={location.pathname} title={t.thanks.title} />
       <SectionWrapper>
         <SectionTitle header={t.thanks.title} />
         <SectionText content={t.thanks.description} />

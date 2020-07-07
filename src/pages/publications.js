@@ -16,7 +16,7 @@ const PublicationsPage = ({ data, pageContext, location }) => {
 
   return (
     <Wrapper>
-      <SEO lang={pageContext.locale} pathname={location.pathname} />
+      <SEO lang={pageContext.locale} pathname={location.pathname} title={t.publications.title} />
       <SectionWrapper>
         <SectionTitle header={t.publications.title} />
         <SectionText content={t.publications.description} />

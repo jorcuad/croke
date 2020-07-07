@@ -31,7 +31,7 @@ const ServicesPage = ({ props, pageContext, location }) => {
 
   return (
     <Wrapper>
-      <SEO lang={pageContext.locale} pathname={location.pathname} />
+      <SEO lang={pageContext.locale} pathname={location.pathname} title={t.services.title} />
       <SectionWrapper>
         <SectionTitle header={t.services.title} />
         <SectionText content={t.services.description} />
