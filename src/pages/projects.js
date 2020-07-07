@@ -3,6 +3,7 @@ import useTranslations from '../components/useTranslations';
 
 import { SectionTitle, SectionWrapper, SectionText } from '../components/section';
 import Project from '../components/projects/project';
+import SEO from '../components/seo';
 
 import Assap from '../../static/projects/assap.png';
 import Marimorena from '../../static/projects/marimorena.png';
@@ -22,11 +23,12 @@ const Row = styled.div`
   ${tw`flex flex-col md:flex-row w-full md:justify-between`}
 `;
 
-const ProjectsPage = props => {
+const ProjectsPage = ({ props, pageContext, location }) => {
   const t = useTranslations();
 
   return (
     <Wrapper>
+      <SEO lang={pageContext.locale} pathname={location.pathname} />
       <SectionWrapper>
         <SectionTitle header={t.projects.title} />
         <SectionText content={t.projects.projects} />

@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
+import SEO from '../components/seo';
 
 import useTranslations from '../components/useTranslations';
 
@@ -21,11 +22,12 @@ const ButtonContainer = styled.button`
   ${tw`w-full`}
 `;
 
-const NotFoundPage = props => {
+const NotFoundPage = ({ props, pageContext, location }) => {
   const t = useTranslations();
 
   return (
     <Wrapper>
+      <SEO lang={pageContext.locale} pathname={location.pathname} />
       <SectionWrapper>
         <center>
           <SectionTitle header={t.notfound.title} />

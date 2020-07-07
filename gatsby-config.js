@@ -3,6 +3,8 @@ module.exports = {
     title: `Croke`,
     description: `Security, Electronics and Crazy projects`,
     author: `Jorge Cuadrado Saez (@Coke727)`,
+    keywords: ['security', 'open source', 'development'],
+    siteUrl: 'https://www.croke.es',
   },
   plugins: [
     {
@@ -31,6 +33,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/publications`,
         name: `publications`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static`,
+        name: `static`,
       },
     },
     {

@@ -7,6 +7,7 @@ import tw from 'tailwind.macro';
 import { SectionTitle, SectionWrapper, SectionText } from '../components/section';
 import { Link, graphql } from 'gatsby';
 import useTranslations from '../components/useTranslations';
+import SEO from '../components/seo';
 
 const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
@@ -16,12 +17,13 @@ const Back = styled.div`
   ${tw`flex text-croke-purple text-xl`};
 `;
 
-const TagsTemplate = ({ pageContext, data }) => {
+const TagsTemplate = ({ pageContext, data, location }) => {
   const { tag } = pageContext;
   const t = useTranslations();
 
   return (
     <Wrapper>
+      <SEO lang={pageContext.locale} pathname={location.pathname} />
       <SectionWrapper>
         <SectionTitle header={'Tag: ' + tag} />
         <SectionText content={`${t.tagsTemplate.blog1}${tag}${t.tagsTemplate.blog2}`} />

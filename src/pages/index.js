@@ -9,6 +9,7 @@ import Areas from '../components/areas';
 import Contact from '../components/contact';
 import Post from '../components/post/post.js';
 import SeeMore from '../components/seemore';
+import SEO from '../components/seo';
 
 import useTranslations from '../components/useTranslations';
 
@@ -20,11 +21,12 @@ const PostWrapper = styled.div`
   ${tw`mb-10`}
 `;
 
-const Home = ({ data, pageContext }) => {
+const Home = ({ data, pageContext, location }) => {
   const t = useTranslations();
 
   return (
     <Wrapper>
+      <SEO lang={pageContext.locale} pathname={location.pathname} />
       <SectionWrapper>
         <SectionTitle header={t.index.homeHeader} />
         <SectionText content={t.index.home} />

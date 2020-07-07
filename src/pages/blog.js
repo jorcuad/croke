@@ -3,6 +3,7 @@ import { SectionTitle, SectionWrapper, SectionText } from '../components/section
 import Post from '../components/post/post.js';
 import Popular from '../components/popular';
 import { graphql } from 'gatsby';
+import SEO from '../components/seo';
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -13,11 +14,12 @@ const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
 
-const BlogPage = ({ data, pageContext }) => {
+const BlogPage = ({ data, pageContext, location }) => {
   const t = useTranslations();
 
   return (
     <Wrapper>
+      <SEO lang={pageContext.locale} pathname={location.pathname} />
       <SectionWrapper>
         <SectionTitle header={t.title} />
         <SectionText content={t.blogPage.blog} />

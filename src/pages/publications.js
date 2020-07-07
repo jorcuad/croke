@@ -1,6 +1,7 @@
 import React from 'react';
 import { SectionTitle, SectionWrapper, SectionText } from '../components/section';
 import Publication from '../components/publication/publication';
+import SEO from '../components/seo';
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -10,11 +11,12 @@ import useTranslations from '../components/useTranslations';
 const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
-const PublicationsPage = ({ data, pageContext }) => {
+const PublicationsPage = ({ data, pageContext, location }) => {
   const t = useTranslations();
 
   return (
     <Wrapper>
+      <SEO lang={pageContext.locale} pathname={location.pathname} />
       <SectionWrapper>
         <SectionTitle header={t.publications.title} />
         <SectionText content={t.publications.description} />

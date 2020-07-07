@@ -9,12 +9,13 @@ import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 import { SectionTitle, SectionWrapper, SectionText } from '../components/section';
+import SEO from '../components/seo';
 
 const Wrapper = styled.div`
   ${tw`flex flex-col relative w-screen items-center justify-center`}
 `;
 
-const TagTemplate = ({ pageContext, data }) => {
+const TagTemplate = ({ pageContext, data, location }) => {
   const groupPublications = data.publications.group;
   var group = data.blog.group;
 
@@ -41,6 +42,7 @@ const TagTemplate = ({ pageContext, data }) => {
   const title = data.site.siteMetadata.title;
   return (
     <Wrapper>
+      <SEO lang={pageContext.locale} pathname={location.pathname} />
       <SectionWrapper>
         <SectionTitle header="Tags" />
         <SectionText content="Here you can find the categories of all the contents of this webpage, from projects to blog posts and publications." />

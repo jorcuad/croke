@@ -3,6 +3,7 @@ import CheckCV from '../components/checkcv';
 import { SectionTitle, SectionWrapper, SectionText } from '../components/section';
 import Sectionbutton from '../components/sectionbutton';
 import Contact from '../components/contact';
+import SEO from '../components/seo';
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -25,11 +26,12 @@ const Container = styled.div`
   ${tw`flex flex-grow w-full mb-3 h-12 sm:mb-0 sm:w-56 sm:h-48`}
 `;
 
-const ServicesPage = props => {
+const ServicesPage = ({ props, pageContext, location }) => {
   const t = useTranslations();
 
   return (
     <Wrapper>
+      <SEO lang={pageContext.locale} pathname={location.pathname} />
       <SectionWrapper>
         <SectionTitle header={t.services.title} />
         <SectionText content={t.services.description} />

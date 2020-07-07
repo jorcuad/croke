@@ -176,13 +176,17 @@ const BlogPostTemplate = ({ data: { mdx }, pageContext, location }) => {
   const post = mdx;
   const { previous, next } = pageContext;
 
+  const image = post.frontmatter.image ? post.frontmatter.image.childImageSharp.resize : null;
   return (
     <Wrapper>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description}
-        image={post.frontmatter.image}
-        meta={post.frontmatter.date}
+        image={image}
+        meta={[{ date: { available: post.frontmatter.date } }]}
+        lang={pageContext.locale}
+        keywords={post.frontmatter.tags}
+        pathname={location.pathname}
       />
       <SectionWrapper>
         <SectionTitle header={post.frontmatter.title} />
@@ -232,10 +236,17 @@ export const query = graphql`
       frontmatter {
         date(formatString: $dateFormat)
         description
-        image {
-          publicURL
-        }
         title
+        tags
+        image {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              width
+              height
+            }
+          }
+        }
       }
       body
     }
