@@ -4,7 +4,7 @@
       "babel-preset-gatsby",
       {
         "targets": {
-          "browsers": ["> 0.2%", "last 2 versions", "Firefox ESR", "iOS >= 8", "Safari >= 8",]
+          "browsers": ["> 0.5%", "last 2 versions", "Firefox ESR"]
         }
       }
     ]
