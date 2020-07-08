@@ -13,7 +13,7 @@ const Content = styled.div`
 `;
 
 const Container = styled.div`
-  ${tw`flex flex-col justify-between h-screen`};
+  ${tw`flex flex-col justify-between`};
 `;
 
 const Layout = ({ children, location, pageContext: { locale } }) => {
