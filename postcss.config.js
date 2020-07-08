@@ -7,7 +7,7 @@ module.exports = {
       features: {
         'nesting-rules': true,
       },
-      browsers: ['> 0.2%', 'last 2 versions', 'Firefox ESR'],
+      browsers: ['> 0.2%', 'last 2 versions', 'Firefox ESR', 'iOS >= 8', 'Safari >= 8'],
     }),
   ],
 };
