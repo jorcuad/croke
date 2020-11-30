@@ -7,6 +7,6 @@ image: './images/ssid.png'
 web: 'https://www.bbvanexttechnologies.com/self-sovereign-identity-identidad-centralizada-bajo-el-control-de-usuario/'
 category: 'BBVA NEXT'
 type: 'publication'
-blog: 'https://www.croke.es/es/blog/ssid'
+blog: 'https://www.croke.es/blog/ssid'
 lang: 'es'
 ---

@@ -8,7 +8,7 @@ slides: 'https://docs.google.com/presentation/d/1sH-SjuVkZ67sR6k7g4E_DoGPN9EJdJE
 code: 'https://github.com/jorcuad/Cybercamp2019-SecurityAR-WORKSHOP'
 video: 'https://www.youtube.com/watch?v=C0y76fM0GWQ&list=PLr5GsywSn9d_HyyGPN0GKlXZ21l5xh5kp&index=25'
 image: './images/marimorena.png'
-blog: 'https://www.croke.es/post/cybercamp2019/'
+blog: 'https://croke.es/blog/cybercamp-2019'
 category: 'WORKSHOP'
 type: 'publication'
 lang: 'es'
