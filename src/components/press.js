@@ -10,6 +10,7 @@ import Xataka from '../../static/press/xataka.png';
 import Rt from '../../static/press/rt.png';
 import ElSalto from '../../static/press/elsalto.png';
 import HelpNet from '../../static/press/helpnetsecurity.jpg';
+import PostNau from '../../static/press/postnau.jpg';
 
 const Content = styled.div`
   ${tw`overflow-hidden flex flex-col mb-20`}
@@ -20,6 +21,13 @@ const Press = props => {
 
   return (
     <Content>
+      <Post
+        date="08/12/2020"
+        link="https://www.elsaltodiario.com/post-apocalipsis-nau/podcast-or-post-apocalipsis-nau-46-diogenes-digital-y-comunidad-maker"
+        image={PostNau}
+        title={t.pressComponent.titleNau}
+        description={t.pressComponent.descriptionNau}
+      />
       <Post
         date="19/03/2020"
         link="https://www.elsaltodiario.com/coronavirus/la-comunidad-maker-se-organiza-y-responde-al-covid-19"

@@ -105,6 +105,8 @@ const query = graphql`
             pressComponent {
               titleSalto
               descriptionSalto
+              titleNau
+              descriptionNau
               titleRT
               descriptionRT
               titleXataka
