@@ -56,12 +56,12 @@ El caso de uso más típico de la criptografía homomórfica es poder delegar c�
 
 El funcionamiento de un sistema de cifrado homomórfico funciona de la siguiente manera:
 
-1. Un cliente C cifra un mensaje m.
-2. El cliente C envía el mensaje cifrado a un servidor (que podría tratarse de un servidor de una nube pública) y lo almacena.
-3. El cliente C pregunta por una función f, que es lo que quiere evaluar.
-4. El servidor S evalúa f de forma homomórfica, es decir, calcula el resultado, sin conocer el mensaje original.
-5. El servidor S devuelve el resultado de la función f de forma cifrada.
-6. El cliente C es capaz de descifrar la respuesta del servidor y obtener el resultado de la función f sobre el mensaje m.
+- (1) Un cliente C cifra un mensaje m.
+- (2) El cliente C envía el mensaje cifrado a un servidor (que podría tratarse de un servidor de una nube pública) y lo almacena.
+- (3) El cliente C pregunta por una función f, que es lo que quiere evaluar.
+- (4) El servidor S evalúa f de forma homomórfica, es decir, calcula el resultado, sin conocer el mensaje original.
+- (5) El servidor S devuelve el resultado de la función f de forma cifrada.
+- (6) El cliente C es capaz de descifrar la respuesta del servidor y obtener el resultado de la función f sobre el mensaje m.
 
 Este tipo de sistemas normalmente, disponen de tres tipos de claves:
 
@@ -151,10 +151,10 @@ TF SEAL y TenSeal son las librerías más destacadas que implementan criptograf�
 <a href="https://github.com/tf-encrypted/tf-seal">TF SEAL</a>, es un puente entre
 <a href="https://github.com/microsoft/SEAL">
   Microsoft SEAL
-</a>, una biblioteca de cifrado homomórfico de última generación, y TensorFlow, uno de los frameworks de \\_machine learning\\_ más populares. Esta librería forma parte de
+</a>, una biblioteca de cifrado homomórfico de última generación, y TensorFlow, uno de los frameworks de \_machine learning\_ más populares. Esta librería forma parte de
 <a href="https://github.com/tf-encrypted/tf-encrypted">
   TF Encrypted
-</a> cuyo objetivo consiste en construir una interfaz para el \\_machine learning\\_ sobre datos cifrados.
+</a> cuyo objetivo consiste en construir una interfaz para el \_machine learning\_ sobre datos cifrados.
 
 La instalación es compleja debido a que se requiere una versión de Tensorflow compilada en C++ 17 para que sea compatible con SEAL, escrito en ese lenguaje. También es requisito fundamental usar la versión 3.7 de Python para que la librería pueda funcionar.
 
