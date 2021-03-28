@@ -1,7 +1,6 @@
 import React from 'react';
 import { SectionTitle, SectionWrapper, SectionText } from '../components/section';
 import Post from '../components/post/post.js';
-import Popular from '../components/popular';
 import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 

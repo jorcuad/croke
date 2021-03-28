@@ -85,7 +85,7 @@ Este tipo de técnicas ya han sido probadas con éxito en entornos bancarios, po
   </a>
 </div>
 
-El sistema que propuso IBM Research cifra los datos de las transacciones en los servidores de la infraestructura del Banco Bradesco, que son externalizadas a un proveedor de nube pública o híbrida. Los datos de entrenamiento cifrados son la entrada del módulo que implementa el entrenamiento del modelo de forma homomórfica. **El resultado es un modelo cifrado** al que se le introducen transacciones cifradas como entrada. Todo el proceso se realiza sin descifrar los datos, por lo que la predicción se realizará sobre los propios datos cifrados y, al acabar el proceso, son enviadas de nuevo a la infraestructura del Banco para descifrar los resultados. Los detalles de la investigación se pueden encontrar en el <a href=https://eprint.iacr.org/2019/1113.pdf">artículo publicado</a> en <a href="https://rwc.iacr.org/2020/">Real World Crypto 2020</a>.
+El sistema que propuso IBM Research cifra los datos de las transacciones en los servidores de la infraestructura del Banco Bradesco, que son externalizadas a un proveedor de nube pública o híbrida. Los datos de entrenamiento cifrados son la entrada del módulo que implementa el entrenamiento del modelo de forma homomórfica. **El resultado es un modelo cifrado** al que se le introducen transacciones cifradas como entrada. Todo el proceso se realiza sin descifrar los datos, por lo que la predicción se realizará sobre los propios datos cifrados y, al acabar el proceso, son enviadas de nuevo a la infraestructura del Banco para descifrar los resultados. Los detalles de la investigación se pueden encontrar en el <a href="https://eprint.iacr.org/2019/1113.pdf">artículo publicado</a> en <a href="https://rwc.iacr.org/2020/">Real World Crypto 2020</a>.
 
 Este ejemplo pone de relieve que este tipo de técnicas han pasado de un plano teórico a uno práctico en el que se abren un sinfín de casos de uso en los que emplear la criptografía homomórfica, aunque sigue siendo necesario conocer los detalles de los esquemas subyacentes (existen esquemas homomórficos que realizan descifrados intermedios que podrían no ser válidos para garantizar el cumplimiento normativo de este tipo de datos), su nivel de seguridad y las operaciones disponibles. Estas limitaciones se siguen tratando de resolver, siendo un área de investigación muy activa en los últimos tiempos.
 
@@ -151,10 +151,10 @@ TF SEAL y TenSeal son las librerías más destacadas que implementan criptograf�
 <a href="https://github.com/tf-encrypted/tf-seal">TF SEAL</a>, es un puente entre
 <a href="https://github.com/microsoft/SEAL">
   Microsoft SEAL
-</a>, una biblioteca de cifrado homomórfico de última generación, y TensorFlow, uno de los frameworks de \_machine learning\_ más populares. Esta librería forma parte de
+</a>, una biblioteca de cifrado homomórfico de última generación, y TensorFlow, uno de los frameworks de \\_machine learning\\_ más populares. Esta librería forma parte de
 <a href="https://github.com/tf-encrypted/tf-encrypted">
   TF Encrypted
-</a> cuyo objetivo consiste en construir una interfaz para el \_machine learning\_ sobre datos cifrados.
+</a> cuyo objetivo consiste en construir una interfaz para el \\_machine learning\\_ sobre datos cifrados.
 
 La instalación es compleja debido a que se requiere una versión de Tensorflow compilada en C++ 17 para que sea compatible con SEAL, escrito en ese lenguaje. También es requisito fundamental usar la versión 3.7 de Python para que la librería pueda funcionar.
 
