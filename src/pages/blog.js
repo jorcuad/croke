@@ -25,10 +25,6 @@ const BlogPage = ({ data, pageContext, location }) => {
         <SectionText content={t.blogPage.blog} />
       </SectionWrapper>
       <SectionWrapper>
-        <SectionTitle header={t.blogPage.popularTitle} />
-        <Popular locale={pageContext.locale} />
-      </SectionWrapper>
-      <SectionWrapper>
         <SectionTitle header={t.blogPage.latestTitle} />
         {data.allMdx.edges.map(({ node }, i) => (
           <Post
