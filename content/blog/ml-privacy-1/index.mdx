@@ -1,0 +1,229 @@
+---
+banner: 'banners/placeholder.png'
+categories: ['security']
+date: '2021-03-10T12:00:00+01:00'
+description: 'El procesamiento de datos conlleva un sinfín de problemáticas, su mayoría en la fase de tratamiento. En este post hablaremos sobre las soluciones que nos ofrece la criptografía.'
+tags: ['BBVA Next', 'security', 'machine learning', 'privacy']
+draft: false
+title: 'Privacidad en machine learning: un concepto ahora más formal y tangible'
+image: './images/post-image.jpg'
+type: 'blog'
+---
+
+**Este post originalmente se publicó en la web de BBVA Next Technologies. No dudes en ver el [original](https://www.bbvanexttechnologies.com/privacidad-en-machine-learning-un-concepto-ahora-mas-formal-y-tangible/). No olvidéis seguir en las redes sociales a sus coautores: Nerea Sainz de la Maza [[LinkedIn](https://www.linkedin.com/in/nereasainzdelamaza/)] y José Ignacio Escribano [[GitHub](https://github.com/jiep)]**
+
+![Machine learning privacy cover](/images/portada.jpg)
+
+**<center>El procesamiento de datos conlleva un sinfín de problemáticas, su mayoría en la fase de tratamiento. En este post hablaremos sobre las soluciones que nos ofrece la criptografía para procesar la información conservando la calidad y privacidad de los resultados sobre modelos de machine learning.</center>**
+
+Uno de los activos más importantes con los que cuentan actualmente las compañías son los datos. Es habitual escuchar o leer la frase “<a href="https://www.theguardian.com/technology/2013/aug/23/tech-giants-data">Data is the new oil</a>”. Esto se debe a la relevancia que han tomado en los últimos años a nivel productivo y a la pelea constante de las compañías por obtener más datos que mejoren sus procesos de negocio.
+
+Estos datos pueden ser de multitud de características. Cada tipo de dato tiene una regulación diferente entre geografías, distintas maneras de tratar los datos dependiendo de su categoría (bien sean datos personales, personalmente identificables, datos sensibles o datos confidenciales). Estas dos características en conjunto con muchas otras propias de cada contexto, crean un entorno muy complejo para el tratamiento de datos y en ocasiones es posible que no sea tecnológicamente o regulatoriamente viable realizar el caso de uso deseado.
+
+Este problema aparece a la hora de querer procesar esta información, ya sea como entrada de un sistema de machine learning o como punto de partida para cualquier procesamiento donde se obtenga valor de los datos. En este tipo de procesos **es necesario hacer uso de herramientas o servicios de terceros** que podrían llegar a tener acceso a los datos para poder dar el servicio y por lo tanto ser un riesgo para la privacidad de los mismos. La contrapartida a hacer uso de servicios de terceros pasa por hacer desarrollos propios que ponen en peligro la rentabilidad del caso de uso.
+
+## ¿Es posible garantizar la seguridad y privacidad de nuestros datos en estos casos uso cumpliendo con las regulaciones?
+
+La criptografía es una de las técnicas más antiguas que permite transmitir información de manera segura, ocultando la información frente a terceros. Además de esto, permite realizar **técnicas para mantener la privacidad y la protección de los datos**.
+
+A lo largo de este post, explicaremos cómo es posible procesar estos datos y qué nuevas soluciones nos brinda la criptografía para poder externalizar el procesado de los datos sin perder la confidencialidad y privacidad de los mismos desde tres técnicas <a href="https://es.wikipedia.org/wiki/Criptograf%C3%ADa">criptográficas</a>: **criptografía homomórfica, computación multiparte segura y privacidad diferencial**.
+
+Estas tecnologías no han aparecido recientemente, sin embargo, no era posible su uso en tiempos razonables de cómputo. En los últimos años el estado del arte ha evolucionado a pasos agigantados, permitiendo procesar en tiempos de cómputos asumibles y con más variedad de operaciones matemáticas, algo que era muy limitante al inicio, permitiendo el entrenamiento y la inferencia de modelos de _machine learning_ de forma cifrada.
+
+Este nuevo paradigma **permite procesar la información sin necesidad de descifrar los datos en estado de reposo**, conservando en los resultados un nivel de calidad similar al que se conseguirían si se realizaran los procesos sobre esos mismos datos en claro. Todo ello favorece la externalización de este tipo de procesos a infraestructura ajena a la organización, ahorrando costes para la misma y manteniendo la privacidad de los datos.
+
+## Criptografía homomórfica
+
+La criptografía homomórfica es la rama de la criptografía que trata de realizar operaciones sobre textos cifrados, sin desvelar el texto plano original. Es considerado por muchos autores como el “<a href="https://ieeexplore.ieee.org/document/7924692">Santo Grial de la criptografía</a>”, puesto que permitiría realizar cálculos sobre los datos cifrados en una tercera parte sin necesidad de descifrar los datos en ningún momento.
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/-arQJ36R5qM"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen></iframe>
+
+El caso de uso más típico de la criptografía homomórfica es poder delegar cálculos en la nube sin que la nube sea consciente de qué datos se están evaluando.
+
+![Esquema de un sistema homomórfico](/images/esquema1.png)
+
+<div class="caption">
+  Esquema de un sistema homomórfico. Fuente:{' '}
+  <a href="https://dl.acm.org/doi/10.1145/3214303">Acar et el.</a>
+</div>
+
+El funcionamiento de un sistema de cifrado homomórfico funciona de la siguiente manera:
+
+1. Un cliente C cifra un mensaje m.
+2. El cliente C envía el mensaje cifrado a un servidor (que podría tratarse de un servidor de una nube pública) y lo almacena.
+3. El cliente C pregunta por una función f, que es lo que quiere evaluar.
+4. El servidor S evalúa f de forma homomórfica, es decir, calcula el resultado, sin conocer el mensaje original.
+5. El servidor S devuelve el resultado de la función f de forma cifrada.
+6. El cliente C es capaz de descifrar la respuesta del servidor y obtener el resultado de la función f sobre el mensaje m.
+
+Este tipo de sistemas normalmente, disponen de tres tipos de claves:
+
+- **Clave pública**: permite cifrar los mensajes.
+- **Clave privada**: permite descifrar los mensajes.
+- **Clave de evaluación**: permite realizar la evaluación de los datos cifrados.
+
+La importancia de esta técnica de cifrado está en los casos de uso que permite que se empiecen a desarrollar de forma segura, manteniendo la **privacidad** y la **confidencialidad**. Entre ellos, los más relevantes implican la externalización de datos con garantía regulatoria, por ejemplo, un conjunto de casos de uso que merece la pena destacar es el de externalizar el entrenamiento y la inferencia de modelos de _machine learning_ en los que tanto el modelo como los datos se procesan de manera cifrada.
+
+Este tipo de técnicas ya han sido probadas con éxito en entornos bancarios, por ejemplo, a través de la colaboración de <a href="https://ibm-research.medium.com/top-brazilian-bank-pilots-privacy-encryption-quantum-computers-cant-break-92ed2695bf14">IBM Research con el Banco Bradesco</a> para aplicar este tipo de esquemas de cifrado sobre datos financieros. Los resultados finales que se obtuvieron a través de los experimentos fueron que:
+
+- Era posible obtener predicciones con la misma precisión que empleando los datos sin cifrar.
+- Era posible el uso de la criptografía homomórfica para preservar los datos de los clientes.
+
+![Sistema homomórfico desarrollado por IBM Research](/images/2.jpg)
+
+<div class="caption">
+  Sistema homomórfico desarrollado por IBM Research sobre datos financieros. Fuente:{' '}
+  <a href="https://ibm-research.medium.com/top-brazilian-bank-pilots-privacy-encryption-quantum-computers-cant-break-92ed2695bf14">
+    IBM Research.
+  </a>
+</div>
+
+El sistema que propuso IBM Research cifra los datos de las transacciones en los servidores de la infraestructura del Banco Bradesco, que son externalizadas a un proveedor de nube pública o híbrida. Los datos de entrenamiento cifrados son la entrada del módulo que implementa el entrenamiento del modelo de forma homomórfica. **El resultado es un modelo cifrado** al que se le introducen transacciones cifradas como entrada. Todo el proceso se realiza sin descifrar los datos, por lo que la predicción se realizará sobre los propios datos cifrados y, al acabar el proceso, son enviadas de nuevo a la infraestructura del Banco para descifrar los resultados. Los detalles de la investigación se pueden encontrar en el <a href=https://eprint.iacr.org/2019/1113.pdf">artículo publicado</a> en <a href="https://rwc.iacr.org/2020/">Real World Crypto 2020</a>.
+
+Este ejemplo pone de relieve que este tipo de técnicas han pasado de un plano teórico a uno práctico en el que se abren un sinfín de casos de uso en los que emplear la criptografía homomórfica, aunque sigue siendo necesario conocer los detalles de los esquemas subyacentes (existen esquemas homomórficos que realizan descifrados intermedios que podrían no ser válidos para garantizar el cumplimiento normativo de este tipo de datos), su nivel de seguridad y las operaciones disponibles. Estas limitaciones se siguen tratando de resolver, siendo un área de investigación muy activa en los últimos tiempos.
+
+## Computación multiparte segura
+
+La computación multiparte segura (MPC, por sus siglas en inglés) permiten a un grupo de personas realizar un cálculo de forma conjunta sin descubrir los datos privados de cada participante. Los participantes acuerdan una función para computar y, después, emplean un protocolo MPC para computar conjuntamente con sus entradas secretas la salida de la función.
+
+La computación multiparte segura posibilita aplicaciones preservando la privacidad donde múltiples partes que no confían entre sí y que disponen de datos privados que no quieren compartir con el resto de partes cooperan para computar una función común.
+
+![Visión general de la computación multiparte segura.](/images/3.png)
+
+<div class="caption">Visión general de la computación multiparte segura.</div>
+
+Una aplicación que permite la MPC es habilitar el _machine learning_ seguro. La MPC se puede emplear tanto en la fase de entrenamiento como de inferencia en los sistemas de _machine learning_.
+
+![Visión general de cómo aplicar MPC sobre modelos de machine learning.](/images/4.png)
+
+<div class="caption">Visión general de cómo aplicar MPC sobre modelos de machine learning.</div>
+
+En la fase de entrenamiento, la MPC puede ser empleada para **entrenar un modelo entre un grupo de partes** usando la combinación de los datos de todas las partes, pero sin exponerlos al resto de partes. En la fase de inferencia, un cliente puede lanzar una petición a un servidor que contiene un modelo preentrenado, manteniendo la respuesta privada al servidor y el modelo al cliente. Las entradas para el protocolo MPC son el modelo privado del servidor y la petición privada del cliente, produciendo la predicción del modelo, que sólo puede ser descifrada por el cliente.
+
+## Privacidad Diferencial
+
+La mayor parte de los conjuntos de datos están formados por datos sensibles, por lo que hacer análisis de datos con ellos no debería filtrar información sensible de ninguno de los individuos del conjunto de datos.
+
+![Los conjuntos de datos pueden contener información sensible y la información de los sujetos no debería filtrar información.](/images/5.png)
+
+<div class="caption">
+  Los conjuntos de datos pueden contener información sensible y la información de los sujetos no
+  debería filtrar información.
+</div>
+
+Con el uso de la privacidad diferencial es posible entrenar modelos de _machine learning_ sin poner en riesgo la privacidad de los conjuntos de datos. El aprendizaje de modelos mediante procesos de privacidad diferencial provee garantías de privacidad demostrables y mitiga el riesgo de exponer datos sensibles. Un modelo entrenado con privacidad diferencial no debería verse afectado por un sólo ejemplo ni por un grupo pequeño de ejemplos de entrenamiento, además, esta propiedad permite una mejor generalización y evita el sobreentrenamiento de los mismos.
+
+La privacidad diferencial nace para proveer una definición formal de privacidad y mejorar anteriores propuestas. Informalmente, la privacidad diferencial establece que dos bases de datos (o conjuntos de datos) que difieran en un individuo, deberían ser indistinguibles a la hora de realizar un análisis de los datos. De esta manera, los resultados del análisis no deberían depender de un individuo en concreto.
+
+A los algoritmos que permiten transformar datos en datos diferencialmente privados se les llama mecanismos. Entre los más conocidos se encuentran el <a href="https://en.wikipedia.org/wiki/Differential_privacy#The_Laplace_mechanism">mecanismo de Laplace</a> y el <a href="https://en.wikipedia.org/wiki/Exponential_mechanism_(differential_privacy)">mecanismo exponencial</a>. El primero consiste en introducir cierto ruido procedente de una <a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Laplace">distribución de Laplace</a> al resultado de una consulta a una base de datos.
+
+![Funcionamiento del mecanismo de Laplace.](/images/6.png)
+
+<div class="caption">Funcionamiento del mecanismo de Laplace.</div>
+
+La propiedad más relevante de los mecanismos de privacidad diferencial es el <a href="https://en.wikipedia.org/wiki/Differential_privacy#Composability">teorema de composición</a>, que permite aplicar distintos mecanismos de forma secuencial o en paralelo, garantizando que la privacidad diferencial se sigue conservando.
+
+![Esquema del teorema de composición.](/images/7.png)
+
+<div class="caption">Esquema del teorema de composición.</div>
+
+## Herramientas open source
+
+Estas tecnologías de las que venimos hablando hoy son aún materia de estudio y la realidad del desarrollo teórico aún no se ha podido implementar de una forma generalista, lo que quiere decir que las herramientas que implementan estas tecnologías aún tienen una elevada curva de aprendizaje y el uso de estas medidas de seguridad sobre la privacidad de los datos requiere un conocimiento muy en detalle de las capacidades individuales de cada librería.
+
+Cada una de estas tecnologías no tiene una única aproximación a cómo implementar librerías que traccionen los casos de uso de la forma más óptima posible y de momento ninguna opción disponible en el entorno académico proporciona soluciones exentas de excepciones y consideraciones en cuanto a la seguridad de los datos en base al contexto en que se encuentran.
+
+La seguridad que estas librerías proporcionan a la privacidad de los datos a día de hoy es muy dependiente del contexto de seguridad de los propios datos, de la cantidad de datos a proteger y de la estructura que modela los datos.
+
+Usando como referencia las tecnologías que hemos comentado anteriormente, hemos probado las herramientas open source del mercado que implementan las funcionalidades descritas. Debido a la extensión de dicho estudio, hemos querido, al menos, referenciar una herramienta dentro de cada una de las tecnologías anteriores: **criptografía homomórfica, computación multiparte y privacidad diferencial**. Las herramientas que queremos destacar tras nuestras pruebas son: TF SEAL y TenSeal, CrypTFlow y DiffPrivLib.
+
+## TFSeal y TenSeal
+
+TF SEAL y TenSeal son las librerías más destacadas que implementan criptografía homomórfica para trabajar sobre modelos de _machine learning_ cifrados.
+
+<a href="https://github.com/tf-encrypted/tf-seal">TF SEAL</a>, es un puente entre
+<a href="https://github.com/microsoft/SEAL">
+  Microsoft SEAL
+</a>, una biblioteca de cifrado homomórfico de última generación, y TensorFlow, uno de los frameworks de \_machine learning\_ más populares. Esta librería forma parte de
+<a href="https://github.com/tf-encrypted/tf-encrypted">
+  TF Encrypted
+</a> cuyo objetivo consiste en construir una interfaz para el \_machine learning\_ sobre datos cifrados.
+
+La instalación es compleja debido a que se requiere una versión de Tensorflow compilada en C++ 17 para que sea compatible con SEAL, escrito en ese lenguaje. También es requisito fundamental usar la versión 3.7 de Python para que la librería pueda funcionar.
+
+<a href="https://github.com/OpenMined/TenSEAL">
+  TenSEAL
+</a> es una librería similar TF SEAL, que permite trabajar sobre tensores cifrados usando SEAL. Esta librería emplea la última versión de SEAL, haciendo que incorpore las últimas funcionalidades/mejoras.
+
+La librería se encuentra implementada en Python y se puede instalar directamente desde pip. Implementa los dos esquemas disponibles en SEAL.
+
+No dispone de mucha documentación, sólo de un pequeño tutorial que explica qué es la criptografía homomórfica y cómo operar con tensores de forma cifrada. La librería está en constante desarrollo, por lo que es esperable que en no mucho tiempo haya más documentación disponible.
+
+## CrypTFlow
+
+CrypTFlow es un sistema end-to-end para realizar inferencia segura sobre Tensorflow. Está compuesto de tres componentes:
+
+- **Athos**: compilador de Tensorflow que compila a una variedad de protocolos MPC semihonesto. Athos usa <a href="https://github.com/mpc-msri/EzPC/tree/master/EzPC">EzPC</a> como un lenguaje intermedio de bajo nivel.
+- **Porthos**: protocolo 3-parte semi-honesto que está orientado a aplicaciones similares a TensorFlow. Porthos está construido sobre SecureNN, pero ha sido modificado para reducir las comunicaciones.
+- **Aramis**: una nueva técnica que utiliza hardware con garantías de integridad para convertir un protocolo semi-honesto MPC a uno seguro frente a adversarios maliciosos. Es necesario disponer de <a href="https://www.intel.es/content/www/es/es/architecture-and-technology/software-guard-extensions.html">SGX</a>.
+
+Con todos estos componentes, son capaces de ejecutar por primera vez una inferencia segura en el conjunto de datos de ImageNet con los modelos pre-entrenados de las siguientes redes neuronales profundas: ResNet-50, DenseNet-121 y SqueezeNet.
+
+Cada uno de estos componentes es independiente y usable de forma independiente, pero combinados hacen CrypTFlow un sistema potente y seguro escrito en TensorFlow.
+
+![Componentes de CrypTFlow.](/images/8.png)
+
+<div class="caption">
+  Componentes de CrypTFlow. Fuente:{' '}
+  <a href="https://www.microsoft.com/en-us/research/uploads/prod/2019/09/CrypTFlow.pdf">
+    Kumar et al.
+  </a>
+</div>
+
+El funcionamiento de CryptTFlow es el siguiente: dada una porción de código escrita en Tensorflow, Athos genera el grafo de computación del código y los metadatos para ayudar a calcular las dimensiones de los tensores. A continuación, el grafo de computación es compilado a un lenguaje intermedio de alto nivel llamado HLIL. Por último, este código generado se puede utilizar por distintos backends como <a href="https://github.com/encryptogroup/ABY">ABY</a> (para cómputos entre 2 partes), Porthos (para 3 partes <a href="https://en.wikipedia.org/wiki/Secure_multi-party_computation#Security_definitions">semihonestos</a>) y Aramis (para cómputos frente a adversarios maliciosos).
+
+## DiffPrivLib
+
+Es la librería de privacidad diferencial de IBM. Se ha liberado como código libre, disponible en GitHub.
+
+Funciona como envoltorio sobre scikit-learn, y su integración con esta librería es inmediata. La librería se encuentra dividida en tres módulos:
+
+- **Mecanismos**: implementa multitud de mecanismos de privacidad diferencial. Todos ellos se pueden ver en la siguiente tabla.
+
+![Mecanismos de privacidad diferencial implementados en DiffPrivLib.](/images/9.png)
+
+<div class="caption">
+  Mecanismos de privacidad diferencial implementados en DiffPrivLib. Fuente:{' '}
+  <a href="https://arxiv.org/pdf/1907.02444.pdf">Holohan et el.</a>
+</div>
+
+- **Modelos**: incluye modelos de _machine learning_ con privacidad diferencial. Tiene modelos de clustering, clasificación, regresión, reducción de la dimensionalidad y preprocesado.
+- **Herramientas**: incluye herramientas genéricas de análisis de datos para privacidad diferencial.
+
+Además, permite el entrenamiento de modelos de _machine learning_. En la siguiente imagen, se ve la comparación del entrenamiento de un modelo usando mecanismos de privacidad diferencial y sin ellos.
+
+![Comparativa entre un entrenamiento usual y un entrenamiento diferencialmente privado.](/images/10.png)
+
+<div class="caption">
+  Comparativa entre un entrenamiento usual y un entrenamiento diferencialmente privado. Fuente:{' '}
+  <a href="https://arxiv.org/pdf/1907.02444.pdf">Holohan et el.</a>
+</div>
+
+## Conclusiones
+
+Como hemos visto a lo largo del post existen tres áreas de la criptografía que permitirían la externalización de datos manteniendo y protegiendo su privacidad.
+
+- **La criptografía homomórfica** permite realizar cálculos sobre los datos cifrados en una tercera parte sin necesidad de descifrar los datos en ningún momento. Esta tecnología permite cifrar la información antes de enviarla a la nube y procesarla en sistemas de _machine learning_ sin verse afectada su confidencialidad y privacidad. Sin embargo, tanto el tiempo de entrenamiento como de inferencia aumentan significativamente, y la precisión suele ser inferior que en modelos entrenados sin cifrar.
+- **La computación multiparte** segura permite a un grupo de entidades realizar un cálculo de forma conjunta sin descubrir los datos privados de cada participante. La MPC se puede emplear tanto en la fase de entrenamiento como de inferencia en los sistemas de _machine learning_.
+- **La privacidad diferencial** posibilita que los resultados de un análisis estadístico no dependan de un individuo en particular. Esto permite el entrenamiento de modelos de _machine learning_ sobre datos privados. Un modelo entrenado con privacidad diferencial no debería verse afectado por un sólo (ni por un grupo pequeño) de ejemplos de entrenamiento, permitiendo además una mejor generalización, y evitando el sobreentrenamiento de los mismos.
+
+En la actualidad existen diferentes herramientas y trabajos sobre cada una de estas áreas, herramientas basadas en estudios y pruebas de concepto que no son adecuadas para usar en entornos productivos, además de haber sido probadas con conjuntos de datos típicos en investigación como el <a href="https://en.wikipedia.org/wiki/MNIST_database">MNIST</a> pero no en entornos reales. Por lo tanto, sigue siendo un contexto a explorar y ver su continuidad en el tiempo para conocer el gran número de herramientas emergentes. Las herramientas más potentes en este ámbito son las que implementan todas estas técnicas de forma conjunta, que veremos en un próximo post.
+
+**Fuente Imagen destacada:** Unsplash
