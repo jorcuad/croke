@@ -103,6 +103,14 @@ const query = graphql`
               description
             }
             pressComponent {
+              title24h24lGNU
+              description24h24lGNU
+              title24h24lEvento
+              description24h24lEvento
+              titleElDiario
+              descriptionElDiario
+              titleRTPegassus
+              descriptionRTPegassus
               titleSalto
               descriptionSalto
               titleNau
