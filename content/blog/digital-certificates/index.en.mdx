@@ -1,0 +1,187 @@
+---
+banner: 'banners/placeholder.png'
+categories: ['security']
+date: '2020-08-19T12:00:00+01:00'
+description: 'El número de certificados digitales continúa creciendo y ha obligado a las organizaciones a evaluar cómo administran el ciclo de vida de sus certificados para evitar ataques debido a un mal uso de éstos.'
+tags: ['BBVA Next', 'security', 'certificates']
+draft: false
+title: 'Certificados digitales, ¿son seguras las páginas a las que nos conectamos?'
+image: './images/post-image.png'
+type: 'blog'
+---
+
+**<center>This article has not yet been translated yet. You can try to read it in Spanish or using a translating tool. I will try to translate it in the future.</center>**
+
+**Este post originalmente se publicó en la web de BBVA Next Technologies. No dudes en ver el [original](https://www.bbvanexttechnologies.com/certificados-digitales-son-seguras-las-paginas-a-las-que-nos-conectamos/). No olvidéis seguir en las redes sociales a su coautora: Nerea Sainz de la Maza [[LinkedIn](https://www.linkedin.com/in/nereasainzdelamaza/)] ¡Es una referente!**
+
+![certificaate cover](/images/portada.png)
+
+**<center>El número de certificados digitales continúa creciendo y ha obligado a las organizaciones a evaluar cómo administran el ciclo de vida de sus certificados para evitar ataques debido a un mal uso de éstos. En los últimos años han surgido varias iniciativas para tratar de facilitar este proceso, las cuales ya analizamos en el pasado y hoy volvemos sobre ello para recoger en este artículo las que mayor impacto siguen teniendo.</center>**
+
+Actualmente, debido a la cantidad de aplicaciones y servicios proporcionados a través de Internet, una de las mayores preocupaciones en torno a la ciberseguridad es la capacidad de **verificar la identidad**, es decir, probar que cierta persona es quien dice ser. Para solventar la dificultad actual de verificar la identidad, se usan **certificados digitales y cadenas de confianza**.
+
+Uno de los usos más habituales de un certificado es identificar si un sitio web es seguro. En este caso, el certificado digital es necesario para habilitar el protocolo _Transport Layer Security (TLS)_ en los sitios web. Este protocolo nos proporciona garantías de seguridad en cuanto a integridad, ya que nos asegura criptográficamente que el contenido de la web no es modificado a medio camino entre el servidor y nuestro ordenador, y privacidad, ya que permite que el contenido de la web y de nuestras interacciones con ella vaya cifrado y no sea visible para un criminal que esté espiando en nuestra red.
+
+Sin embargo, el uso más importante de los certificados digitales es el de **identificar a la persona u organización que publicó dicho sitio web en un dominio digital** concreto de forma inequívoca. Esto es importante porque en Internet podría haber dos páginas exactamente iguales, una de ellas de una tienda _online_ y otra exactamente igual publicada por un criminal que quiere hacerse pasar por esa tienda para robarnos los datos de nuestra tarjeta de crédito o nuestra contraseña. La única diferencia entre ambas será el dominio, o dirección digital (la URL), de cada una de esas páginas exactamente iguales. El certificado digital nos dirá también quién ha publicado esa página web y eso nos permitirá diferenciar entre ellas dos y saber a ciencia cierta cuál de ellas es la página verdadera. Esta distinción no siempre es fácil, ya que los criminales se las ingenian para poner nombres visualmente parecidos a los oficiales pero es un primer paso para alertarnos de posibles amenazas sobre las cuales se sustentan muchas otras tecnologías que nos protegen.
+
+## ¿Qué es un certificado?
+
+Un certificado es un conjunto de datos que identifican una página web accesible desde un dominio concreto y a la entidad que ha creado ese certificado. Estas entidades, llamadas **Autoridades Certificadoras** (en adelante CAs) son las **encargadas de emitir los certificados** dando garantías criptográficas de que nadie salvo ellas son capaces de modificar el contenido del certificado de forma indetectable.
+
+Cuando queremos crear y publicar una página web, será necesario obtener un dominio. Con ese dominio, que es único y no puede ser adquirido por otra persona, y nuestros datos personales; la CA comprobará la posesión del dominio y nos creará un certificado, en teoría inmutable, que asegurará a nuestros visitantes que la dirección de la página web pertenece a su creador y que no ha cambiado desde el momento de su emisión.
+
+![Certificate concept](/images/certificate.jpg)
+
+<div class="caption">
+  Interpretación de un certificado. Fuente: <a href="https://smallstep.com/">Small Step</a>
+</div>
+
+Cuando hablemos de los certificados digitales tenemos que tener en cuenta que vamos a hablar de **dos pares de claves público-privadas**. Por un lado está el par de claves de la CA. La clave privada servirá para firmar todos los certificados que genere la CA y la clave pública servirá para verificar que ha sido esa CA y no otra entidad quién ha creado el certificado. La clave privada, como es lógico, se almacena de forma segura y con gran celo, ya que de ser robada tendría un impacto crítico en la seguridad de todos los certificados generados por esa CA. La clave pública de la CA se almacena en los navegadores web que confían en ella. Esto quiere decir que un navegador podría confiar en ella pero otros no y que por lo tanto para algunos navegadores la web será segura pero no tiene por qué serlo para todos.
+
+El otro par de claves es el que se usa para cifrar la conexión entre el servidor de una página web y nuestro navegador. La clave privada del servidor que nos provee la página web se almacena en el propio servidor. La clave pública se almacena en el certificado digital de la página web. Cuando la CA firma con su clave privada el certificado nos permite asegurar que no ha sido modificado por nadie más, es por eso que la página web añade su clave pública en el certificado, permitiendo al navegador asegurar que ningún atacante es capaz de descifrar los datos que intercambiamos con la web, como por ejemplo, el usuario y contraseña durante el _login_ o los datos bancarios en una compra _online_.
+
+La relación entre que el certificado no sea modificable a no ser que sea por la CA y que podamos identificar qué página web es segura es directa.
+
+## Los terceros de confianza
+
+La seguridad de este sistema se sustenta en los **sistemas criptográficos de clave asimétrica**, concretamente este sistema depende de que la clave privada de la CA sea segura. Si esa clave es robada, un atacante podrá crear certificados falsos a nombre de otras personas. Es por eso que este es uno de esos sistemas dependientes de un tercero de confianza, la CA. Confiamos en que la CA que estamos usando es segura y confiamos en que la CA no es malintencionada y actuará conforme a la ley.
+
+![Trusted parties](/images/trusted-parties.png)
+
+<div class="caption">
+  Concepto de Autoridad Certificadora. Fuente: <a href="https://www.trusto.eu/">Trusto</a>
+</div>
+
+El mayor problema respecto a confiar en la seguridad de un tercero de confianza es que la seguridad envejece. Con el tiempo aparecen nuevas vulnerabilidades que podrían poner en riesgo sistemas que eran reconocidos como seguros. En este caso, esto se ve exponenciado con que un tercero de confianza es por lo general uno de los objetivos más beneficiosos de atacar para un delincuente. La razón por la que confiamos en estas organizaciones que se posicionan como terceros de confianza es porque sus sistemas de seguridad se suponen muy seguros y especializados para la tarea que realizan, sin embargo no debemos pasar por alto que incluso estos sistemas de seguridad también envejecen con el tiempo.
+
+Otro aspecto a tener en cuenta sobre los terceros de confianza es que una organización está sujeta a la legalidad del país en el que reside, este hecho puede obligarla a actuar acorde a dicha legalidad, que puede ir en contra del usuario. Además, también es posible que un empleado cometa un error y cree un certificado con datos que no son correctos o que ese empleado esté descontento y decida actuar en contra de la empresa y de la ley. Estas razones nos deben dar a entender que pese a que este sistema es indudablemente una **medida de seguridad necesaria en cualquier servicio de Internet, no debe ser tampoco nuestra única capa de seguridad** y debemos seguir teniendo que velar por que cada uno de los componentes de nuestro sistema sea seguro y resiliente a un fallo en el resto de medidas de seguridad establecidas.
+
+Hay que matizar que el certificado nos permite comprobar que la dirección de una página web ha sido adquirida por la persona que creó el certificado, pero no nos garantiza que esa persona tenga buenas intenciones o que la página web no haya sido modificada desde que se creó el certificado.
+
+## Inseguridades de un certificado
+
+Llevamos ya un rato hablando sobre certificados pero puede que no sea visible el cómo mejoran la seguridad de los recursos digitales y el cómo pueden afectar a nuestro día a día.
+
+Imaginemos que un ciberdelincuente consigue entrar en los sistemas de la empresa que valida la identidad de las páginas web de la organización X. En ese momento, el cibercriminal podrá crear certificados que suplanten la identidad de la organización X, que si hasta ese momento lo ha hecho bien, nadie sabrá que esos certificados han sido hechos sin permiso de la organización X.
+
+Por poner un ejemplo del día a día, esto es equivalente a si un criminal consigue entrar en una comisaría de policía y con las impresoras especiales que allí disponen imprime un DNI a tu nombre pero con la imagen de su cara. Si nadie ve al delincuente mientras comete la falsificación, no se puede saber que ese DNI es falso ya que se ha hecho mediante métodos reglamentarios. Entonces, ese criminal podrá hacerse pasar por otra persona. Por supuesto, en la vida real no es tan fácil hacer esto con un DNI, ya que el criminal necesitaría las credenciales de acceso de un funcionario público para poder usar dichas máquinas. Sin embargo, ejemplifica bien lo que puede hacerse con un certificado falsificado.
+
+Volviendo al ámbito digital, una vez que el ciberdelincuente falsifica ese certificado, lo único que tiene que hacer a continuación es, por ejemplo, crear una página web idéntica a la de la organización X. El certificado que ha generado el ciberdelincuente se ha creado por los métodos oficiales y **para cualquier navegador el certificado será veraz** y probará que la página web pertenece en efecto a la organización X. Sin embargo, quien está detrás no será una organización en la que podemos confiar, sino un ciberdelincuente preparado para obtener nuestros datos.
+
+En este ejemplo, hay un problema grave, nosotros confiamos en que el intermediario que valida nuestra identidad es seguro y no dejará que esto pase. Pero, si el cibercriminal ha hecho bien su trabajo, nadie sabrá que esto ha pasado. Entonces, ¿cómo sabremos que esto ha pasado?
+
+**La respuesta es clara, no se puede saber**. En algún momento alguien resultará estafado, hará una denuncia y tras investigar el suceso, se descubrirá ese certificado falso y se invalidará. Sin embargo, mientras esto no suceda otros usuarios serán también engañados.
+
+## Certificate Transparency
+
+<a href="https://www.certificate-transparency.org/what-is-ct">
+  Certificate Transparency
+</a> es una iniciativa de Google que surge para eliminar de raíz la posibilidad de que esto pase, **ayuda a mitigar el uso de certificados fraudulentos emitidos sin el conocimiento del propietario del dominio** para el que se emiten. Se trata de un elemento que se añade como un nivel extra de seguridad a la cadena de confianza ya existente, en la cual están envueltas las CA, las Autoridad Validadora (VA), los certificados y los servidores web.
+
+![Trusted parties](/images/ct.png)
+
+Certificate Transparency se compone de tres piezas que explicaremos a continuación. La interacción entre estas piezas es la que aporta un nuevo nivel de seguridad a la cadena de confianza. En resumen, lo que se consigue con esta interacción es **obligar a que todos los certificados aparezcan públicamente** en los servidores de _logs_. Si no aparecen en estos servidores serán considerados como no válidos. Esto se cumple tanto para certificados lícitos como para certificados que no lo son. Gracias a esto, cualquier dueño de dominio que haga uso de un monitor podrá enterarse rápidamente de certificados robados y firmados a su nombre, impidiendo de esta forma el <a href="https://es.wikipedia.org/wiki/Phishing">phishing</a> con su identidad, como sucedía en el ejemplo anterior. Y a su vez, cuando un usuario que haga uso de un auditor en su navegador intente entrar a este tipo de webs maliciosas, será informado por su navegador de que el sitio web no es seguro.
+
+**Servidor de logs:** es el encargado de almacenar los certificados. Para almacenar los certificados se utiliza una estructura predefinida: un <a href="https://es.wikipedia.org/wiki/%C3%81rbol_de_Merkle">árbol binario de Merkle</a> que puede verse como una estructura de <a href="https://es.wikipedia.org/wiki/Funci%C3%B3n_hash">hashes</a> encadenados, de forma que si la información de un nodo (certificado en este caso) es modificada, es necesario rehacer el árbol entero para obtener un hash raíz consistente.
+
+![Diagrama Merkle Tree](/images/merkle_tree.png)
+
+<div class="caption">Esquema de un árbol de Merkle.</div>
+
+Para poder almacenar el certificado en el _log_ es necesario realizar primero el _hash_ del mismo y es este _hash_ es el que se añade al árbol existente.
+
+Esta estructura de _hashes_ encadenados permite fácilmente comprobar cuándo la información de un certificado ha sido modificada ya que el _hash_ raíz del árbol de Merkle tras la alteración no se corresponde con el hash raíz del árbol original provocando una inconsistencia y detectando por tanto que la información ha sido alterada.
+Por supuesto, Certificate Transparency, requiere que las CA (Let’s Encrypt, Digicert, Symantec, Comodo, GlobalSign, etc.) declaren públicamente los certificados que han generado legítimamente.
+
+**Auditor:** se encarga de comprobar que los certificados están en un servidor de _log_ válido así como que el árbol es consistente o lo que es lo mismo, que no haya habido ninguna alteración en ningún nodo. Un auditor puede ser el propio navegador web.
+
+**Monitor:** permite centralizar la información de los servidores de _logs_ de forma gráfica e intuitiva de modo que cualquier usuario pueda comprobar qué certificados tiene un servidor y pueda operar con ellos (búsquedas, descargas).
+
+## Monitores de Logs
+
+La aparición de la tecnología Certificate Transparency hizo que muchas compañías importantes quisieran beneficiarse de sus capacidades, lanzando sus propios monitores y servicios de monitorización, ya que revisar periódicamente los _logs_ de CT puede ser un reto dado el alto volumen de certificados emitidos. Las herramientas de monitorización más destacadas son:
+
+- https://crt.sh
+- https://censys.io/certificates
+- https://google.com/transparencyreport/https/ct
+- https://developers.facebook.com/tools/ct
+- https://www.entrust.com/ct-search/
+
+![Logo FB Monitor](/images/facebook_monitor.jpg)
+
+En el caso de Facebook, desarrolló en 2016 un monitor que se encarga de consultar a los diversos servidores de _logs_ por sus certificados y además los muestra de forma intuitiva y accesible en un portal web. En esta web, Facebook añadió la capacidad de realizar búsquedas por dominio y descargar los certificados. Gracias a estas funcionalidades tan sencillas, su monitor se convierte en una herramienta muy útil que permite **centralizar la información y visualizarla de forma sencilla** y además permite a los propietarios de dominios ver fácilmente todos los certificados asociados con sus dominios y recibir notificaciones cuando se emitan nuevos. Por lo tanto, se protege a los sitios web legítimos y en el caso de existir dominios fraudulentos se agiliza su cierre y evita que los usuarios caigan en dichas estafas.
+
+![FB monitor screenshot](/images/monitor-screenshot.png)
+
+<div class="caption">
+  Apariencia del monitor web de Facebook. Fuente:{' '}
+  <a href="https://developers.facebook.com/tools/ct/">Facebook</a>
+</div>
+
+Como hemos mencionado al inicio, se podrían crear dominios visualmente similares a los oficiales, lo que se conoce como confusables conocido como <a href="https://en.wikipedia.org/wiki/IDN_homograph_attack">Homograph Attack</a> en inglés. En el laboratorio se desarrolló la herramienta <a href="https://www.bbvanexttechnologies.com/labstools/deepconfusables/">DeepConfusables</a> que utiliza deep learning para automatizar la creación de caracteres <a href="https://websec.github.io/unicode-security-guide/visual-spoofing/">confusables</a> sobre la codificación Unicode. Este sistema se podría usar como herramienta de _blue team_, para detectar posibles dominios que suplanten a nuestra organización y poder registrarlos para redirigir al dominio legítimo.
+
+De la misma manera, en la herramienta de monitorización de Facebook incluyeron esta funcionalidad, la monitorización de dominios de suplantación o phishing facilitando la visualización de dominios falsos. **La herramienta busca nombres de dominios que se parecen a los legítimos**, detectando dominios homógrafos con caracteres Unicode, como por ejemplo, si la letra “o“ fuera reemplazada por el número “0“ como “www.bbvanexttechn0l0gies.com”, o también errores tipográficos que se pasan por alto fácilmente como nombres mal escritos del tipo “www.bbvanextthecnologies.com”. Este tipo de ataque no sólo funciona con estos ejemplos tan sencillos sino que también existen multitud de ejemplos alternativos mucho más difíciles de detectar con otros caracteres Unicode como se muestra en la imagen. Las primeras direcciones podrían ser fácilmente detectables por un ojo humano, sin embargo las dos últimas podrían pasar totalmente desapercibidas.
+
+![Fake urls examples](/images/facebook-fakeurls.png)
+
+Cabe destacar que Facebook sólo proporciona las notificaciones, y es responsabilidad de los propietarios de dominio comunicarse con los registradores de dominio para cerrar los dominios fraudulentos y con las CAs para revocar los certificados.
+
+## Let’s Encrypt
+
+![Lets Encrypt logo](/images/lets-encrypt.png)
+
+<a href="https://letsencrypt.org/es/">
+  Let’s Encrypt
+</a> es una CA que permite la expedición de certificados web gratuitos. Se creó en abril de 2016 por el Internet Security Research Group y tras 4 años han logrado emitir
+<a href="https://letsencrypt.org/2020/02/27/one-billion-certs.html">
+  mil millones de certificados
+</a>, y actualmente proporcionan certificados a 225 millones de páginas web. Para poder emitir el certificado es necesario demostrar el control sobre dominio donde se aloja la aplicación y para ello es necesario instalar en el _host_ web un cliente software que emplee el protocolo
+<a href="https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment">ACME</a>,
+<a href="https://tools.ietf.org/html/rfc8555">
+  estandarizado
+</a> por el IETF en 2019, para la comunicación con Let’s Encrypt. Su objetivo es automatizar el proceso para configurar un servidor seguro y obtener un certificado válido.
+
+![FB monitor screenshot](/images/crecimiento-letsencrypt.png)
+
+<div class="caption">
+  Crecimiento de Let’s Encrypt – Páginas web con certificados activos. Fuente:{' '}
+  <a href="https://letsencrypt.org/es/stats/">Let’s Encrypt</a>
+</div>
+
+### ¿Cómo funciona?
+
+El funcionamiento de Let’s Encrypt es relativamente simple. Para certificar un dominio mediante este método sólo es necesario instalar en el servidor un agente software. Este es distribuido en la web oficial de Let’s Encrypt. Después de la instalación de este software hay dos fases. En la primera debemos demostrar que somos los dueños del dominio para el cual queremos un certificado. Una vez hecho esto entramos en la segunda fase, en la que ya podemos gestionar el ciclo de vida de nuestros certificados.
+
+He aquí el <a href="https://letsencrypt.org/docs/certificate-compatibility/">listado</a> de navegadores compatibles con Let’s Encrypt. Para el caso concreto de Google, Let’s Encrypt envía todos los certificados emitidos a los <a href="https://letsencrypt.org/docs/ct-logs/">registros de Certificate Transparency</a>, mejorando así su capacidad de monitorización.
+
+### 1. Validación del control del dominio
+
+El agente software instalado en el host crea un par de claves público/privada. Tras esto, envía a Let’s Encrypt la clave pública y el dominio para el que se está solicitando el certificado. Let’s Encrypt responde a nuestro servidor con uno o más retos mediante los cuales se puede probar el control del dominio.
+
+Un ejemplo típico es el de crear un fichero concreto en una de las rutas de nuestro dominio y firmarlo con la clave privada.
+
+Una vez realizados los retos, la CA comprueba que éstos sean correctos. En nuestro ejemplo, la CA buscará el fichero en la ruta de nuestro dominio, validará la firma con la clave pública y comprobará que concuerde con lo solicitado.
+
+Si el reto se supera con éxito el servidor es autorizado para poder gestionar certificados para el dominio especificado.
+
+### 2. Solicitud, revocación y renovación de certificados
+
+El agente software firma las peticiones de solicitud, renovación o revocación con la clave autorizada y el servidor contesta bien con el nuevo certificado o con la respuesta correspondiente a la revocación.
+
+Como comentábamos, las CAs pueden tener problemas de seguridad. En el caso de Let’s Encrypt, hace unos meses se vio <a href="https://www.bbc.com/news/technology-51719588">obligado a revocar 3 millones de certificados</a> TLS por un error que afectaba a la forma en la que el software verificó la propiedad del dominio antes de emitir dichos certificados. Desde Let’s Encrypt contactaron con los afectados para renovar los certificados y evitar los problemas que conlleva el hecho de tener un certificado revocado que resultaría en que la página fuera marcada como insegura y esto podría afectar a la reputación de los sitios web y por consiguiente a las organizaciones.
+
+## Conclusiones
+
+Los profesionales de la seguridad saben cómo funcionan los certificados digitales, sin embargo no todos saben administrarlos de forma segura desde su creación hasta la revocación.
+
+En los últimos años están apareciendo diferentes _frameworks_, tecnologías y productos que prometen una gestión escalable y segura del ciclo de vida de los certificados. Existen versiones de pago, de código abierto, basadas en la nube, etcétera. Gracias a estas tecnologías, **la gestión de certificados se simplifica al mismo tiempo que se abarata el coste y aumenta la usabilidad**.
+
+Cabe destacar que el objetivo final de las tecnologías emergentes es incrementar la seguridad evitando que se distribuyan de forma insegura las claves privadas así como proponer alternativas para la detección de certificados comprometidos con la mayor brevedad posible.
+
+Con todo ello, debido a que la seguridad del individuo en Internet y la protección de los datos que se intercambian son un aspecto clave, seguirá experimentando evoluciones y nuevas aportaciones.
+
+Sin embargo, no debemos olvidar que es **el usuario final quién debe validar estos mecanismos** ya que como comentábamos inicialmente, el hecho de que una web posea un certificado digital podría dar cierta apariencia de seguridad ganando la confianza del usuario, incluso obtener mayor posicionamiento SEO, pero no revela el verdadero fin de la web.
+
+_Este artículo es la revisión de uno de nuestros post antiguos y nos gustaría remarcar y agradecer el trabajo de_ <a href="https://es.linkedin.com/in/albertodiazadorna">Alberto Díaz Ardona</a> _y_ <a href="https://www.bbvanexttechnologies.com/author/ruth-gonzalez-novillo/">Ruth González Novillo</a> _en el artículo original sobre el que nos hemos basado._
+
+Fuente Imagen destacada: <a href="https://unsplash.com/photos/kqguzgvYrtM">Unplash</a>

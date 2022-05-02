@@ -109,6 +109,11 @@ const PostContent = styled.div`
     max-height: 100%;
   }
 
+  .audio {
+    width: 100%;
+    height: 100px;
+  }
+
   .gatsby-resp-iframe-wrapper {
     margin: ${rhythm(2)} auto;
   }

@@ -1,0 +1,212 @@
+---
+banner: 'banners/placeholder.png'
+categories: ['BBVA Next']
+date: '2020-06-30T12:00:00+01:00'
+description: '(Only spanish version) The use of passwords as an authentication mechanism does not guarantee the security of our accounts. Although there is no definitive security measure, passwordless is a step forward in improving user security and convenience. Are we at the beginning of the end of passwords?'
+tags: ['BBVA Next', 'security', 'passwordless', 'authentication']
+draft: false
+title: 'Passwordless: The end of passwords'
+image: './images/post-image.jpg'
+type: 'blog'
+---
+
+**<center>This article has not yet been translated yet. You can try to read it in Spanish or using a translating tool. I will try to translate it in the future.</center>**
+
+**Este post originalmente se publicó en la web de BBVA Next Technologies. No dudes en ver el [original](https://www.bbvanexttechnologies.com/passwordless-el-fin-de-las-contrasenas/). No olvidéis seguir en las redes sociales a su coautora: Ruth González [[Twitter](https://twitter.com/RuthGnz)][[LinkedIn](https://www.linkedin.com/in/ruthgonzaleznovillo/)] ¡Es una referente! Y echadle un ojo al [repo del lab de seguridad](https://github.com/orgs/next-security-lab), ellos también se han volcado mucho en que este post salga TAN bien.**
+
+![Passwordless cover](/images/portada.jpg)
+
+**<center>El uso de contraseñas como mecanismo de autenticación no garantiza la seguridad de nuestras cuentas. Aunque no hay una medida de seguridad definitiva, passwordless da un paso más en mejorar la seguridad y comodidad del usuario. ¿Estaremos ante el principio del fin de las contraseñas?</center>**
+
+## Usuario y contraseña: 12345/12345
+
+Autenticarse mediante usuario y contraseña es el mecanismo más comúnmente utilizado para demostrar la identidad de una persona en los procesos de autenticación. La seguridad de este mecanismo depende directamente del propio usuario, quien debe elegir la complejidad y longitud de la contraseña. Si bien es cierto, con el fin de reducir la problemática la mayoría de los sitios web incorporan diferentes políticas que definen unas [características mínimas de seguridad](https://www.incibe.es/sites/default/files/contenidos/politicas/documentos/contrasenas.pdf):
+
+- Longitud mínima
+- Uso de al menos una mayúsculas
+- Uso de al menos una minúscula
+- Uso de números
+- Uso de al menos un carácter especial
+
+Estas políticas aumentan la seguridad en detrimento de la usabilidad ya que el usuario final debe memorizar una serie de caracteres complejos. La dificultad aumenta cuando tenemos que usar contraseñas en distintos sitios, algo que es común ya que todos tenemos varias cuentas de correo electrónico, cuentas en tiendas online o en redes sociales.
+
+Pese a que las recomendaciones anteriores no dejan de ser ciertas, **con el paso del tiempo las pautas de seguridad han ido evolucionando en favor de evitar contraseñas que sean una sola palabra y promoviendo que las contraseñas sean una frase fácil** de recordar, con palabras ortográficamente correctas y en la que se intente añadir mayúsculas y números de una forma natural que nos permita recordarla más fácilmente. Uno de los problemas que causa una contraseña compleja o una política de rotación muy agresiva es que el usuario la olvide constantemente o que al obligar a cambiarla caiga en la mala práctica de repetir patrones predecibles.
+
+![XKCD Comic](/images/password.png)
+
+<div class="caption">
+  Comic de XKCD, un clásico actual. <a href="https://xkcd.com/936/">Fuente</a>
+</div>
+
+Debido a la gran cantidad de servicios web que se usan y la dificultad creciente de recordar una contraseña diferente por cada servicio, al final, las personas acaban reutilizando las contraseñas entre una aplicación y otra. Esto es un error común e **incrementa en gran medida el riesgo al que se expone el usuario**.
+
+Para entender el porqué de este aumento en el riesgo que corre el usuario, supongamos que un atacante encuentra una vulnerabilidad en un sitio web concreto donde un usuario ha creado una cuenta. Si este atacante es capaz de comprometer la base de datos y obtener los datos del usuario (entre ellos la contraseña), el siguiente paso que tomará es el de **buscar más servicios donde ese usuario esté registrado** y probará si la contraseña es igualmente válida.
+
+Puede que los servicios que usamos regularmente no sean inseguros, pero de reutilizar la misma contraseña en todos los servicios estamos comprometiendo la seguridad del resto de servicios a la del sistema más débil. Un sistema es tan seguro como su dependencia más débil.
+
+Con la gran cantidad de ataques que sufren los servicios digitales a diario, una buena práctica consiste en comprobar si una cuenta ha sido comprometida. Esto puede hacerse en servicios como [Have I Been Pwned](https://haveibeenpwned.com/), un servicio gratuito especializado que recopila las bases de datos de los servicios vulnerados y los pone a disposición de los usuarios a través de su página web. Si al buscar nuestro email aparece algún resultado, eso quiere decir que alguna de nuestras cuentas asociadas a este email ha sufrido una brecha de seguridad y los datos de sus usuarios han sido publicados en internet o vendidos en la _dark web_. Este servicio no tiene todos los datos, pero se recomienda comprobar de vez en cuando si nuestros correos electrónicos aparecen en su buscador. Si esto sucede, el usuario debe cambiar la contraseña, y si el servicio admite un segundo factor, es aconsejable que se active.
+
+## Seguridad y usabilidad
+
+Para tener contraseñas seguras podemos concluir que deben ser lo [más complejas posibles](https://krebsonsecurity.com/password-dos-and-donts/) y además deberían ser **únicas por cada cuenta**. Si se quiere llegar a un siguiente nivel, lo ideal sería cambiarlas cada cierto tiempo. De esta forma, si han sido comprometidas, el atacante dejaría de tener acceso.
+
+A raíz de todo esto, surgen los gestores de contraseñas, los cuales como su nombre indica nos permiten almacenar contraseñas de forma segura protegidas mediante una clave única. Esto aumenta la usabilidad ya que el usuario sólo tiene que memorizar una contraseña compleja y no una por cada servicio que desee usar.
+
+Aún así, esta solución no es del todo segura ya que nada nos impide apuntar la clave del gestor de contraseñas en un post-it que podemos pegar a la pantalla de nuestro ordenador.
+
+Para solventar este problema aparece el uso del segundo factor. Este mecanismo implica que cuando nos autenticamos en un servicio, no sólo se nos pedirá una contraseña para verificar nuestra identidad, sino que tendremos que introducir otro tipo de información como un código PIN, nuestra huella dactilar o una imagen de nuestra cara. No todos los métodos de doble factor son seguros, el SMS es un tipo de método doble factor que [bajo ciertas circunstancias es inseguro](https://www.kaspersky.es/blog/2fa-practical-guide/17187/) y **se recomienda hacer uso de métodos alternativos**.
+
+Un claro ejemplo es la normativa europea [PSD2](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=celex%3A32015L2366) sobre servicios de pagos electrónicos, que entró en vigor el 14 septiembre de 2019 y recoge que el acceso a los canales online y la realización de operaciones requieren de un doble factor de autenticación, ya sea a través de la aplicación web o móvil. La normativa define uno de los principios clave para la autenticación con doble factor por el cual un usuario debe emplear al menos dos de los siguientes tipos de autenticación:
+
+- Algo que conoce: una contraseña.
+- Algo que posee: puede ser su dispositivo móvil (SMS)
+- Algo que es: reconocimiento facial o huella dactilar.
+
+Passwordless **va un nivel más allá**, eliminando definitivamente las contraseñas para el proceso de autenticación y centrándose en otros mecanismos y protocolos como factor único y principal del proceso. Permite solventar el problema que generan las contraseñas, siendo este uno de sus puntos [fuertes en cuanto a seguridad](https://www.microsoft.com/en-us/security/business/identity/passwordless). Además, reduce la problemática de la gestión de contraseñas. Esto supone un ahorro de costes en los servicios en que esta gestión no se puede realizar de forma automática.
+
+A pesar de ser un mecanismo de autenticación novedoso que a priori simplifica la problemática de las tradicionales contraseñas, no queda exento de riesgos y el grado de seguridad depende de su [implementación](https://auth0.com/blog/is-passwordless-authentication-more-secure-than-passwords/).
+
+## Evolución de la autenticación sin contraseñas
+
+La inseguridad de las contraseñas ha hecho que surjan distintos mecanismos de autenticación que permitan reforzar la seguridad llegando como caso extremo a eliminarlas en el caso de _passwordless_.
+
+### 2FA
+
+Es una **medida de seguridad para evitar el acceso no autorizado a cuentas**, permitiendo que en caso de que un atacante logre la contraseña del usuario no pueda acceder al servicio, puesto que se necesita un factor adicional como puede ser un código que le llega al usuario por SMS o un código que genere una aplicación externa sincronizada con el servidor como podría ser Google Authenticator.
+
+### MFA
+
+Mientras que en 2FA se hace uso de un segundo factor de autenticación, en MFA ([Multi-Factor Authentication](https://www.centrify.com/blog/adaptive-multi-factor-authentication-mfa-2/)) se generaliza este concepto. **Un sistema de autenticación MFA no incorpora un único segundo factor sino múltiples de ellos**. Si bien, en 2FA un usuario debe demostrar su identidad mediante una contraseña y otro sistema de verificación de identidad paralelo, con MFA no existe una limitación en el número de sistemas de verificación paralelos que puede tener el sistema de autenticación.
+
+A modo de ejemplo, en 2FA un sistema contaría con un formulario para introducir una contraseña y en caso de ser válida nos pedirá un código PIN generado por una aplicación _authenticator_. Sin embargo, en MFA tras este PIN, podría pedirnos una huella dactilar, después verificación facial y finalmente el código enviado mediante un SMS. No hay límite en el número de capas verificación que pueden añadirse y el número de capas dependerá de la seguridad que queramos que tenga el sistema de verificación.
+
+La autenticación multifactor se puede integrar en soluciones de seguridad que toman en cuenta el comportamiento del usuario, esto mejora las capacidades de respuesta en lo que se denominan sistemas de [seguridad adaptativa](https://www.gartner.com/smarterwithgartner/build-adaptive-security-architecture-into-your-organization/). Esta permite prevenir y detectar de forma temprana los ataques. En un caso ideal incluso predecirlos en base a los datos recogidos del usuario antes de que sucedan. La autenticación multifactor toma una posición clave en estos esquemas de seguridad ya que permite seleccionar los métodos de autenticación que mejor se ajustan al contexto de seguridad del usuario, seleccionando de forma automática cuántos controles de autenticación y de qué tipo son necesarios para reducir el riesgo de seguridad. En MFA la contraseña deja de ser el sistema de verificación de la identidad básica para convertirse en uno más dentro de un amplio abanico de posibilidades.
+
+### Passwordless
+
+La autenticación sin contraseñas es un tipo de autenticación multifactor (MFA) que **reemplaza las contraseñas por un elemento de autenticación más seguro**, por ejemplo una huella dactilar o un PIN. Se basa en los mismos principios que los [certificados digitales](https://en.wikipedia.org/wiki/Public_key_certificate) ya que cuentan con un par de claves (pública y privada). Este par de claves son generadas por una herramienta externa que puede ser un dispositivo móvil, una extensión del navegador, un dispositivo hardware especializado u otro elemento.
+
+Al igual que en la [criptografía asimétrica](https://en.wikipedia.org/wiki/Public-key_cryptography), **la clave privada se almacena localmente y de forma segura en el dispositivo externo** y está ligada a algún tipo de factor de autenticación como puede ser una huella dactilar, un PIN, reconocimiento facial o voz. Esto hace que únicamente se tenga acceso a la clave privada mediante alguno de los mecanismos citados anteriormente. Por el contrario, la clave pública se transfiere, en el proceso de registro, al sitio web, aplicación o sistema con el que el usuario quiere realizar la autenticación posterior. De esta forma, cuando el usuario quiera autenticarse, enviará un mensaje firmado con su clave privada al servicio contra el que se quiere autenticar y este último usará la clave pública almacenada para confirmar la identidad del usuario.
+
+## Tipos de autenticación sin contraseña
+
+La autenticación sin contraseñas surgió inicialmente como un nivel de seguridad extra de las mismas usándose sobre todo como segundo factor. Al no existir un estándar inicial, **existen diversas formas para establecer técnicas alternativas o complementarias** a las contraseñas tradicionales. Algunos ejemplos bastante comunes son los que encontraríamos a continuación.
+
+### SMS
+
+El usuario usa su teléfono móvil como un segundo factor de autenticación. Tras introducir su contraseña en el formulario de login de la aplicación, el servidor le enviará un código mediante un SMS. El usuario debe introducir dicho código en la aplicación y si es correcto estará demostrando la posesión de su teléfono móvil, que actúa en ese caso como segundo factor. En este tipo de mecanismos de autenticación una mala práctica común de las aplicaciones es comprobar primero la contraseña y de no ser correcta cancelar el proceso de autenticación. Esto da pistas a un atacante de si la contraseña era correcta y podría dejarle atacar otros servicios sin MFA que use ese mismo usuario. Sin embargo, el coste de los SMS suele hacer que los servicios prefieran hacer esta comprobación inicial para ahorrarse los costes derivados de enviar SMS en caso de que la contraseña sea incorrecta. El empleo de SMS no es un método recomendado ya que se conocen múltiples [ataques](https://www.kaspersky.es/blog/2fa-practical-guide/17187/) que pueden vulnerar la seguridad de este tipo de autenticación. Como ejemplo, Google anunció que [sustituirá sus sistemas de 2FA mediante SMS](https://www.forbes.com/sites/zakdoffman/2020/06/17/google-confirms-powerful-new-security-move-impacting-all-users-goodbye-sms/) por notificaciones push en los terminales Android.
+
+### Notificaciones PUSH
+
+Una [notificación push](https://doubleoctopus.com/security-wiki/authentication/push-notification-authentication/) es un mensaje que aparece en un dispositivo móvil y que es generada por una aplicación del móvil o su servidor correspondiente. Las aplicaciones pueden enviar este tipo de notificaciones cuando quieran y los usuarios no tienen porqué estar usándolas en ese momento. Esta notificación pondrá en sobre aviso al usuario del intento de acceso a uno de sus servicios. Cuando los usuarios ven la notificación pueden aprobar o denegar el acceso normalmente presionando un botón. Las notificaciones push permiten autenticar al usuario mediante la confirmación de que el dispositivo que registraron para realizar la autenticación, por lo general un dispositivo móvil, está en posesión del usuario. Este tipo de autenticación **está ganando popularidad por su simplicidad**, aunque está limitado ya que el usuario necesita tener una aplicación en su dispositivo. Un ejemplo de este tipo de autenticación sería Google, quien la permite como opción para acceder a aplicaciones como Gmail, Calendar y Docs.
+
+### Google Authenticator
+
+Es una solución propietaria de Google. Existen alternativas similares. Esta aplicación utiliza algoritmos que permiten sincronizar códigos entre el servidor y la aplicación de Google Authenticator de forma que cuando el usuario introduce el código que aparece en la app, el servidor es capaz de verificar que es correcto.
+
+### Biometría
+
+Es uno de los mecanismos más nuevos y está teniendo un gran crecimiento en los últimos años. Permite que el usuario se autentique con algo que es y no que conoce como en el caso de una contraseña. Añade un nivel de seguridad extra, aunque dependiendo del tipo de sistema biométrico que se utilice puede ser comprometido. El ejemplo más extendido es el uso de la huella dactilar que está presente en la mayoría de los dispositivos móviles. El reconocimiento facial también está bastante extendido y aquí habría que destacar los numerosos estudios que tratan de saltarse este control o bien por medio de fotografías o [falsificando caras](https://www.bbvaopenmind.com/en/technology/innovation/how-to-hack-a-face-from-facial-recognition-to-facial-recreation/). El reconocimiento de voz también está bastante generalizado aunque no se emplea tanto en sistemas de autenticación en páginas webs tradicionales sino que se usa sobretodo cuando se trata con asistentes de voz. Existen además elementos biométricos más complejos como por ejemplo los escáneres de iris o los reconocimientos de retina.
+
+## Estándares
+
+[Fido Alliance](https://youtu.be/11UfySDn7_I) es un consorcio de empresas tecnológicas que busca mejorar los sistemas de autenticación actuales. Usando como base la seguridad de los sistemas de autenticación mediante un formulario con usuario y contraseña, Fido Alliance busca desarrollar un estándar de autenticación interoperable que garantice un proceso más sencillo y seguro para los usuarios.
+
+Este estándar se basa en conceptos de criptografía asimétrica. Cuando hablamos de criptografía asimétrica, siempre hay un par de claves: una para cifrar los datos y otra para descifrarlos. Las especificaciones definidas en el estándar pueden ser implementadas en un gran rango de tecnologías como sensores de huella dactilar, reconocimiento facial o _tokens hardware_.
+
+### FIDO 1.0
+
+La primera versión del estándar de FIDO surgió en 2014. En esta primera iteración se plantea tanto el uso de FIDO como segundo factor de autenticación haciendo uso de llaves físicas como la autenticación _passwordless_. Ambos casos de uso se definen cada uno en una especificación propia dentro del estándar.
+
+- **UAF**: Universal Authentication Framework. Es una especificación que permite a los servicios adoptar **seguridad sin contraseñas en dispositivos móviles**. Cuando el usuario crea la cuenta, el usuario registra un dispositivo de su elección y define un mecanismo de autenticación como huella, cara, voz o un PIN.
+
+![Proceso de autenticación passwordless](/images/UAF.png)
+
+<div class="caption">
+  Proceso de autenticación passwordless.{' '}
+  <a href="https://fidoalliance.org/specifications/">Fuente</a>
+</div>
+
+- **U2F**: Universal 2nd Factor. Es una especificación para llaves de seguridad físicas que actúa como **segundo factor en métodos de autenticación mediante contraseña**. Normalmente las llaves U2F se conectan al ordenador vía USB, aunque también las hay de NFC y Bluetooth.
+
+![Autenticación mediante llave física](/images/U2F.png)
+
+<div class="caption">
+  Autenticación mediante llave física. <a href="https://fidoalliance.org/specifications/">Fuente</a>
+</div>
+
+Tras unos años con FIDO 1 en el mercado, la FIDO Alliance en colaboración con la W3C, empezó el desarrollo de su segunda versión.
+
+### FIDO 2.0
+
+Se lanzó en 2018 como actualización de la versión original de 2014. Su objetivo principal es mejorar la facilidad de adopción.
+
+El componente principal es Web Authentication (WebAuthn), que se desarrolló en colaboración con la W3C. WebAuthn está formado por un conjunto de especificaciones y APIs que se añaden a la autenticación basada en FIDO para soportar navegadores y otras plataformas. Esto implica que los usuarios serán capaces de registrarse en sus aplicaciones usando sistemas biométricos o llaves hardware compatibles con FIDO.
+
+WebAuthn pretende hacer la autenticación FIDO más accesible a usuarios que usan una gran variedad de tecnologías. El estándar se soporta por los navegadores más conocidos.
+
+![Adopción de FIDO2 en los navegadores](/images/browser.jpg)
+
+<div class="caption">
+  Adopción de FIDO2 en los navegadores.{' '}
+  <a href="https://fidoalliance.org/fido2/fido2-web-authentication-webauthn/">Fuente</a>
+</div>
+
+**En FIDO2, la especificación U2F pasa a llamarse CTAP1**. Además, introducen [CTAP2](https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html) (Client To Authenticator Protocol) que es una actualización de CTAP1 que permite incluir dispositivos externos como por ejemplo teléfonos móviles como autenticadores aceptados.
+
+**CTAP2 es el protocolo que define el conjunto de mensajes, el formato y datos que deben intercambiarse el navegador y el autenticador externo.**
+
+WebAuthn por su parte permite definir la comunicación entre el servidor FIDO al que a veces se denomina como _Relying Party Server_ y el navegador, aplicación o plataforma del cliente.
+
+En la siguiente imagen se recoge la arquitectura del estándar FIDO2.
+
+![Visión a alto nivel de una arquitectura FIDO](/images/V2.png)
+
+<div class="caption">
+  Visión a alto nivel de una arquitectura FIDO.{' '}
+  <a href="https://fidoalliance.org/specifications/">Fuente</a>
+</div>
+
+En la siguiente tabla se resumen las diferencias entre las dos versiones de FIDO.
+
+![Comparativa entre la versión 1 y 2 de FIDO](/images/tabla1.png)
+
+<div class="caption">
+  Comparativa entre la versión 1 y 2 de FIDO.{' '}
+  <a href="https://www.bbvanexttechnologies.com/passwordless-el-fin-de-las-contrasenas/">Fuente</a>
+</div>
+
+Para entender completamente FIDO2 hay que conocer las partes que intervienen en el proceso de autenticación:
+
+- **Navegador/Aplicación**: contiene la aplicación Javascript capaz de enviar peticiones al servidor y comunicarse con el _authenticator_. Los principales navegadores ya incorporan funcionalidades estandarizadas que les permiten comunicarse con el _authenticator_.
+- **FIDO Server**: a veces conocido como _Relying Party_. Es la aplicación con la que el usuario se autentica. Cuando el usuario envía los datos de autenticación firmados, este servidor se encarga de realizar las validaciones de las firmas, y almacena las claves públicas de los usuarios registrados. El servidor FIDO es el encargado de la gestión de los usuarios de la aplicación.
+- **Authenticator**: es el dispositivo que utiliza el usuario para verificar su identidad. Puede ser una llave física o algún sistema embebido. En un dispositivo móvil o en un ordenador con huella, el _authenticator_ podría ser el propio dispositivo mediante el lector de huellas o incluso reconocimiento facial. Como llaves físicas, se puede utilizar cualquiera compatible con FIDO. Entre ellas, son compatibles las llaves [Yubikey](https://www.yubico.com/?lang=es) o las [Titan](https://cloud.google.com/titan-security-key?hl=es) de Google.
+
+![Ejemplo de llaves físicas de Yubico](/images/yubi.png)
+
+<div class="caption">
+  Ejemplo de llaves físicas de Yubico.{' '}
+  <a href="https://www.bbvanexttechnologies.com/passwordless-el-fin-de-las-contrasenas/">Fuente</a>
+</div>
+
+## Conclusión
+
+Las contraseñas dependen directamente de la implicación y concienciación del usuario en mantener sus cuentas correctamente securizadas, de la longitud que este decida y de dónde y cómo las almacene. Los modelos _passwordless_ dominados por el estándar de la FIDO Alliance son una evolución de la forma en que realizamos la autenticación que aumentan la seguridad a la vez que mejoran la experiencia del usuario.
+
+**Mediante este mecanismo de autenticación, los ataques de _phishing_ se vuelven más complicados**, ya que un usuario que haya sido engañado para dar a un atacante su contraseña enviando un email malicioso no podrá cederles el mecanismo de autenticación de forma sencilla (no existe dicha contraseña). Los métodos de autenticación usados en _passwordless_ no son fáciles de obtener para un atacante, sin embargo, esto no es imposible, aunque sí mucho más difícil, lo cual, es una clara ventaja sobre otros métodos de autenticación.
+
+Si bien es cierto, es muy poco probable que las contraseñas desaparezcan completamente en un corto plazo, cada vez es más común añadir algún tipo de funcionalidad _passwordless_ o bien como doble factor o incluso como una alternativa más para iniciar la sesión.
+
+Google Authenticator como código PIN temporal y las notificaciones push (sustitutos de los SMS) como segundo factor, son claros ejemplos de elementos que vamos incorporando poco a poco al proceso de autenticación y que nos permiten añadir una capa de seguridad sobre las contraseñas tradicionales.
+
+FIDO 2 supone un avance para estos mecanismos de autenticación usando la criptografía de clave asimétrica como nexo entre los dispositivos autenticadores y el servidor permitiendo utilizar una gran cantidad de dispositivos incluyendo los biométricos.
+
+Estos últimos dispositivos están en auge. Ya no sólo la huella dactilar que se encuentra incorporada en la mayoría de los teléfonos móviles y en algunos ordenadores portátiles, sino también el reconocimiento facial o por voz.
+
+El incremento de estos dispositivos biométricos junto con la definición del estándar FIDO ha hecho que el usar este tipo de mecanismos como alternativa de autenticación sea sencillo **no sólo para los usuarios finales sino para los propios desarrolladores de aplicaciones**. Un ejemplo claro son los [dispositivos Android](https://fidoalliance.org/android-now-fido2-certified-accelerating-global-migration-beyond-passwords/), que desde 2019 todos aquellos con versión superior o igual a Android 7.0 son compatibles con el estándar.
+
+Aunque cada vez son más las aplicaciones que incorporan algún tipo de mecanismo sin contraseñas o bien como MFA o como autenticación _passwordless_ completa, queda todavía mucho camino que recorrer, pero sin duda, la evolución en los procesos de autenticación tiende a seguir esta línea. Desde el laboratorio de seguridad de BBVA Next recomendamos activar al menos un 2FA en todos los servicios digitales que requieran mayor protección.
+
+Próximamente publicaremos una continuación de este artículo en la que trataremos FIDO2. En esta segunda parte se mostrará cómo desarrollar una aplicación que cumpla con el estándar haciendo uso de tecnologías _open source_ y qué dificultades o ventajas podemos encontrar al tratar con esta tecnología.
+
+_Fuente de la imagen principal: Freepik_
