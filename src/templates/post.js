@@ -114,6 +114,11 @@ const PostContent = styled.div`
     height: 100px;
   }
 
+  .drive-video {
+    width: 100%;
+    height: 450px;
+  }
+
   .gatsby-resp-iframe-wrapper {
     margin: ${rhythm(2)} auto;
   }
