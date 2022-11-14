@@ -11,6 +11,7 @@ import VdeGuerra from '../../static/projects/wow.png';
 import Crokev2 from '../../static/projects/avatar.png';
 import FreePhone from '../../static/projects/freephone.png';
 import Cryptex from '../../static/projects/cryptex.jpg';
+import Cryptex from '../../static/projects/MHammer.jpg';
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -34,6 +35,14 @@ const ProjectsPage = ({ props, pageContext, location }) => {
         <SectionText content={t.projects.projects} />
         <Row>
           <Project
+            name="Microphone Hammer"
+            description={t.projects.hammerDesc}
+            image={MHammer}
+            code="https://github.com/y-x-c/wearable-microphone-jamming"
+            demo="http://www.youtube.com/watch?v=H1rozZ7ebxQ"
+            documentation="https://croke.es/blog/jasyp-2022-mic-jammer"
+          />
+          <Project
             name="ASSAP"
             description={t.projects.assapDesc}
             image={Assap}
@@ -42,6 +51,8 @@ const ProjectsPage = ({ props, pageContext, location }) => {
             documentation="https://github.com/assap-org/assap/wiki"
             contribute="https://github.com/assap-org/assap/projects/2"
           />
+        </Row>
+        <Row>
           <Project
             name="FreePhone"
             description={t.projects.freephoneDesc}
@@ -50,8 +61,6 @@ const ProjectsPage = ({ props, pageContext, location }) => {
             demo="https://raw.githubusercontent.com/jorcuad/FreePhone/master/images/building_freephone.mp4"
             documentation="https://github.com/jorcuad/FreePhone/wiki"
           />
-        </Row>
-        <Row>
           <Project
             name="Marimorena"
             description={t.projects.marmimorenaDesc}
@@ -59,6 +68,8 @@ const ProjectsPage = ({ props, pageContext, location }) => {
             code="https://github.com/jorcuad/Cybercamp2019-SecurityAR-Workshop"
             demo="https://www.youtube.com/watch?v=C0y76fM0GWQ"
           />
+        </Row>
+        <Row>
           <Project
             name="Croke-V2"
             description={t.projects.crokev2Desc}
@@ -66,8 +77,6 @@ const ProjectsPage = ({ props, pageContext, location }) => {
             code="https://github.com/jorcuad/croke"
             demo="https://www.croke.es"
           />
-        </Row>
-        <Row>
           <Project
             name="Vientos de Guerra"
             description={t.projects.vdeguerraDesc}
@@ -75,6 +84,8 @@ const ProjectsPage = ({ props, pageContext, location }) => {
             code="https://github.com/jorcuad/VientosDeGuerra"
             demo="https://vientos-de-guerra.croke.es/"
           />
+        </Row>
+        <Row>
           <Project
             name="Cryptex"
             description={t.projects.cryptexDesc}
