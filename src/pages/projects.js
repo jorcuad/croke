@@ -11,7 +11,7 @@ import VdeGuerra from '../../static/projects/wow.png';
 import Crokev2 from '../../static/projects/avatar.png';
 import FreePhone from '../../static/projects/freephone.png';
 import Cryptex from '../../static/projects/cryptex.jpg';
-import Cryptex from '../../static/projects/MHammer.jpg';
+import MHammer from '../../static/projects/MHammer.jpg';
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';

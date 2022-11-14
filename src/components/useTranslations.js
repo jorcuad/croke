@@ -131,6 +131,7 @@ const query = graphql`
               crokev2Desc
               vdeguerraDesc
               cryptexDesc
+              hammerDesc
             }
             projectsList {
               assap
