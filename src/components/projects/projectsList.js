@@ -28,9 +28,9 @@ const ProjectsList = props => {
       <Content>
         <Card
           image={Inhibidor}
-          title="Inhibidor"
+          title="Mic Hammer"
           description={t.projectsList.inhibidor}
-          link={t.projectsList.linkOpenSource}
+          link={t.projectsList.linkEducationl}
         />
         <Card
           image={Assap}

@@ -140,6 +140,7 @@ const query = graphql`
               freephone
               crokev2
               cryptex
+              inhibidor
               linkWorkshop
               linkServices
               linkEducationl
