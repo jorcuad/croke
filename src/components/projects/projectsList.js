@@ -11,7 +11,7 @@ import Marimorena from '../../../static/projects/marimorena.png';
 import VdeGuerra from '../../../static/projects/wow.png';
 import Crokev2 from '../../../static/projects/avatar.png';
 import FreePhone from '../../../static/projects/freephone.png';
-import Cryptex from '../../../static/projects/cryptex.jpg';
+import Inhibidor from '../../../static/projects/MHammer.jpg';
 
 const Content = styled.div`
   ${tw`overflow-hidden flex flex-col md:justify-between`}
@@ -27,10 +27,30 @@ const ProjectsList = props => {
     <Row>
       <Content>
         <Card
+          image={Inhibidor}
+          title="Inhibidor"
+          description={t.projectsList.inhibidor}
+          link={t.projectsList.linkOpenSource}
+        />
+        <Card
           image={Assap}
           title="ASSAP"
           description={t.projectsList.assap}
           link={t.projectsList.linkOpenSource}
+        />
+        <Card
+          image={Crokev2}
+          title="Croke-V2"
+          description={t.projectsList.crokev2}
+          link={t.projectsList.linkOpenSource}
+        />
+      </Content>
+      <Content>
+        <Card
+          image={FreePhone}
+          title="FreePhone"
+          description={t.projectsList.freephone}
+          link={t.projectsList.linkEducationl}
         />
         <Card
           image={Marimorena}
@@ -43,26 +63,6 @@ const ProjectsList = props => {
           title="V. de Guerra"
           description={t.projectsList.vdeguerra}
           link={t.projectsList.linkServices}
-        />
-      </Content>
-      <Content>
-        <Card
-          image={FreePhone}
-          title="FreePhone"
-          description={t.projectsList.freephone}
-          link={t.projectsList.linkEducationl}
-        />
-        <Card
-          image={Crokev2}
-          title="Croke-V2"
-          description={t.projectsList.crokev2}
-          link={t.projectsList.linkOpenSource}
-        />
-        <Card
-          image={Cryptex}
-          title="Cryptex"
-          description={t.projectsList.cryptex}
-          link={t.projectsList.link3dPrinting}
         />
       </Content>
     </Row>
