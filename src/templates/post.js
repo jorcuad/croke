@@ -249,11 +249,10 @@ export const query = graphql`
         title
         tags
         image {
+          publicURL
           childImageSharp {
             resize(width: 1200) {
               src
-              width
-              height
             }
           }
         }

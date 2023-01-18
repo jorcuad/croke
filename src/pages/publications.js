@@ -2,6 +2,7 @@ import React from 'react';
 import { SectionTitle, SectionWrapper, SectionText } from '../components/section';
 import Publication from '../components/publication/publication';
 import SEO from '../components/seo';
+import { graphql } from 'gatsby';
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';

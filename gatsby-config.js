@@ -66,6 +66,12 @@ module.exports = {
         name: `translations`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/gatsby-config.js`,
+      },
+    },
     `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-mdx`,
