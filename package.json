@@ -58,7 +58,7 @@
     "gatsby-remark-smartypants": "^2.2.3",
     "gatsby-source-filesystem": "^2.11.1",
     "gatsby-transformer-json": "^2.4.3",
-    "gatsby-transformer-remark": "^2.7.5",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.4.6",
     "i18next": "^19.4.5",
     "i18next-browser-languagedetector": "^5.0.0",
